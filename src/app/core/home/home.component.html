@@ -1,27 +1,15 @@
-<main>
-    <article>
-        <section class="section hero" aria-label="home">
-            <div class="container">
-    
-              <div class="hero-content">
-    
-                <!-- <p class="hero-subtitle">Bienvenidos</p> -->
-    
-                <p class="mat-headline-3" style="color:white;margin: 10px;"><b>Bienvenidos</b></p>
-                <p class="mat-headline-6" style="color:white;margin: 10px;">
-                    Encuentra todo los productos de segunda mano en un solo sitio
-                </p>
-    
-                <a href="#" class="btn btn-primary">Ver más</a>
-    
-              </div>
-    
-              <figure class="hero-banner">
-                <img src="assets/images/bannerproducts.png" width="680" height="645"
-                  alt="products" class="w-100">
-              </figure>
-    
-            </div>
-          </section>
-    </article>
-</main>
+  
+  <!-- BANNER -->
+
+<mat-card class="banner-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+  <div fxLayout="column" fxLayoutAlign="start left">
+    <h1 class="banner-title">¡Bienvenidos!</h1>
+    <p class="banner-subtitle">Encuentra todos los productos de segunda mano en un solo sitio</p>
+    <button mat-raised-button  class="banner-button">Ver más</button>
+  </div>
+  <div fxLayoutAlign="center">
+    <img src="../../../assets/images/bannerproducts.png" alt="Imagen del banner" class="banner-image" />
+  </div>
+</mat-card>
+
+<!-- PRODUCTOS MAS VENDIDOS -->
