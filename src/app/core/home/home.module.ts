@@ -8,6 +8,10 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { IonicModule } from '@ionic/angular';
+import { MatCardModule } from '@angular/material/card';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { register } from 'swiper/element/bundle';
+
 
 
 
@@ -22,7 +26,14 @@ import { IonicModule } from '@ionic/angular';
     MatIconModule,
     MatDividerModule,
     FlexLayoutModule,
+    MatCardModule,
     IonicModule.forRoot()
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class HomeModule { }
+export class HomeModule { 
+
+  constructor() {
+    register();
+}
+}

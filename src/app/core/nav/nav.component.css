@@ -145,7 +145,6 @@
 ::ng-deep address { font-style: normal; }
 
 
-
 ::ng-deep body.loaded { overflow: visible; }
 
 :focus-visible { outline-offset: 4px; }
@@ -187,6 +186,15 @@
 .label-lg { font-size: var(--fs-14); }
 
 .label-md { font-size: var(--fs-12); }
+
+.header-label {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center;  
+}
 
 /**
  * font weight
@@ -351,7 +359,7 @@
 .navbar-item:not(:last-child) { border-block-end: 1px solid var(--jet_a10); }
 
 .navbar-link {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 3px;
   padding: 16px 15px;
   transition: var(--transition-1);
