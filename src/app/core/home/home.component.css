@@ -1,12 +1,15 @@
-
-  
-  .banner-container {
-    height: 550px;
+ /*-----------------------------------*\
+  #BANNER
+\*-----------------------------------*/
+ .banner-container {
+    width: 100%;
+    height: 299.80029296875px;
+    top: 102px;
     background: linear-gradient(45deg,#BE272D, #ffffff);
     background-repeat: no-repeat;
     background-position: center bottom; /* Ajusta la posición del fondo */
     color: #fff;
-    padding: 20px;
+    /* padding: 20px; */
   }
   
   .banner-title {
@@ -36,8 +39,12 @@
     max-height: 300px; /* Ajusta el tamaño de la imagen según tus necesidades */
   }
   
-
   
+/*-----------------------------------*\
+  #CAROUSEL
+\*-----------------------------------*/
+
+
   .carousel-container {
     display: flex;
     align-items: center;
@@ -68,6 +75,11 @@
     outline: none;
   }
 
+
+  /*-----------------------------------*\
+  #PRODUCTO MAS VENDIDO
+\*-----------------------------------*/
+
   .best-seller{
     width: 80%;
     margin: 30px 10% ;
@@ -78,6 +90,7 @@
     height: 328px;
     margin: 30px 10%;
     border-radius: 10px;
+    background-color: #FFFFFF;
   }
 
   .product-money{
@@ -116,14 +129,14 @@
   }
 
   swiper-container {
-    width: 100%;
+    width: 85%;
     height: 120%;
   }
 
   swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,7 +150,125 @@
   swiper-container::part(button-next){
     color: #BE272D;
   }
- 
+
+  /*-----------------------------------*\
+  #CATEGORIAS POPULARES
+  \*-----------------------------------*/
+
+  .popular-categories{
+    width:  656.04px;
+    height: 326.36px;
+    border-radius: 10px;
+    margin: 40px;
+    background-color: #FFFF;
+  }
+  .image-container {
+    margin: auto;
+  }
+
+  .image-popular {
+    width: 338.0433349609375px;
+    height: 286.357666015625px;
+    border-radius: 10px;
+  }
+
+  .title-text-container {
+    width: 233px;
+    height: 25px;
+    margin: 10px;
+  }
+  .subtitle-text-container{
+    width: 233px;
+    height: 62px;
+    margin: 10px;
+  }
+
+  .sub-title-popular{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #BE272D;
+
+  }
+  
+  .title-popular {
+    font-family: Titillium Web;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0.36em;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  
+  .button-popular {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  /*-----------------------------------*\
+  #PRODUCTO DESCUENTO
+  \*-----------------------------------*/
+
+  .title{
+    font-family: 'Titillium Web';
+  color: #BE272D;
+  font-weight: 700;
+  font-size: 25px;
+  margin-top: 20px;
+  line-height: 31px;
+  letter-spacing: 1%;
+  }
+
+  .product-discount-card{
+    width: 365px;
+    height: 328px;
+    /* margin-bottom: 20px; */
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #F1F1F1F1;
+  }
+
+  .column-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .card-products{
+    width: 85%;
+    border-radius: 20px;
+  }
+
+  .card-products-container {
+    height: 100px; /* Ajusta esta altura según tus necesidades */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-discount-button {
+    font-size: 20px;
+    border-radius: 50px; /* Ajusta el valor para hacer el botón más ovalado */
+    width: 400px; /* Ajusta el valor para hacer el botón más largo */
+    padding: 10px 20px; /* Ajusta el padding para dar más espacio al texto dentro del botón */
+    color: #BE272D !important; /* Cambia el color de la fuente aquí */
+    background-color: #FFFFFF; /* Cambia el color de fondo del botón aquí */
+    border: 2px solid #BE272D;
+    padding: 10px;
+    border-radius: 25px;
+  }
+
+
+  /*-----------------------------------*\
+    #MEDIA DISPLAYS
+  \*-----------------------------------*/
+
   @media screen and (max-width: 767px) {
     .banner-container {
       padding: 10px;

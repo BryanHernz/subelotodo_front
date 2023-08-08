@@ -8,6 +8,7 @@ body {
     color: var(--davys-gray);
     font-size: 1.6rem;
     line-height: 1.5; */
+    background-color: #F1F1F1 !important;
     overflow: hidden;
     position: relative!important;
     overflow-y: scroll!important;

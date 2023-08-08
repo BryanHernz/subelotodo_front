@@ -16,7 +16,7 @@ export class HomeComponent {
       id: 1,
       name: 'Telefono',
       country: 'Chile',
-      date: '01-02-2023', // ???
+      date: '13 de noviembre 2023', // ???
       photo: this.photoURL,
       price: 500000,
       currency: 'CLP',
@@ -25,7 +25,7 @@ export class HomeComponent {
       id: 1,
       name: 'Telefono',
       country: 'Chile',
-      date: '01-02-2023', // ???
+      date: '13 de noviembre 2023', // ???
       photo: this.photoURL,
       price: 500000,
       currency: 'CLP',
@@ -34,7 +34,7 @@ export class HomeComponent {
       id: 1,
       name: 'Telefono',
       country: 'Chile',
-      date: '01-02-2023', // ???
+      date: '13 de noviembre 2023', // ???
       photo: this.photoURL,
       price: 500000,
       currency: 'CLP',
@@ -43,7 +43,7 @@ export class HomeComponent {
       id: 1,
       name: 'Telefono',
       country: 'Chile',
-      date: '01-02-2023', // ???
+      date: '13 de noviembre 2023', // ???
       photo: this.photoURL,
       price: 500000,
       currency: 'CLP',
@@ -52,7 +52,7 @@ export class HomeComponent {
       id: 1,
       name: 'Telefono',
       country: 'Chile',
-      date: '01-02-2023', // ???
+      date: '13 de noviembre 2023', // ???
       photo: this.photoURL,
       price: 500000,
       currency: 'CLP',
