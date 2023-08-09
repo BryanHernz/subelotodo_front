@@ -1,0 +1,50 @@
+<!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a routerLink="/home" class="logo">
+        <img src="assets/img/logo.svg" width="140" height="28" alt="Jassa home">
+      </a>
+
+      <nav class="navbar" data-navbar [ngClass]="status ? 'active' : ''">
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a routerLink="/home" class="header-label navbar-link " routerLinkActive="active">Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a routerLink="/ofertas"  class="header-label navbar-link " routerLinkActive="active">Ofertas</a>
+          </li>
+
+          <li class="navbar-item">
+            <a routerLink="/comoVender"  class="header-label navbar-link " routerLinkActive="active">¿Cómo vender?</a>
+          </li>
+
+          <li class="navbar-item">
+            <a routerLink="/preguntasFrecuentes"  class="header-label navbar-link " routerLinkActive="active">Preguntas frecuentes</a>
+          </li>
+
+          <li class="navbar-item">
+            <a routerLink="/grupoWhatsapp"  class="header-label navbar-link " routerLinkActive="active">Grupo de WhatsApp</a>
+          </li>
+        </ul>
+        
+      </nav>
+
+      
+      <button mat-icon-button class="btn btn-text">
+        <mat-icon>menu</mat-icon>
+        </button>
+
+      <button class="nav-toggle-btn" aria-label="menu" data-nav-toggler (click)="addToggle()">
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+    </div>
+  
+  </header>
+
