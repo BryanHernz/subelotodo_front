@@ -29,9 +29,9 @@
     padding: 10px 20px; /* Ajusta el padding para dar más espacio al texto dentro del botón */
     color: #BE272D !important; /* Cambia el color de la fuente aquí */
     background-color: #FFFFFF; /* Cambia el color de fondo del botón aquí */
-    border: 2px solid #BE272D;
+    border: 1px solid red;
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 20px;
   }
   
   .banner-image {
@@ -88,9 +88,13 @@
   .product-card{
     width: 365px;
     height: 328px;
-    margin: 30px 10%;
+    /* margin-bottom: 20px; */
+    margin: 20px;
     border-radius: 10px;
+    
     background-color: #FFFFFF;
+
+    
   }
 
   .product-money{
@@ -108,6 +112,8 @@
     line-height: 25px;
     letter-spacing: 0.01em;
     text-align: center;
+
+    
   }
 
   .product-card-text{
@@ -127,6 +133,18 @@
     background-position: center;
     background-size: cover;
   }
+
+  .button-product-card{
+    width: 285px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px;
+    color: #BE272D !important; /* Cambia el color de la fuente aquí */
+    background-color: #FFFFFF; /* Cambia el color de fondo del botón aquí */
+    border: 1px solid #BE272D;
+    /* gap: 10px */
+  }
+  
 
   swiper-container {
     width: 85%;
@@ -205,9 +223,15 @@
     margin: 0;
   }
   
-  .button-popular {
-    width: 100%;
-    max-width: 150px;
+  .button-popular-categories{
+    width: 233px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px;
+    color: #BE272D !important; /* Cambia el color de la fuente aquí */
+    background-color: #FFFFFF; /* Cambia el color de fondo del botón aquí */
+    border: 1px solid #BE272D;
+    /* gap: 10px */
   }
 
   /*-----------------------------------*\
@@ -216,21 +240,28 @@
 
   .title{
     font-family: 'Titillium Web';
-  color: #BE272D;
-  font-weight: 700;
-  font-size: 25px;
-  margin-top: 20px;
-  line-height: 31px;
-  letter-spacing: 1%;
+    color: #BE272D;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 20px;
+    line-height: 31px;
+    letter-spacing: 1%;
   }
 
   .product-discount-card{
-    width: 365px;
-    height: 328px;
+    width: 346px;
+    height: 378px;
     /* margin-bottom: 20px; */
-    margin: 20px;
+    /* padding: 20px, 40px, 20px, 40px; */
+    margin: 40px;
     border-radius: 10px;
     background-color: #F1F1F1F1;
+  }
+
+  .product-discount-img{
+    width: 266px;
+    height: 124px;
+
   }
 
   .column-container {
@@ -253,16 +284,15 @@
   }
 
   .product-discount-button {
-    font-size: 20px;
-    border-radius: 50px; /* Ajusta el valor para hacer el botón más ovalado */
-    width: 400px; /* Ajusta el valor para hacer el botón más largo */
-    padding: 10px 20px; /* Ajusta el padding para dar más espacio al texto dentro del botón */
+    width: 346px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px;
     color: #BE272D !important; /* Cambia el color de la fuente aquí */
     background-color: #FFFFFF; /* Cambia el color de fondo del botón aquí */
-    border: 2px solid #BE272D;
-    padding: 10px;
-    border-radius: 25px;
+    border: 1px solid #BE272D;
   }
+ 
 
 
   /*-----------------------------------*\
