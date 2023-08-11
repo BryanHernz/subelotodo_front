@@ -15,7 +15,7 @@ export class HomeComponent {
     {
       id: 1,
       name: 'Lavadora-secadora MLSF-13510SC01',
-      country: 'Chile',
+      country: 'Comuna',
       date: '13 de noviembre 2023', // ???
       photo: '../../../assets/images/imagenes-productos/Rectangle 7.png',
       price: 220000,
@@ -24,7 +24,7 @@ export class HomeComponent {
     {
       id: 2,
       name: 'Patines Profesionales Adulto Rojo',
-      country: 'Chile',
+      country: 'Comuna',
       date: '13 de diciembre 2023', // ???
       photo: '../../../assets/images/imagenes-productos/patines imagen.jpg',
       price: 90000,
@@ -33,7 +33,7 @@ export class HomeComponent {
     {
       id: 3,
       name: 'Estufa a leña Neoflam grande',
-      country: 'Chile',
+      country: 'Comuna',
       date: '21 de julio 2023', // ???
       photo: '../../../assets/images/imagenes-productos/Rectangle 7 (1).png',
       price: 300000,
@@ -42,7 +42,7 @@ export class HomeComponent {
     {
       id: 4,
       name: 'Computadora Acer Aspire Vero Laptop',
-      country: 'Chile',
+      country: 'Comuna',
       date: '11 de agosto 2023', // ???
       photo: '../../../assets/images/imagenes-productos/computador imagen.jpg',
       price: 500000,
@@ -51,7 +51,7 @@ export class HomeComponent {
     {
       id: 5,
       name: 'Televisor Plasma UHD',
-      country: 'Chile',
+      country: 'Comuna',
       date: '8 de septiembre 2023', // ???
       photo: '../../../assets/images/imagenes-productos/TV imagen.jpg',
       price: 250000,
@@ -63,7 +63,7 @@ export class HomeComponent {
     {
       id: 1,
       name: 'Computadora Acer Aspire Vero Laptop',
-      country: 'Chile',
+      country: 'Comuna',
       date: '11 de agosto 2023', // ???
       photo: '../../../assets/images/imagenes-productos/computador imagen.jpg',
       price: 500000,
@@ -72,7 +72,7 @@ export class HomeComponent {
     {
       id: 2,
       name: 'Televisor Plasma UHD',
-      country: 'Chile',
+      country: 'Comuna',
       date: '8 de septiembre 2023', // ???
       photo: '../../../assets/images/imagenes-productos/TV imagen.jpg',
       price: 250000,
@@ -81,7 +81,7 @@ export class HomeComponent {
     {
       id: 3,
       name: 'Zapatillas Nike AirForce 1 White',
-      country: 'Chile',
+      country: 'Comuna',
       date: '18 de septiembre 2023', // ???
       photo: '../../../assets/images/imagenes-productos/nikes.jpg',
       price: 135000,
@@ -90,7 +90,7 @@ export class HomeComponent {
     {
       id: 4,
       name: 'Lavadora-secadora MLSF-13510SC01',
-      country: 'Chile',
+      country: 'Comuna',
       date: '13 de noviembre 2023', // ???
       photo: '../../../assets/images/imagenes-productos/labadora imagen.png',
       price: 220000,
@@ -99,7 +99,7 @@ export class HomeComponent {
     {
       id: 5,
       name: 'Iphone SE Gray/Granite 128Gb',
-      country: 'Chile',
+      country: 'Comuna',
       date: '11 de septiembre 2023', // ???
       photo: '../../../assets/images/imagenes-productos/iphone imagen.jpg',
       price: 600000,
@@ -108,7 +108,7 @@ export class HomeComponent {
     {
       id: 6,
       name: 'Patines Profesionales Adulto Rojo',
-      country: 'Chile',
+      country: 'Comuna',
       date: '13 de diciembre 2023', // ???
       photo: '../../../assets/images/imagenes-productos/patines imagen.jpg',
       price: 90000,
