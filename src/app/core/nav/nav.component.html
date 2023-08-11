@@ -54,23 +54,17 @@
       <!-- ... (código anterior) ... -->
 
       <div class="category-menu" [ngClass]="menuOpen ? 'open' : ''">
-        <div class="category-header" fxLayout="row">
-          <div class="search-item">
-            <div class="search-container">
-              <input type="text" placeholder="">
-              <ion-icon name="search-outline"></ion-icon>
+        <!-- ... (otros elementos) ... -->
+        <div class="category-content" fxLayout="row wrap">
+          <div *ngFor="let categoria of categories" class="categoria" fxFlex="auto">
+            <div fxLayout="row" fxLayoutGap="14px" class="categoria-info">
+              <img [src]="categoria.logo" alt="Logo de categoría" class="categoria-logo">
+              <p class="categoria-title">{{ categoria.name }}</p>
             </div>
-          </div>
-            <button mat-raised-button class="button-menu-categories" style="margin: 10px;" >Categorías</button>
-            <button mat-raised-button class="button-menu-categories" style="margin: 10px;" >Marcas</button>
-            <button mat-raised-button class="button-menu-categories" style="margin: 10px;" >Ciudad</button>
-        </div>
-        <div class="category-content" fxLayout="row">
-          <!-- ngFor para imprimir las categorías -->
-          <div *ngFor="let categoria of categories" class="categoria-column" fxLayout="column">
-            <div class="categoria-title">{{ categoria.name }}</div>
-            <div *ngFor="let subcategoria of categoria.subCategories" class="subcategoria" style="margin-top: 20px;">
-              {{ subcategoria.name }}
+            <div class="subcategorias">
+              <div *ngFor="let subcategoria of categoria.subCategories" class="subcategoria">
+                {{ subcategoria.name }}
+              </div>
             </div>
           </div>
         </div>

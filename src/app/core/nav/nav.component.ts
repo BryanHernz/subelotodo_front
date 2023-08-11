@@ -25,6 +25,7 @@ export class NavComponent {
     {
       id:'1',
       name:'Tecnologia y electrónica',
+      logo:"../../../assets/images/iconos-categorias/tecnologi╠üa y electro╠ünica.svg",
       subCategories:[
         {
         id:'1',
@@ -59,6 +60,7 @@ export class NavComponent {
     {
       id:'2',
       name:'Hogar',
+      logo:"../../../assets/images/iconos-categorias/hogar.svg" ,
       subCategories:[
         {
           id:'1',
@@ -85,6 +87,7 @@ export class NavComponent {
     {
       id:'3',
       name:'Muebles',
+      logo:"../../../assets/images/iconos-categorias/muebles.svg" ,
       subCategories:[
         {
           id:'1',
@@ -107,6 +110,7 @@ export class NavComponent {
     {
       id:'4',
       name:'Domitorio',
+      logo:"../../../assets/images/iconos-categorias/dormitorio.svg" ,
       subCategories:[
         {
           id:'1',
@@ -137,6 +141,7 @@ export class NavComponent {
     {
       id:'5',
       name:'Deportes y Aire Libre',
+      logo:"../../../assets/images/iconos-categorias/deporte y aire libre.svg" ,
       subCategories:[
         {
           id:'1',
@@ -167,6 +172,7 @@ export class NavComponent {
     {
       id:'6',
       name:'Mujer',
+      logo:"../../../assets/images/iconos-categorias/mujer.svg" ,
       subCategories:[
         {
           id:'1',
@@ -189,6 +195,7 @@ export class NavComponent {
     {
       id:'7',
       name:'Hombre',
+      logo:"../../../assets/images/iconos-categorias/Hombre.svg" ,
       subCategories:[
         {
           id:'1',
@@ -207,6 +214,7 @@ export class NavComponent {
     {
       id:'8',
       name:'Mundo niños y juguetería',
+      logo:"../../../assets/images/iconos-categorias/mundo nin╠âo y jugueteria.svg" ,
       subCategories:[
         {
           id:'1',
@@ -225,6 +233,7 @@ export class NavComponent {
     {
       id:'9',
       name:'Belleza y Salud',
+      logo:"../../../assets/images/iconos-categorias/belleza y salud.svg",
       subCategories:[
         {
           id:'1',
@@ -247,6 +256,7 @@ export class NavComponent {
     {
       id:'10',
       name:'Mundo escolar',
+      logo:"../../../assets/images/iconos-categorias/mundo escolar.svg",
       subCategories:[
         {
           id:'1',
@@ -265,6 +275,7 @@ export class NavComponent {
     {
       id:'11',
       name:'Antiguedades y arte',
+      logo:"../../../assets/images/iconos-categorias/antiguedades y arte.svg",
       subCategories:[
         {
           id:'1',
@@ -287,6 +298,7 @@ export class NavComponent {
     {
       id:'12',
       name:'Jardín y Terraza',
+      logo:"../../../assets/images/iconos-categorias/jardi╠ün y terraza.svg",
       subCategories:[
         {
           id:'1',
@@ -313,6 +325,7 @@ export class NavComponent {
     {
       id:'13',
       name:'Música y Libros',
+      logo:"../../../assets/images/iconos-categorias/mu╠üsica y libros.svg",
       subCategories:[
         {
           id:'1',
@@ -331,6 +344,7 @@ export class NavComponent {
     {
       id:'14',
       name:'Otras Categorias',
+      logo:"../../../assets/images/iconos-categorias/otras categorii╠üas.svg",
       subCategories:[
         {
           id:'1',
