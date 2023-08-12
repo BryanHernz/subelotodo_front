@@ -625,7 +625,6 @@
 
 .category-menu.open {
   display: block;
-  transform: translateY(0);
 }
 
 .category-header{
