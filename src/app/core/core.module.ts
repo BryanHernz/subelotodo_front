@@ -4,14 +4,12 @@ import { NavComponent } from './nav/nav.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { IonicModule } from '@ionic/angular';
 import { FooterComponent } from './footer/footer.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
   declarations: [
-    NavComponent,
     FooterComponent
   ],
   imports: [
@@ -20,11 +18,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatToolbarModule,
     MatButtonModule,
     FlexLayoutModule,
-    IonicModule.forRoot()
     
   ],
   exports: [
-    NavComponent,
     FooterComponent
   ],
 })
