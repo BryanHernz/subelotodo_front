@@ -10,7 +10,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
-    FooterComponent
+    FooterComponent,
+    NavComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +22,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     
   ],
   exports: [
-    FooterComponent
+    FooterComponent,
+    NavComponent
   ],
 })
 export class CoreModule { }
