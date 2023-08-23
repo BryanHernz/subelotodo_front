@@ -6,7 +6,8 @@
     <div class="container">
 
       <a routerLink="/home" class="logo">
-        <img src="assets/img/logo.svg" width="140" height="28" alt="Jassa home">
+        
+        <img src="assets/img/logo.svg" width="109.194580078125" height="70.51641845703125" alt="Jassa home">
       </a>
 
       <nav class="navbar" data-navbar [ngClass]="status ? 'active' : ''">
@@ -29,22 +30,51 @@
           </li>
 
           <li class="navbar-item">
-            <a routerLink="/grupoWhatsapp"  class="header-label navbar-link " routerLinkActive="active">Grupo de WhatsApp</a>
+            <a routerLink="/subeloTodoInforma"  class="header-label navbar-link " routerLinkActive="active">Subelo todo informa</a>
           </li>
         </ul>
         
       </nav>
 
+      <div class="search-item">
+        <div class="search-container">
+          <input type="text" placeholder="">
+          <ion-icon name="search-outline"></ion-icon>
+        </div>
+      </div>
       
-      <button mat-icon-button class="btn btn-text">
-        <mat-icon>menu</mat-icon>
-        </button>
+      <button mat-icon-button class="btn btn-text" aria-label="menu" data-nav-toggler (click)="toggleMenu()">
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+      
 
       <button class="nav-toggle-btn" aria-label="menu" data-nav-toggler (click)="addToggle()">
         <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
       </button>
+      <!-- ... (código anterior) ... -->
+
+      <div class="category-menu" [ngClass]="menuOpen ? 'open' : ''" style="height: 90vh; width: 1000px;">
+        <!-- ... (otros elementos) ... -->
+        <div class="category-content" fxLayout="column wrap" style="height: 98%; margin-top: 0; gap: 0;">
+          <div *ngFor="let categoria of categories" class="categoria" style="width: 16.25rem;">
+            <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
+              <img [src]="categoria.logo" alt="Logo de categoría" class="categoria-logo">
+              <p class="categoria-title">{{ categoria.name }}</p>
+            </div>
+            <div class="subcategorias" fxLayout="column wrap" fxLayoutAlign="space-between" fxFlex="auto" fxLayoutGap="1rem">
+              <div *ngFor="let subcategoria of categoria.subCategories" class="subcategoria">
+                {{ subcategoria.name }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+<!-- ... (código posterior) ... -->
 
     </div>
   
   </header>
 
+ 
