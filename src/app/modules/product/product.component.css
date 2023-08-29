@@ -1,0 +1,182 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+.body-product{
+  width: 1,360.14px;
+  height: 511px;
+  top: 208.5px;
+  left: 39.432373046875px;
+  margin: 28px;
+}
+
+.title-container{
+  width: 1360.1351318359375px;
+  height: 37px;
+}
+
+.title-typography{
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 37px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: #BE272D;
+}
+
+.carousel-container{
+  width: 1,360.14px;
+  height: 207px;
+  /* margin: 47px; */
+}
+
+swiper-container {
+  width: 1,360.14px;
+  height: 45%;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 304.7837829589844px;
+  height: 206.63865661621094px;
+  object-fit: cover;
+}
+
+.info-container{
+  width: 1,360.14px;
+  height: 211px;
+  margin: 40px; 
+  justify-content: center;
+  align-items: center;
+}
+
+.description-container{
+  width: 550px;
+  height: 211px;
+  margin: 18px;
+}
+
+.adicional-container{
+  width: 365.7px;
+  height: 211px;
+  padding: 20px;
+  background: #FFFFFF;
+  margin: 10px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.addtocart-container{
+  width: 365.07px;
+  height: 211px;
+  margin: 20px;
+}
+
+.money-container{
+  width: 550px;
+  height: 37px;
+}
+
+.money{
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 37px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color:  #BE272D;
+  /* width: 550px;
+  height: 156px; */
+}
+.description-text{
+  width: 550px;
+  height: 156px ;
+}
+
+.description-typography{
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: #000000;
+}
+
+.category-container{
+  width: 123px;
+  height: 25px;
+  
+}
+
+.adicional-typography{
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: #000000;
+}
+
+.addtocart-text-container{
+  width: 365.06756591796875px;
+  height: 83px;
+}
+
+.addtocart-text-typo{
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: #000000;
+}
+
+.input-number-container{
+  width: 120px;
+  height: 32px;
+}
+
+.button-add-cart{
+  background-color: #BE272D; /* Color de fondo normal */
+  color: white; /* Color de texto normal */
+  border: none; /* Quita el borde */
+  padding: 10px 20px; /* Ajusta el espaciado interno */
+  cursor: pointer; /* Cambia el cursor a una mano al pasar el ratón */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+  width: 248px;
+  height: 57px;
+  border-radius: 10px;
+  font-family: Titillium Web;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.button-add-cart:hover {
+  background-color: #A31B20; /* Color de fondo al pasar el cursor */
+  color: white; /* Color de texto al pasar el cursor */
+}
+
+.row {
+  display: flex;
+}
+

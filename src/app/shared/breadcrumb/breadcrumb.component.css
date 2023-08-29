@@ -1,0 +1,31 @@
+.breadcrumb{
+    width: 269.19px;
+    height: 25px;
+    top: 156px;
+    left: 39.432373046875px;
+    margin: 22px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex  !important; /* Hacer que los elementos sean flexibles */
+    list-style: none; /* Eliminar los puntos de la lista */
+    /* padding: 0; */
+}
+
+/* Estilos para los elementos de la lista */
+
+
+.breadcrumb li {
+    display: inline;
+    margin-right: 10px; /* Espacio entre elementos */
+}
+
+/* Estilos para los enlaces */
+.breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* Estilo para el elemento actual (último) sin enlace */
+.breadcrumb li:last-child {
+    color: #333;
+}

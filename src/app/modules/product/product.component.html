@@ -1,0 +1,57 @@
+
+    <article>
+      <div id="breadcrumb-container" class="breadcrumb">
+          <app-breadcrumb></app-breadcrumb>
+      </div>
+      <section id="body-product" class="body-product" fxLayout="column" fxLayout.xs="column" fxLayoutAlign="center center" >
+        <div class="title-container">
+          <p class="title-typography">
+            Estufa a leña Neoflam grande
+          </p>
+        </div>
+        
+        <swiper-container class="mySwiper"  keyboard="true" 
+          slides-per-view="4" rewind="true" >
+          <swiper-slide lazy="true" *ngFor="let photo of product.photosUrl">
+            <img loading="lazy" [src]="photo.path" />
+          </swiper-slide>
+        </swiper-container>
+
+        <div class="info-container row">  
+          <div class="description-container ">
+            <div class="money-container">
+              <div class="money-product"><p class="money">{{product.price | currency : 'CLP' : 'symbol-narrow'}} CLP</p></div>
+            </div>
+            <br>
+            <div class="desciption-text">
+              <p class="description-typography">Descripción del artículo:</p>
+              <br>
+              <p class="description-typography">
+                {{product.description}}
+              </p>
+            </div>
+          </div>
+
+          <div class="adicional-container adicional-typography">
+            <p style="width: 123px; height: 25px;">Categoría: Hogar</p>
+            <p style="width: 302px; height: 25px">Ubicación: R.Metropolitana, San Bernardo</p>
+            <p style="width: 292px; height: 25px">Estado de producto: Usado-Como nuevo</p>
+            <p style="width: 303px; height: 25px">Medidas: 50 ancho, 63 fondo y 78 cm alto</p>
+            <p style="width: 111px; height: 25px">Peso: 100 kilos</p>
+          </div>
+          <div class="addtocart-container">
+            <div class="addtocart-text-container addtocart-text-typo">
+              <p>Estado de venta: En venta </p>
+              <p>Precio referencial: $100.000 CLP</p>
+              <p>Código: SkuK-550</p>
+            </div>
+            <br>
+            <div class="input-number-container">
+              <app-numeric-input [(value)]="myValue" (valueChange)="myValue = $event"></app-numeric-input>
+            </div>
+            <br>
+            <button class="button-add-cart">Agregar a carro</button>
+          </div>
+        </div>
+      </section>
+    </article>

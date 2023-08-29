@@ -1,0 +1,15 @@
+<!-- numeric-input.component.html -->
+<div class="numeric-input">
+    <div class="custom-button" (click)="decrement()">
+      <div class="button-content">
+        <img src="assets/images/iconos-generales/Vector.svg" alt="Icono de decremento">
+      </div>
+    </div>
+    <input  [(ngModel)]="value" min="0">
+    <div class="custom-button" (click)="increment()">
+      <div class="button-content">
+        <img style="transform: scaleY(-1);" src="assets/images/iconos-generales/Vector.svg" alt="Icono de decremento">
+      </div>
+    </div>
+  </div>
+  

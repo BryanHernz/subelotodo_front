@@ -1,0 +1,55 @@
+.numeric-input {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+  }
+  
+
+  /* Estilos para los botones personalizados */
+.custom-button {
+    cursor: pointer;
+    /* padding: 8px; */
+    border-radius: 4px;
+    margin: 0 4px;
+    transition: background-color 0.3s; /* Agrega una transición de color de fondo */
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    border: 1px;
+    user-select: none; /* Evita la selección de texto en el botón */
+  }
+
+  .button-content{
+    width: 12.00000000000001px;
+    height: 12.00000000000001px;
+    padding: 0.924307644367218px 2.4374589920043945px 0.9235851168632507px 3.1875px;
+  
+
+  }
+  
+  .custom-button .button-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-button:hover {
+    background-color: #BE272D; /* Cambia el color de fondo en el hover */
+  }
+  
+  /* Estilos para los botones SVG */
+  .custom-button svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+  
+  /* Estilos para el input */
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center; /* Centra horizontalmente el contenido del input */
+    width: 56px;
+    height: 32px;
+    margin: 10px;
+
+  }
