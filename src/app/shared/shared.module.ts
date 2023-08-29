@@ -8,7 +8,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { NumericInputComponent } from './components/numeric-input/numeric-input.component';
 import { FormsModule } from '@angular/forms';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { register } from 'swiper/element/bundle';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,11 @@ import { FormsModule } from '@angular/forms';
     BreadcrumbComponent,
     NumericInputComponent
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class SharedModule { }
+export class SharedModule { 
+  constructor() {
+    register();
+  } 
+}
 
