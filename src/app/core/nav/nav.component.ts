@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Category } from "../models/categories";
-import { SubCategory } from "../models/subcategories";
+import { Category } from "../../shared/models/categories";
+import { SubCategory } from "../../shared/models/subcategories";
 
 @Component({
   selector: 'app-nav',

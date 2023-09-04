@@ -1,0 +1,22 @@
+/* Estilos para el componente principal */
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Establece el alto mínimo de la vista a la altura del viewport */
+}
+
+/* Estilos para app-nav */
+app-nav {
+  flex: 0 0 auto; /* No se estirará y mantendrá su altura automática */
+}
+
+/* Estilos para router-outlet (contenido) */
+router-outlet {
+  flex: 1; /* Se estirará para ocupar el espacio restante */
+  overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
+}
+
+/* Estilos para app-footer */
+app-footer {
+  flex: 0 0 auto; /* No se estirará y mantendrá su altura automática */
+}

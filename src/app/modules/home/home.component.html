@@ -40,14 +40,16 @@
                           <p>{{product.country}}</p>
                         </div>
                         <div fxLayout="row" fxLayoutAlign="center center" >
-                          <h2 class="product-money" style="color :#BE272D;"><b>{{product.price | currency : 'CLP' : 'symbol-narrow'}}</b></h2>
+                          <h2 class="product-money" style="color :#BE272D;"><b>{{product.price | currency : 'CLP' : 'symbol-narrow'}} CLP</b></h2>
                         </div>
                         <div fxLayout="row" fxLayoutAlign="center center">
                           <p class="product-name" >{{product.name}}</p>
                         </div>
                       </mat-card-content>
                       <mat-card-actions>
-                        <button mat-raised-button class="button-product-card">Ver más</button>
+                        <a [routerLink]="['/product/', product.id]">
+                          <button mat-raised-button class="button-product-card">Ver más</button>
+                        </a>                        
                       </mat-card-actions>
                 </mat-card>
               </swiper-slide>

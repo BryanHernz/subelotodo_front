@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductCard } from "../models/product-card";
-
+import { ProductCard } from "../../shared/models/product-card";
 
 
 @Component({

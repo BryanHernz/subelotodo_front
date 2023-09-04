@@ -119,12 +119,12 @@
 
 ::ng-deep li { list-style: none; }
 
-::ng-deep a,
+/* ::ng-deep a,
 ::ng-deep img,
 ::ng-deep span,
 ::ng-deep label,
 ::ng-deep button,
-::ng-deep ion-icon { display: block; }
+::ng-deep ion-icon { display: block; } */
 
 ::ng-deep a {
   color: inherit;
@@ -307,7 +307,7 @@
 .header .btn { display: none; color: #BE272D; }
 
 .header {
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   width: 100%;
