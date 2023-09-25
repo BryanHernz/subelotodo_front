@@ -4,7 +4,7 @@
  .banner-container {
     width: 100%;
     height: 299.80029296875px;
-    top: 102px;
+    top: 0;
     background: linear-gradient(45deg,#BE272D, #ffffff);
     background-repeat: no-repeat;
     background-position: center bottom; /* Ajusta la posición del fondo */
@@ -63,11 +63,34 @@
     width: 300px;
     height: 200px;
   }
-  
+
   .prev-button,
+  .next-button {
+    background-color: white;
+    background-position: center;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    padding: 8px 16px;
+    border-radius: 100%;
+    border: 2px solid black;
+    color: red;
+  }
+  
+  .prev-button {
+    /* Estilos para los botones de flecha */
+    background-color: transparent;
+    background-image: url(src\assets\images\iconos-generales\rightCircle.svg);
+    border: none;
+    font-size: 2rem;
+    color: #000;
+    cursor: pointer;
+    outline: none;
+  } 
+
   .next-button {
     /* Estilos para los botones de flecha */
     background-color: transparent;
+    background-image: url(src\assets\images\iconos-generales\rightCircle.svg);
     border: none;
     font-size: 2rem;
     color: #000;
@@ -164,7 +187,7 @@
     background-color: #BE272D;
   }
 
-  swiper-container::part(button-prev),
+  swiper-container::part(button-prev)
   swiper-container::part(button-next){
     color: #BE272D;
   }
@@ -174,7 +197,7 @@
   \*-----------------------------------*/
 
   .popular-categories{
-    width:  656.04px;
+    width:  616px;
     height: 326.36px;
     border-radius: 10px;
     margin: 40px;
@@ -232,6 +255,16 @@
     background-color: #FFFFFF; /* Cambia el color de fondo del botón aquí */
     border: 1px solid #BE272D;
     /* gap: 10px */
+  }
+
+  .seccion-title{
+    font-family: 'Titillium Web';
+    color: #BE272D;
+    font-weight: 700; 
+    font-size: 25px; 
+    margin-top: 25px; 
+    line-height: 31px; 
+    letter-spacing: 1%;
   }
 
   /*-----------------------------------*\

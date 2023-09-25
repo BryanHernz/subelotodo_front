@@ -12,6 +12,7 @@ import { register } from 'swiper/element/bundle';
 @NgModule({
   declarations: [
     ProductComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -21,10 +22,9 @@ import { register } from 'swiper/element/bundle';
     SharedModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
-  
 })
 export class ProductModule {
-    constructor() {
-      register();
-    } 
- }
+  constructor() {
+    register();
+  } 
+}

@@ -1,0 +1,279 @@
+.body{
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    align-self: stretch;
+    background: #F1F1F1;
+    padding-bottom: 40px;
+}
+
+.banner{
+    width: 1444px;
+    height: 268.507px;
+    flex-shrink: 0;
+}
+
+.offers-main-cards{
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 40px;
+    width: 1361px;
+    height: 144px;
+}
+
+.offers-main-card{
+    width: 807px;
+    height: 144px;
+    display: flex;
+    width: 427px;
+    padding: 10px;
+    align-items: flex-end;
+    gap: 20px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.offers-main-card img{
+    width: 233px;
+    height: 124px;
+    flex-shrink: 0;
+}
+
+.offers-main-card-data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.offers-main-card-title{
+    height: 58.621px;
+    align-self: stretch;
+}
+
+.offers-main-card-title p{
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.offers-main-card div button{
+    width: 154px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 10px;
+    background: #BE272D;
+}
+
+.offers-main-card div button p{
+    padding-top: 8px;
+    color: #FFF;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 155%; /* 24.8px */
+    letter-spacing: 0.16px;
+}
+
+.offers-group{
+    display: flex;
+    width: 1440px;
+    padding: 20px 40px 40px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: #F1F1F1;
+}
+
+.offers-group-title{
+    height: 34px;
+    width: 1360px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+    color: #BE272D;
+}
+
+.offers-group-title p{
+    height: 1px;
+    color: #BE272D;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 155%; /* 24.8px */
+    letter-spacing: 0.16px;
+}
+
+.line{
+    stroke-width: 1px;
+    stroke: #BE272D;
+    width: 1360px;
+    height: 0px;
+}
+
+.offers-row{
+    display: flex;
+    width: 1360px;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.offer-card{
+    display: flex;
+    height: 378px;
+    width: 200px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    flex: 1 0 0;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.offer-card-title{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.offer-tag{
+    height: 25px;
+    display: flex;
+    width: 88px;
+    padding: 0px 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #128C16;
+    background: #128C16;
+}
+
+.offer-tag p{
+    padding-top: 12px;
+    color: #FFF;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 155%; /* 24.8px */
+    letter-spacing: 0.16px;
+}
+
+.offer-percent{
+    flex: 1 0 0;
+    color: #128C16;
+    text-align: right;
+    font-family: TitilliumWeb;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 155%; /* 31px */
+    letter-spacing: 0.2px;
+}
+
+.offer-card img{
+    width: 200px;
+    height: 95px;
+    flex: 1 0 0;
+    align-self: stretch;
+    object-fit: cover;
+}
+
+.offer-before{
+    color: #9B9B9B;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 155%; /* 31px */
+    letter-spacing: 0.2px;
+    text-decoration-line: strikethrough;
+}
+
+.offer-price{
+    color: #000;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 155%; /* 31px */
+    letter-spacing: 0.2px;
+}
+
+.offer-description{
+    text-align: center;
+    color: #000;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 155%;
+    letter-spacing: 0.16px;
+}
+
+.offer-button{
+    display: flex;
+    padding-top: 8px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 10px;
+    background: #BE272D;
+}
+
+.offer-button p{
+    color: #FFF;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 155%; /* 24.8px */
+    letter-spacing: 0.16px;
+}
+
+.more-button{
+    align-self: center;
+    height: 45px;
+    display: flex;
+    padding: 10px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid #BE272D;
+    background: #FFF;
+}
+
+.more-button p{
+    padding-top: 8px;
+    color: #BE272D;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 155%; /* 24.8px */
+    letter-spacing: 0.16px;
+}

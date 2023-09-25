@@ -1,8 +1,14 @@
 /* Estilos para el componente principal */
 :host {
   display: flex;
+  background-color: #ffffff;
   flex-direction: column;
   min-height: 100vh; /* Establece el alto mínimo de la vista a la altura del viewport */
+}
+
+.mainDiv{
+  align-self: center;
+  max-width: 1440px;
 }
 
 /* Estilos para app-nav */

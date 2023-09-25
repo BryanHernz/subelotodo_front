@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Category } from "../../shared/models/categories";
 import { SubCategory } from "../../shared/models/subcategories";
+import { Region } from 'src/app/shared/models/regions';
+import { Commune } from 'src/app/shared/models/communes';
 
 @Component({
   selector: 'app-nav',
@@ -10,15 +12,21 @@ import { SubCategory } from "../../shared/models/subcategories";
 export class NavComponent {
   status = false;
   menuOpen: boolean = false;
+  regiones: boolean = false;
   addToggle()
   {
     this.status = !this.status;       
   }
 
   toggleMenu() {
-    console.log('aqui');
-    
     this.menuOpen = !this.menuOpen;
+    this.regiones = false;
+  }
+
+  toggleSwitch() {
+    //console.log('aqui');
+    
+    this.regiones = !this.regiones;
   }
 
   categories: Category [] = [
@@ -355,6 +363,457 @@ export class NavComponent {
           name:'Otros'
         },
       ],
+    },
+  ];
+
+  regions: Region [] = [
+    {
+      id:'1',
+      name:'Región Arica y Parinacota',
+      communes:[
+        {
+        id:'1',
+        name:'Arica',
+        },
+        {
+          id:'2',
+          name:'Putre',
+        },
+      ]
+    },
+    {
+      id:'2',
+      name:'Región de Tarapacá',
+      communes:[
+        {
+        id:'1',
+        name:'Gran Iquique',
+        },
+        {
+          id:'2',
+          name:'Pozo Almonte',
+        },
+      ]
+    },
+    {
+      id:'3',
+      name:'Región de Antofagasta',
+      communes:[
+        {
+        id:'1',
+        name:'Antofagasta',
+        },
+        {
+          id:'2',
+          name:'Mejillones',
+        },
+        {
+          id:'3',
+          name:'Taltal',
+        },
+        {
+        id:'4',
+        name:'Calama',
+        },
+        {
+          id:'5',
+          name:'San Pedro de Atacama',
+        },
+        {
+          id:'6',
+          name:'Tocopilla',
+        },
+      ]
+    },
+    {
+      id:'4',
+      name:'Región de Atacama',
+      communes:[
+        {
+        id:'1',
+        name:'Copiapó',
+        },
+        {
+          id:'2',
+          name:'Caldera',
+        },
+        {
+          id:'3',
+          name:'Tierra Amarilla',
+        },
+        {
+        id:'4',
+        name:'Chañaral',
+        },
+        {
+          id:'5',
+          name:'Diego de Almagro',
+        },
+        {
+          id:'6',
+          name:'El salvador',
+        },
+      ]
+    },
+    {
+      id:'5',
+      name:'Región de Coquimbo',
+      communes:[
+        {
+        id:'1',
+        name:'La Serena',
+        },
+        {
+          id:'2',
+          name:'Tongoy',
+        },
+        {
+          id:'3',
+          name:'Los Vilos',
+        },
+        {
+          id:'4',
+          name:'Salamanca',
+        },
+        {
+          id:'5',
+          name:'Ovalle',
+        },
+      ]
+    },
+    {
+      id:'6',
+      name:'Región de Valparaíso',
+      communes:[
+        {
+        id:'1',
+        name:'Valparaíso',
+        },
+        {
+          id:'2',
+          name:'Viña del Mar',
+        },
+        {
+          id:'3',
+          name:'Concón',
+        },
+        {
+          id:'4',
+          name:'Casablanca',
+        },
+        {
+          id:'5',
+          name:'Juan Fernández',
+        },
+        {
+          id:'6',
+          name:'Los Andes',
+        },
+        {
+          id:'7',
+          name:'La Ligua',
+        },
+        {
+          id:'8',
+          name:'Quillota',
+        },
+        {
+          id:'9',
+          name:'San Antonio',
+        },
+        {
+          id:'10',
+          name:'San Felipe',
+        },
+        {
+          id:'11',
+          name:'Llayllay',
+        },
+        {
+          id:'12',
+          name:'Limache - Olmué',
+        },
+      ]
+    },
+    {
+      id:'7',
+      name:"Región Libertador General Bernardo O'Higgins",
+      communes:[
+        {
+        id:'1',
+        name:'Rancagua',
+        },
+        {
+          id:'2',
+          name:'Graneros',
+        },
+        {
+          id:'3',
+          name:'San Francisco de Mostazal',
+        },
+        {
+          id:'4',
+          name:'Rengo',
+        },
+        {
+          id:'5',
+          name:'Pichilemu',
+        },
+        {
+          id:'6',
+          name:'Chimbarongo',
+        },
+      ]
+    },
+    {
+      id:'8',
+      name:'Región del Maule',
+      communes:[
+        {
+        id:'1',
+        name:'Talca',
+        },
+        {
+          id:'2',
+          name:'Constitución',
+        },
+        {
+          id:'3',
+          name:'Maule',
+        },
+        {
+          id:'4',
+          name:'Curicó',
+        },
+        {
+          id:'5',
+          name:'Linares',
+        },
+      ]
+    },
+    {
+      id:'9',
+      name:'Región de Ñuble',
+      communes:[
+        {
+        id:'1',
+        name:'Chillán',
+        },
+        {
+          id:'2',
+          name:'Bulnes',
+        },
+        {
+          id:'3',
+          name:'Quillón',
+        },
+        {
+          id:'4',
+          name:'San Carlos',
+        },
+      ]
+    },
+    {
+      id:'10',
+      name:'Región del Biobío',
+      communes:[
+        {
+        id:'1',
+        name:'Concepción',
+        },
+        {
+          id:'2',
+          name:'Coronel',
+        },
+        {
+          id:'3',
+          name:'Lota',
+        },
+        {
+          id:'4',
+          name:'Tomé',
+        },
+        {
+          id:'5',
+          name:'Cañete',
+        },
+        {
+          id:'6',
+          name:'Los Angeles',
+        },
+        {
+          id:'7',
+          name:'Yumbel',
+        },
+      ]
+    },
+    {
+      id:'11',
+      name:'Región de la Araucanía',
+      communes:[
+        {
+        id:'1',
+        name:'Temuco',
+        },
+        {
+          id:'2',
+          name:'Gorbea',
+        },
+        {
+          id:'3',
+          name:'Pucón',
+        },
+        {
+          id:'4',
+          name:'Vilcún',
+        },
+        {
+          id:'5',
+          name:'Villarrica',
+        },
+        {
+          id:'6',
+          name:'Angol',
+        },
+        {
+          id:'7',
+          name:'Victoria',
+        },
+      ]
+    },
+    {
+      id:'12',
+      name:'Región de los Ríos',
+      communes:[
+        {
+        id:'1',
+        name:'Valdivia',
+        },
+        {
+          id:'2',
+          name:'Los Lagos',
+        },
+        {
+          id:'3',
+          name:'Panguipulli',
+        },
+        {
+          id:'4',
+          name:'La Unión',
+        },
+      ]
+    },
+    {
+      id:'13',
+      name:'Región de los Lagos',
+      communes:[
+        {
+        id:'1',
+        name:'Puerto Montt',
+        },
+        {
+          id:'2',
+          name:'Calbuco',
+        },
+        {
+          id:'3',
+          name:'Frutillar',
+        },
+        {
+          id:'4',
+          name:'Llanquihue',
+        },
+        {
+        id:'5',
+        name:'Castro',
+        },
+        {
+          id:'6',
+          name:'Ancud',
+        },
+        {
+          id:'7',
+          name:'Quellón',
+        },
+        {
+          id:'8',
+          name:'Osorno',
+        },
+      ]
+    },
+    {
+      id:'14',
+      name:'Región de Aysén',
+      communes:[
+        {
+        id:'1',
+        name:'Coyhaique',
+        },
+        {
+          id:'2',
+          name:'Puerto Aysén',
+        },
+        {
+          id:'3',
+          name:'Chile Chico',
+        },
+      ]
+    },
+    {
+      id:'15',
+      name:'Región de Magallanes y de la Antártica Chilena',
+      communes:[
+        {
+        id:'1',
+        name:'Punta Arenas',
+        },
+        {
+          id:'2',
+          name:'Puerto Williams',
+        },
+        {
+          id:'3',
+          name:'Puerto Natales',
+        },
+      ]
+    },
+    {
+      id:'16',
+      name:'Región Metropolitana',
+      communes:[
+        {
+        id:'1',
+        name:'Gran Santiago',
+        },
+        {
+          id:'2',
+          name:'San José de Maipo',
+        },
+        {
+          id:'3',
+          name:'Colina',
+        },
+        {
+          id:'4',
+          name:'Tiltil',
+        },
+        {
+        id:'5',
+        name:'Buin',
+        },
+        {
+          id:'6',
+          name:'Paine',
+        },
+        {
+          id:'7',
+          name:'Melipilla',
+        },
+        {
+          id:'8',
+          name:'Talagante',
+        },
+      ]
     },
   ];
 }

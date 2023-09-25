@@ -10,12 +10,14 @@ import { NumericInputComponent } from './components/numeric-input/numeric-input.
 import { FormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { register } from 'swiper/element/bundle';
+import { SwiperGalleryComponent } from './components/swiper-gallery/swiper-gallery.component';
 
 @NgModule({
   declarations: [
     FooterComponent,
     BreadcrumbComponent,
     NumericInputComponent,
+    SwiperGalleryComponent,
   ],
   imports: [
     CommonModule,
@@ -24,12 +26,12 @@ import { register } from 'swiper/element/bundle';
     MatButtonModule,
     FlexLayoutModule,
     FormsModule
-    
   ],
   exports: [
     FooterComponent,
     BreadcrumbComponent,
-    NumericInputComponent
+    NumericInputComponent,
+    SwiperGalleryComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

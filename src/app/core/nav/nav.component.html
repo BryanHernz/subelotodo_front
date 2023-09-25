@@ -3,77 +3,128 @@
   -->
 
   <header class="header" data-header>
-    <div class="container">
-
-      <a routerLink="/home" class="logo">
+        <div class="container">
+          <div class="container-leading">
+            <a routerLink="/home" class="logo">
+              <img src="assets/img/logo.svg" height="51.63" alt="Jassa home">
+            </a>
+    
+              <nav class="navbar" data-navbar [ngClass]="status ? 'active' : ''">
+                <ul class="navbar-list">
         
-        <img src="assets/img/logo.svg" width="109.194580078125" height="70.51641845703125" alt="Jassa home">
-      </a>
-
-      <nav class="navbar" data-navbar [ngClass]="status ? 'active' : ''">
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <a routerLink="/home" class="header-label navbar-link " routerLinkActive="active">Home</a>
-          </li>
-
-          <li class="navbar-item">
-            <a routerLink="/ofertas"  class="header-label navbar-link " routerLinkActive="active">Ofertas</a>
-          </li>
-
-          <li class="navbar-item">
-            <a routerLink="/comoVender"  class="header-label navbar-link " routerLinkActive="active">¿Cómo vender?</a>
-          </li>
-
-          <li class="navbar-item">
-            <a routerLink="/preguntasFrecuentes"  class="header-label navbar-link " routerLinkActive="active">Preguntas frecuentes</a>
-          </li>
-
-          <li class="navbar-item">
-            <a routerLink="/subeloTodoInforma"  class="header-label navbar-link " routerLinkActive="active">Subelo todo informa</a>
-          </li>
-        </ul>
+                  <li class="navbar-item">
+                    <a [routerLink]="['/home']" class="header-label navbar-link " routerLinkActive="active">Home</a>
+                  </li>
         
-      </nav>
+                  <li class="navbar-item">
+                    <a [routerLink]="['/offers']" class="header-label navbar-link " routerLinkActive="active">Ofertas</a>
+                  </li>
 
-      <div class="search-item">
-        <div class="search-container">
-          <input type="text" placeholder="">
-          <img src="assets\images\iconos-generales\lupa de busqueda.svg">
+                  <li class="navbar-item">
+                    <a [routerLink]="['/offers2']" class="header-label navbar-link " routerLinkActive="active">Ofertas 2</a>
+                  </li>
+        
+                  <li class="navbar-item">
+                    <a routerLink="/comoVender"  class="header-label navbar-link " routerLinkActive="active">¿Cómo vender?</a>
+                  </li>
+        
+                  <li class="navbar-item">
+                    <a routerLink="/preguntasFrecuentes"  class="header-label navbar-link " routerLinkActive="active">Preguntas frecuentes</a>
+                  </li>
+        
+                  <li class="navbar-item">
+                    <a routerLink="/subeloTodoInforma"  class="header-label navbar-link " routerLinkActive="active">Subelo todo informa</a>
+                  </li>
+                </ul>
+                
+              </nav>
+          </div>
+          
+    
+          
+          <!--<button class="nav-toggle-btn" aria-label="menu" data-nav-toggler (click)="addToggle()">
+            <img src="assets\images\iconos-generales\categorias.svg">
+          </button>-->
+  
+          <div class="container-icons">
+            
+              <button mat-icon-button class="btn btn-text" aria-label="menu" data-nav-toggler (click)="toggleMenu()">
+                <img class="img_menu" src="assets\images\iconos-generales\categorias.svg">
+              </button>
+      
+              <button mat-icon-button class="btn btn-text" aria-label="menu" data-nav-toggler >
+                <img class="img_menu" src="assets\images\iconos-generales\campana icono.svg">
+              </button>
+      
+              <button mat-icon-button class="btn btn-text" aria-label="menu" data-nav-toggler >
+                <img class="img_menu" src="assets\images\iconos-generales\bolsa icono.svg">
+              </button>
+      
+              <button mat-icon-button class="btn btn-text" aria-label="menu" data-nav-toggler >
+                <img class="img_menu" src="assets\images\iconos-generales\persona icono.svg">
+              </button>
+            
+          </div>
+
+
+        <!-- ... (código anterior) ... -->
+  
+        <div class="category-menu" [ngClass]="menuOpen ? 'open' : ''" [ngStyle]="{ 'height': regiones ? '1157px' : '894px', 'width': '973px'}">
+          <!-- ... (otros elementos) ... -->
+          <div>
+            <button [ngClass]=" regiones ? 'switch-button' : 'switch-button-active'" (click)="regiones=false" >
+            <p [ngClass]=" regiones ? 'switch-button-text' : 'switch-button-text-active'">Categorias</p>
+          </button>
+          <button [ngClass]=" regiones ? 'switch-button-active' : 'switch-button'" (click)="regiones=true">
+            <p [ngClass]=" regiones ? 'switch-button-text-active': 'switch-button-text'">Regiones</p>
+          </button>
         </div>
-      </div>
-      
-      <button mat-icon-button class="btn btn-text" aria-label="menu" data-nav-toggler (click)="toggleMenu()">
-        <img src="assets\images\iconos-generales\categorias.svg">
-      </button>
-      
-
-      <button class="nav-toggle-btn" aria-label="menu" data-nav-toggler (click)="addToggle()">
-        <img src="assets\images\iconos-generales\categorias.svg">
-      </button>
-      <!-- ... (código anterior) ... -->
-
-      <div class="category-menu" [ngClass]="menuOpen ? 'open' : ''" style="height: 90vh; width: 1000px;">
-        <!-- ... (otros elementos) ... -->
-        <div class="category-content" fxLayout="column wrap" style="height: 98%; margin-top: 0; gap: 0;">
-          <div *ngFor="let categoria of categories" class="categoria" style="width: 16.25rem;">
-            <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
-              <img [src]="categoria.logo" alt="Logo de categoría" class="categoria-logo">
-              <p class="categoria-title">{{ categoria.name }}</p>
+          <div class="category-content" *ngIf="regiones==false" fxLayout="column wrap" style="height: 98%; margin-top: 0; gap: 0;">
+            <div *ngFor="let categoria of categories" class="categoria" style="width: 193px;">
+              <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
+                <img class="categoria-logo" [src]="categoria.logo" alt="Logo de categoría" >
+                <p class="categoria-title">{{ categoria.name }}</p>
+              </div>
+              <div class="subcategorias" fxLayout="column wrap" fxLayoutAlign="space-between" fxFlex="auto" fxLayoutGap="1rem">
+                <div *ngFor="let subcategoria of categoria.subCategories" class="subcategoria">
+                  {{ subcategoria.name }}
+                </div>
+              </div>
             </div>
-            <div class="subcategorias" fxLayout="column wrap" fxLayoutAlign="space-between" fxFlex="auto" fxLayoutGap="1rem">
-              <div *ngFor="let subcategoria of categoria.subCategories" class="subcategoria">
-                {{ subcategoria.name }}
+          </div>
+          <div class="category-content" *ngIf="regiones==true" fxLayout="column wrap" style="height: 98%; margin-top: 0; gap: 0;">
+            <div *ngFor="let region of regions" class="categoria" style="width: 16.25rem;">
+              <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
+                <p class="categoria-title">{{ region.name }}</p>
+              </div>
+              <div class="subcategorias" fxLayout="column wrap" fxLayoutAlign="space-between" fxFlex="auto" fxLayoutGap="1rem">
+                <div *ngFor="let comuna of region.communes" class="subcategoria">
+                  {{ comuna.name }}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       
+
+      
+      </div>
+    <div class="container">
+      <div class="search-item">
+        <div class="search-container">
+          <img src="assets\images\iconos-generales\lupa de busqueda.svg">
+          <input type="text" placeholder="">
+          
+        <button class="search-button">
+          <p class="button-text">Buscar</p>
+        </button>
+        </div>
+      </div>
+    </div>
 
 <!-- ... (código posterior) ... -->
 
-    </div>
+    
   
   </header>
 

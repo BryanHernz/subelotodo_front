@@ -1,5 +1,101 @@
+<div class="body">
+  <div id="breadcrumb-container" class="breadcrumb">
+    <app-breadcrumb></app-breadcrumb>
+  </div>
+  <div class="product-section">
+    <div class="images-section">
+      <div class="title-container">
+        <p class="title">
+          {{product.title}}
+        </p>
+        <app-swiper-gallery></app-swiper-gallery>
+      </div>
+    </div>
+    <div class="details-container">
+      <div class="data-container">
+        <div class="price-container">
+          <p class="price">
+            {{product.price | currency : 'CLP' : 'symbol-narrow'}} CLP
+          </p>
+        </div>
+        <div class="ref-price-container">
+          <p class="ref-price">
+            Precio referencial: {{product.referencePrice | currency : 'CLP' : 'symbol-narrow'}}
+          </p>
+        </div>
+        <div class="description-container">
+          <p class="description">
+            Descripción de artículo: 
+            <br>
+            <br>
+            {{product.description}}
+          </p>
+        </div>
+      </div>
+      <div class="info-container">
+        <div class="specifications-container">
+          <p class="text-style">
+            Categoría: {{product.tag}}
+          </p>
+          <p class="text-style">
+            Ubicación: {{product.location}}
+          </p>
+          <p class="text-style">
+            Estado de producto: {{product.condition}}
+          </p>
+          <p class="text-style">
+            Medidas: {{product.dimensions}}
+          </p>
+          <p class="text-style">
+            Peso: {{product.weight}}
+          </p>
+          <p class="text-style">
+            Estado de venta: En venta
+          </p>
+        </div>
+        <div class="sale-details-container">
+          <div class="seller-details">
+            Publicado por: {{product.seller}} Contacto: {{product.sellerContact}}
+          </div>
+          <div class="buy-button">
+            <p>
+              Agregar a carro
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="recomendations-section">
+    <div class="recomendations-section-title">
+      <p class="recomendations-title">Productos recomendados</p>
+      <div class="line">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1360" height="2" viewBox="0 0 1361 2" fill="none">
+          <path d="M0.567627 0.53656H1360.57" stroke="#BE272D"/>
+          </svg>
+      </div>
+    </div>
+    <div class="recomendations">
+      <img class="imgIcon" src="assets/images/iconos-generales/LeftCircle.svg" alt="">
+      <div class="recomendation-card" *ngFor="let item of productsCards">
+        <img src="{{item.photo}}" alt="Imagen">
+        <div class="recomedation-info">
+          <p class="recomendation-title">{{item.name}}</p>
+          <p class="recomendation-price">{{item.price | currency : 'CLP' : 'symbol-narrow'}}</p>
+          <button class="recomendation-button">
+            <p>Ver más</p>
+          </button>
+        </div>
+      </div>
+      <img class="imgIcon" src="assets/images/iconos-generales/RightCircle.svg" alt="">
+    </div>
+  </div>
+</div>
+  
 
-    <article>
+
+
+    <!--<article>
       <div id="breadcrumb-container" class="breadcrumb">
           <app-breadcrumb></app-breadcrumb>
       </div>
@@ -10,29 +106,29 @@
           </p>
         </div>
 
-        <swiper-container class="mySwiperProductImagesContainer"  keyboard="true" 
-          slides-per-view="4" rewind="true" >
-          <swiper-slide  class="mySwiperProductImagesSlide" lazy="true" *ngFor="let photo of product.photosUrl">
-            <img loading="lazy" [src]="photo.path" />
-          </swiper-slide>
-        </swiper-container>
+        <div style="display: flex;">
+          <div style="height: 100%; width: 400px;"><app-swiper-gallery></app-swiper-gallery></div>
 
-        <div class="info-container row">  
+        
+
+        <div class="info-container">  
           <div class="description-container ">
             <div class="money-container">
               <div class="money-product"><p class="money">{{product.price | currency : 'CLP' : 'symbol-narrow'}} CLP</p></div>
             </div>
             <br>
             <div class="desciption-text">
+              
+              <p class="description-typography">Precio referencial: $100.000 CLP</p>
               <p class="description-typography">Descripción del artículo:</p>
-              <br>
+              
               <p class="description-typography">
                 {{product.description}}
               </p>
             </div>
           </div>
 
-          <div class="adicional-container adicional-typography">
+          <div class="info-container row"><div class="adicional-container adicional-typography">
             <p style="width: 123px; height: 25px;">Categoría: Hogar</p>
             <p style="width: 302px; height: 25px">Ubicación: R.Metropolitana, San Bernardo</p>
             <p style="width: 292px; height: 25px">Estado de producto: Usado-Como nuevo</p>
@@ -42,7 +138,6 @@
           <div class="addtocart-container">
             <div class="addtocart-text-container addtocart-text-typo">
               <p>Estado de venta: En venta </p>
-              <p>Precio referencial: $100.000 CLP</p>
               <p>Código: SkuK-550</p>
             </div>
             <br>
@@ -51,7 +146,8 @@
             </div>
             <br>
             <button class="button-add-cart">Agregar a carro</button>
-          </div>
+          </div></div>
+        </div>
         </div>
 
         
@@ -110,4 +206,4 @@
           
         </div>
       </section>
-    </article>
+    </article>-->

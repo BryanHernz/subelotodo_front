@@ -9,5 +9,10 @@ export interface Product {
     description: string; 
     condition: string;
     price: number;
+    referencePrice: number;
+    dimensions:string;
+    weight:string;
+    seller:string;
+    sellerContact:string;
     photosUrl: Photos[];
   }

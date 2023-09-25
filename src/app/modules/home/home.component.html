@@ -21,38 +21,36 @@
       ------------------------------------->
 
     <section  fxLayout="column" fxLayout.xs="column" fxLayoutAlign="center center" >
-      <h2 style="font-family: 'Titillium Web';color: #BE272D;
-          font-weight: 700; font-size: 25px; margin-top: 130px; line-height: 31px; letter-spacing: 1%;" fxLayoutAlign="center center">
+      <h2 class="seccion-title" fxLayoutAlign="center center">
           Productos mas vendidos
       </h2>
       <swiper-container class="mySwiper" navigation="true" pagination="true" keyboard="true" 
         css-mode="true"  slides-per-view="3" rewind="true" >
           <swiper-slide *ngFor="let product of productsCard" >
-            <mat-card   
-                        class="product-card" fxLayout="column" fxLayout.xs="column" 
-                        fxLayoutAlign="center center" style="margin-bottom: 20px;">
-                      <mat-card-header >
-                        <img class="product-img" [src]="product.photo">
-                      </mat-card-header>
-                      <mat-card-content fxLayout="column" fxLayoutAlign="center center">
-                        <div class="product-card-text" fxLayout="row" fxLayoutAlign="start center">
-                          <p style="margin-right: 40px;">{{product.date}}</p>
-                          <p>{{product.country}}</p>
-                        </div>
-                        <div fxLayout="row" fxLayoutAlign="center center" >
-                          <h2 class="product-money" style="color :#BE272D;"><b>{{product.price | currency : 'CLP' : 'symbol-narrow'}} CLP</b></h2>
-                        </div>
-                        <div fxLayout="row" fxLayoutAlign="center center">
-                          <p class="product-name" >{{product.name}}</p>
-                        </div>
-                      </mat-card-content>
-                      <mat-card-actions>
-                        <a [routerLink]="['/product/', product.id]">
-                          <button mat-raised-button class="button-product-card">Ver más</button>
-                        </a>                        
-                      </mat-card-actions>
-                </mat-card>
-              </swiper-slide>
+            <mat-card class="product-card" fxLayout="column" fxLayout.xs="column" 
+              fxLayoutAlign="center center" style="margin-bottom: 20px;">
+              <mat-card-header >
+                      <img class="product-img" [src]="product.photo">
+                    </mat-card-header>
+                    <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+                      <div class="product-card-text" fxLayout="row" fxLayoutAlign="start center">
+                        <p style="margin-right: 40px;">{{product.date}}</p>
+                        <p>{{product.country}}</p>
+                      </div>
+                      <div fxLayout="row" fxLayoutAlign="center center" >
+                        <h2 class="product-money" style="color :#BE272D;"><b>{{product.price | currency : 'CLP' : 'symbol-narrow'}} CLP</b></h2>
+                      </div>
+                      <div fxLayout="row" fxLayoutAlign="center center">
+                        <p class="product-name" >{{product.name}}</p>
+                      </div>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <a [routerLink]="['/product/', product.id]">
+                        <button mat-raised-button class="button-product-card">Ver más</button>
+                      </a>                        
+                    </mat-card-actions>
+            </mat-card>
+          </swiper-slide>
       </swiper-container>
     </section>
 
@@ -104,8 +102,7 @@
     <section fxLayout="column" fxLayoutAlign="center center">
         <mat-card  class="card-products" >
           <mat-card-header class="card-products-container"  >
-            <mat-card-title class="title"
-            >
+            <mat-card-title class="seccion-title">
               Productos en descuento
             </mat-card-title>
           </mat-card-header>
@@ -142,7 +139,7 @@
                   </div>
                 </mat-card-content>
                 <mat-card-actions>
-                  <button mat-raised-button class="button-product-card">Ver más</button>
+                  <button mat-raised-button class="button-product-card" [routerLink]="['/product/', 1]">Ver más</button>
                 </mat-card-actions>
               </mat-card>
           </mat-card-content>
@@ -153,7 +150,5 @@
           </mat-card-footer>
         </mat-card>
     </section>
-
-
 </article>
 </main>

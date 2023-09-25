@@ -7,6 +7,7 @@ import { ProductCard } from "../../shared/models/product-card";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent {
   private photoURL = 'assets/images/product-1.png';
 

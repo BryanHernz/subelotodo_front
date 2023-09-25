@@ -1,0 +1,47 @@
+.img-container{
+    width: 428px;
+    height: 406px;
+    display: flex;
+    gap: 40px;
+}
+
+.img-containerImage{
+    width: 292px;
+    height: 406px;
+    overflow: hidden;
+    object-fit:contain;
+    border: 1px solid #000;
+    align-self: stretch;
+}
+
+.img-slide img{
+    height: 106px;
+    width: 96px;
+    opacity: 1;
+    object-fit:cover;
+    cursor: pointer;
+}
+
+.active{
+    display: none;
+}
+
+.galleryColumn{
+    height: 100%;
+    flex-direction:column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.galleryColumnIcon{
+    height: 14.2px;
+    width: 10px;
+}
+
+.img-prev{
+    height: 358px;
+    flex-direction:column;
+    display: flex;
+    justify-content: space-between;
+}

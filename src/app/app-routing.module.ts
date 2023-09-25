@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductComponent } from './modules/product/product.component';
 
 const routes: Routes = [
   { 
@@ -10,6 +9,14 @@ const routes: Routes = [
   {
     path: 'product/:id',
     loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule),
+  },
+  {
+    path: 'offers',
+    loadChildren: () => import('./modules/offers/offers.module').then(m => m.OffersModule),
+  },
+  {
+    path: 'offers2',
+    loadChildren: () => import('./modules/offers2/offers2.module').then(m => m.Offers2Module),
   },
   {
     path: '',
@@ -22,4 +29,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
