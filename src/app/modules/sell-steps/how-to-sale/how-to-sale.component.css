@@ -1,0 +1,122 @@
+.main-container{
+    padding-top: 80px;
+    width: 1440px;
+    height: 900px;
+    background-color: #F1F1F1;
+    text-align:center;
+}
+
+.body-container{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    height: 651px;
+    width: 1023px;
+}
+
+.title{
+    width: 426.064px;
+    height: 18.877px;
+    color: #BE272D;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.description{
+    width: 426px;
+    height: 124px;
+    color: #000;
+    text-align: center;
+    font-family: TitilliumWeb;
+    overflow-wrap: break-word;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 155%; /* 24.8px */
+    letter-spacing: 0.16px;
+}
+
+.content-conatiner{
+    width: 1023px;
+    height: 283px;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.content-card{
+    width: 236px;
+    height: 283px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.card-header{
+    display: flex;
+    padding: 8.5px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    border-radius: 10px;
+    background: #FFF;
+}
+
+.card-header img{
+    width: 208.5px;
+    height: 123.9px;
+}
+
+.card-title{
+    color: #BE272D;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 155%; /* 31px */
+    letter-spacing: 0.2px;
+    align-self: stretch;
+}
+
+.card-description{
+    flex: 1 0 0;
+    align-self: stretch;
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 155%; /* 24.8px */
+    letter-spacing: 0.16px;
+}
+
+.button{
+    display: flex;
+    padding: 10px 100px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: #BE272D;
+}
+
+.button p{
+    padding-top: 8px;
+    color: #FFF;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 155%; /* 24.8px */
+    letter-spacing: 0.16px;
+}

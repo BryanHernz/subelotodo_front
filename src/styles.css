@@ -23,3 +23,8 @@ body {
   font-family: 'TitilliumWeb';
   src: url('./assets/fonts/TitilliumWeb-Regular.ttf');
 }
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-Regular.ttf');
+}
