@@ -1,0 +1,132 @@
+.main-container {
+    display: flex;
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: min-content;
+    background: #FFF;
+}
+
+.header-container-sel {
+    display: flex;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    border-radius: 10px;
+    background: #BE272D;
+}
+
+.header-container {
+    display: flex;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    border-radius: 10px;
+    background: #F1F1F1;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    align-self: stretch;
+}
+
+.info-name {
+    height: 10px;
+    color: #BE272D;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.info-email {
+    height: 10px;
+    color: #BE272D;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.info-name-sel {
+    height: 10px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.info-email-sel {
+    height: 10px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.options-section {
+    display: flex;
+    width: 215px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    top: 9px;
+}
+
+.options-section button {
+    align-self: stretch;
+    text-align: start;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.options-section button:hover {
+    background: snow;
+}
+
+.options-unselected {
+    color: #000;
+    height: 20px;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2;
+    justify-content: end;
+    align-self: stretch;
+}
+
+.options-selected {
+    color: #BE272D;
+    text-decoration: underline;
+    height: 20px;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2;
+    justify-content: end;
+    align-self: stretch;
+}

@@ -47,6 +47,38 @@ const routes: Routes = [
     loadChildren: () => import('./modules/inform/inform.module').then(m => m.InformModule),
   }, 
   {
+    path: 'seller-data',
+    loadChildren: () => import('./modules/seller/personal-data/seller-data/seller-data.module').then(m => m.SellerDataModule),
+  }, 
+  {
+    path: 'sell',
+    loadChildren: () => import('./modules/seller/sell/sell.module').then(m => m.SellModule),
+  }, 
+  {
+    path: 'seller-posts',
+    loadChildren: () => import('./modules/seller/posts/seller-posts/seller-posts.module').then(m => m.SellerPostsModule),
+  }, 
+  {
+    path: 'completed-sales',
+    loadChildren: () => import('./modules/seller/completed-sales/completed-sales/completed-sales.module').then(m => m.CompletedSalesModule),
+  },
+  {
+    path: 'rejected-sales',
+    loadChildren: () => import('./modules/seller/rejected-sales/rejected-sales/rejected-sales.module').then(m => m.RejectedSalesModule),
+  }, 
+  {
+    path: 'delete-posts',
+    loadChildren: () => import('./modules/seller/delete-posts/delete-posts/delete-posts.module').then(m => m.DeletePostsModule),
+  }, 
+  {
+    path: 'notifications',
+    loadChildren: () => import('./modules/seller/notifications/notifications/notifications.module').then(m => m.NotificationsModule),
+  }, 
+  {
+    path: 'payments',
+    loadChildren: () => import('./modules/seller/payments/payments/payments.module').then(m => m.PaymentsModule),
+  }, 
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',

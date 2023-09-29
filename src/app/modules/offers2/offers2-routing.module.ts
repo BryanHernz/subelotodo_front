@@ -7,10 +7,6 @@ const routes: Routes = [
     path: '',
     component: Offers2Component 
   },
-  { 
-    path: 'offers2',
-    component: Offers2Component 
-  },
 ];
 
 @NgModule({

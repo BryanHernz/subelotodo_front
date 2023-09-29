@@ -4,15 +4,15 @@
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 
 body {
-    /* background-color: var(--white);
+  /* background-color: var(--white);
     color: var(--davys-gray);
     font-size: 1.6rem;
     line-height: 1.5; */
-    background-color: #F1F1F1 !important;
-    overflow: hidden;
-    position: relative!important;
-    overflow-y: scroll!important;
-  }
+  background-color: #F1F1F1 !important;
+  overflow: hidden;
+  position: relative !important;
+  overflow-y: scroll !important;
+}
 
 @font-face {
   font-family: 'Roboto';

@@ -13,6 +13,14 @@ export class NavComponent {
   status = false;
   menuOpen: boolean = false;
   regiones: boolean = false;
+  sellerLogged: boolean = false;
+  sellerMenuOpen: boolean = false;
+
+  sellerMode()
+  {
+    this.sellerLogged = true;       
+  }
+
   addToggle()
   {
     this.status = !this.status;       
@@ -23,9 +31,11 @@ export class NavComponent {
     this.regiones = false;
   }
 
+  toggleSellerMenu() {
+    this.sellerMenuOpen = !this.sellerMenuOpen;
+  }
+
   toggleSwitch() {
-    //console.log('aqui');
-    
     this.regiones = !this.regiones;
   }
 

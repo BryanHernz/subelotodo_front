@@ -1,0 +1,41 @@
+<div class="main-div">
+    <div class="lateral">
+        <app-seller-vertical-menu></app-seller-vertical-menu>
+    </div>
+    <div class="main-container">
+        <div class="title-container">
+            <p class="main-title">Eliminar publicación</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="1029" height="2" viewBox="0 0 1029 2" fill="none">
+                <path d="M0.11377 0.858582H1087.85" stroke="#BE272D"/>
+            </svg>
+        </div>
+        <div class="body">
+            <div class="header-card">
+                <img src="assets/images/seller/exclamationSign.svg" alt="">
+                <div class="header-content">
+                    <p class="red-text">Importante</p>
+                    <p class="normal-text">Antes de continuar, debes saber que si eliminas una publicación, se te cobrará un porcentaje, ya que puede que la Antes de continuar, debes saber que si eliminas una publicación, se te cobrará un porcentaje, ya que puede que la Antes de continuar, debes saber que si eliminas una publicación, se te cobrará un porcentaje, ya que puede que la Antes de continuar, debes saber que si eliminas una publicación, se te cobrará un porcentaje, ya que puede que la.</p>
+                </div>
+            </div>
+            <p class="bold-text">Estas son todas tus publicaciones, ¿Cuál deseas eliminar?</p>
+            <div class="body-card">
+                <div class="row-post" *ngFor="let item of posts">
+                    <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
+                    <p class="row-post-name">Estufa a leña Neoflam grande</p>
+                    <div class="date-location-container">
+                        <p>Fecha:00.00.00</p>
+                        <p>Comuna: San Bernardo</p>
+                    </div>
+                    <div class="price-category-container">
+                        <p>$70.000 CLP</p>
+                        <p>Categoría: Hogar</p>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="row-button" (click)="openSeeMoreDialog()">Ver más</button>
+                        <button class="row-button" (click)="openDeleteDialog()">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
