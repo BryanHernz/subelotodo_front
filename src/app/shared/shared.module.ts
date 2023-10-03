@@ -13,6 +13,13 @@ import { register } from 'swiper/element/bundle';
 import { RouterLink } from '@angular/router';
 import { SwiperGalleryComponent } from './components/swiper-gallery/swiper-gallery.component';
 import { SellerVerticalMenuComponent } from './components/seller-vertical-menu/seller-vertical-menu.component';
+import { AdminVerticalMenuComponent } from './components/admin-vertical-menu/admin-vertical-menu.component';
+import { AlertDialogComponent } from './components/alert-dialog/alert-dialog.component';
+import { UploadImageComponent } from './components/upload-image/upload-image.component';
+import { EditBannerComponent } from './components/edit-banner/edit-banner.component';
+import { MatTable } from '@angular/material/table';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +28,12 @@ import { SellerVerticalMenuComponent } from './components/seller-vertical-menu/s
     NumericInputComponent,
     SwiperGalleryComponent,
     SellerVerticalMenuComponent,
+    AdminVerticalMenuComponent,
+    AlertDialogComponent,
+    UploadImageComponent,
+    EditBannerComponent,
+    ConfirmationDialogComponent,
+    LogoutComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +43,7 @@ import { SellerVerticalMenuComponent } from './components/seller-vertical-menu/s
     FlexLayoutModule,
     FormsModule,
     RouterLink,
+
   ],
   exports: [
     FooterComponent,
@@ -37,6 +51,9 @@ import { SellerVerticalMenuComponent } from './components/seller-vertical-menu/s
     NumericInputComponent,
     SwiperGalleryComponent,
     SellerVerticalMenuComponent,
+    AdminVerticalMenuComponent,
+    AlertDialogComponent,
+    UploadImageComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

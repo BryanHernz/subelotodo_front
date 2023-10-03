@@ -1,0 +1,55 @@
+<div class="main-div">
+    <div class="lateral">
+        <app-admin-vertical-menu></app-admin-vertical-menu>
+    </div>
+    <div class="main-container">
+        <div class="title-container">
+            <p class="main-title">Vendedores</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="1088" height="2" viewBox="0 0 1088 2" fill="none">
+                <path d="M0.112793 0.552399H1087.85" stroke="#BE272D"/>
+            </svg>
+        </div>
+        <div class="content-container">
+            <table mat-table [dataSource]="vendedores" #tabla1>
+
+                <ng-container matColumnDef="numero">
+                  <th class="header" mat-header-cell *matHeaderCellDef> Nº </th>
+                  <td class="row" mat-cell *matCellDef="let vendedores"> {{vendedores.numero}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="cliente">
+                  <th class="header" style="width: 220px;" mat-header-cell *matHeaderCellDef> Clientes </th>
+                  <td class="row" style="width: 220px;" mat-cell *matCellDef="let vendedores"> {{vendedores.cliente}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="telefono">
+                    <th class="header" mat-header-cell *matHeaderCellDef> Teléfono </th>
+                    <td class="row" mat-cell *matCellDef="let vendedores"> {{vendedores.telefono}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="mail">
+                <th class="header" mat-header-cell *matHeaderCellDef> Mail </th>
+                <td class="row" mat-cell *matCellDef="let vendedores"> {{vendedores.mail}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="fecha">
+                <th class="header" mat-header-cell *matHeaderCellDef> Fecha creada </th>
+                <td class="row" mat-cell *matCellDef="let vendedores"> {{vendedores.fecha}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="vendidos">
+                <th class="header" mat-header-cell *matHeaderCellDef> Cant.de prod. vendidos  </th>
+                <td class="row" mat-cell *matCellDef="let vendedores"> {{vendedores.vendidos}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="saldos">
+                <th class="header" mat-header-cell *matHeaderCellDef> Saldos pendientes </th>
+                <td class="row" mat-cell *matCellDef="let vendedores"> {{vendedores.saldos}} </td>
+                </ng-container>
+              
+                <tr class="header" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr class="row" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+        </div>
+    </div>
+</div>  

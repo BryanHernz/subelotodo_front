@@ -1,0 +1,40 @@
+<div class="main-div">
+    <div class="lateral">
+        <app-admin-vertical-menu></app-admin-vertical-menu>
+    </div>
+    <div class="main-container">
+        <div class="title-container">
+            <p class="main-title">Perfil administrador</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="950" height="2" viewBox="0 0 950 2" fill="none">
+                <path d="M0.11377 0.858582H1087.85" stroke="#BE272D"/>
+            </svg>
+        </div>
+        <div class="content-container">
+            <div class="section-container">
+                <div class="title-row">
+                    <img src="assets/images/seller/usuario.svg" alt="">
+                    <p>Datos de administrador</p>
+                </div>
+                <div class="data-row">
+                    <p class="data-name">Nombre</p>
+                    <p class="data">Carola Rojas Villanueva</p>
+                </div>
+                <div class="data-row">
+                    <p class="data-name">Documento</p>
+                    <p class="data">12.345.678-9</p>
+                </div>
+                <div class="data-row">
+                    <p class="data-name">Email</p>
+                    <p class="data">carol.R@gmail.com</p>
+                </div>
+                <div class="data-row">
+                    <p class="data-name">Teléfono</p>
+                    <p class="data">0912345678</p>
+                </div>
+            </div>
+            <button class="button-edit" (click)="openDialog()">
+                <p>Editar información</p>
+            </button>
+        </div>
+    </div>
+</div>  

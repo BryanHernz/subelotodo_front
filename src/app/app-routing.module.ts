@@ -79,6 +79,70 @@ const routes: Routes = [
     loadChildren: () => import('./modules/seller/payments/payments/payments.module').then(m => m.PaymentsModule),
   }, 
   {
+    path: 'admin-data',
+    loadChildren: () => import('./modules/admin/personal-data/admin-data/admin-data.module').then(m => m.AdminDataModule),
+  },
+  {
+    path: 'banners',
+    loadChildren: () => import('./modules/admin/banners/banners/banners.module').then(m => m.BannersModule),
+  }, 
+  {
+    path: 'banners-home',
+    loadChildren: () => import('./modules/admin/banners/banners-home/banners-home.module').then(m => m.BannersHomeModule),
+  }, 
+  {
+    path: 'banners-categories',
+    loadChildren: () => import('./modules/admin/banners/banners-categories/banners-categories.module').then(m => m.BannersCategoriesModule),
+  }, 
+  {
+    path: 'banners-others',
+    loadChildren: () => import('./modules/admin/banners/banners-others/banners-others.module').then(m => m.BannersOthersModule),
+  }, 
+  {
+    path: 'admin-posts',
+    loadChildren: () => import('./modules/admin/posts/posts/posts.module').then(m => m.PostsModule),
+  }, 
+  {
+    path: 'admin-posts-form',
+    loadChildren: () => import('./modules/admin/posts/posts-form/posts-form/posts-form.module').then(m => m.PostsFormModule),
+  }, 
+  {
+    path: 'admin-posts-control',
+    loadChildren: () => import('./modules/admin/posts/posts-control/posts-control/posts-control.module').then(m => m.PostsControlModule),
+  }, 
+  {
+    path: 'admin-posts-validate',
+    loadChildren: () => import('./modules/admin/posts/posts-control/posts-validate/posts-validate.module').then(m => m.PostsValidateModule),
+  }, 
+  {
+    path: 'admin-sales-register',
+    loadChildren: () => import('./modules/admin/posts/posts-control/sales-register/sales-register.module').then(m => m.SalesRegisterModule),
+  }, 
+  {
+    path: 'admin-categories',
+    loadChildren: () => import('./modules/admin/categories/categories/categories.module').then(m => m.CategoriesModule),
+  },
+  {
+    path: 'admin-sellers',
+    loadChildren: () => import('./modules/admin/sellers/sellers.module').then(m => m.SellersModule),
+  },
+  {
+    path: 'admin-frequent-questions',
+    loadChildren: () => import('./modules/admin/admin-frequent-questions/admin-frequent-questions/admin-frequent-questions.module').then(m => m.AdminFrequentQuestionsModule),
+  },
+  {
+    path: 'admin-metrics',
+    loadChildren: () => import('./modules/admin/metrics/metrics.module').then(m => m.MetricsModule),
+  },
+  {
+    path: 'admin-notifications',
+    loadChildren: () => import('./modules/admin/notifications/admin-notifications/admin-notifications.module').then(m => m.AdminNotificationsModule),
+  },
+  {
+    path: 'admin-payments',
+    loadChildren: () => import('./modules/admin/payments/admin-payments/admin-payments.module').then(m => m.AdminPaymentsModule),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',

@@ -1,0 +1,81 @@
+<div class="main-div">
+    <div class="components-container">
+        <div class="title-row">
+            <img src="assets/images/iconos-generales/pagos.svg" alt="">
+            <p class="title-text">Editar datos de pago</p>
+            <img src="assets/images/seller/x.svg" alt="" (click)="close()">
+        </div>
+        <div class="fields-container">
+            <div class="form-field">
+                <p class="form-field-label">Nombre y Apellido</p>
+                <input class="form-field-input" placeholder="">
+                <div class="hint-div">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="580" height="2" viewBox="0 0 580 2" fill="none">
+                        <path d="M0 1.06018H580" stroke="black"/>
+                      </svg>
+                    <p class="form-field-hint">Escribe el nombre de usuario</p>
+                </div>
+            </div>
+            <div class="form-field">
+                <p class="form-field-label">Mail</p>
+                <input class="form-field-input" placeholder="">
+                <div class="hint-div">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="580" height="2" viewBox="0 0 580 2" fill="none">
+                        <path d="M0 1.06018H580" stroke="black"/>
+                      </svg>
+                    <p class="form-field-hint">Escribe tu mail</p>
+                </div>
+            </div>
+            <div class="form-field">
+                <p class="form-field-label">Documento</p>
+                <input class="form-field-input" placeholder="">
+                <div class="hint-div">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="580" height="2" viewBox="0 0 580 2" fill="none">
+                        <path d="M0 1.06018H580" stroke="black"/>
+                      </svg>
+                    <p class="form-field-hint">Escribe tu RUT</p>
+                </div>
+            </div>
+            <div class="form-field">
+                <p class="form-field-label">Tipo de cuenta</p>
+                <input class="form-field-input" placeholder="">
+                <div class="hint-div">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="580" height="2" viewBox="0 0 580 2" fill="none">
+                        <path d="M0 1.06018H580" stroke="black"/>
+                      </svg>
+                    <p class="form-field-hint">Escribe el tipo de cuenta</p>
+                </div>
+            </div>
+            <div class="form-field">
+                <p class="form-field-label">Tarjeta</p>
+                <input class="form-field-input" placeholder="">
+                <div class="hint-div">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="580" height="2" viewBox="0 0 580 2" fill="none">
+                        <path d="M0 1.06018H580" stroke="black"/>
+                      </svg>
+                    <p class="form-field-hint">Escribe tu tarjeta</p>
+                </div>
+            </div>
+            <div class="form-field" >
+                <p class="form-field-label">Banco</p>
+                <select class="select" id="" style="background-image: url(assets/images/iconos-generales/ArrowDown2.svg)">
+                    <option value="" disabled selected>Elige tu banco</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <p class="form-field-label">Número de cuenta</p>
+                <input class="form-field-input" placeholder="">
+                <div class="hint-div">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="580" height="2" viewBox="0 0 580 2" fill="none">
+                        <path d="M0 1.06018H580" stroke="black"/>
+                      </svg>
+                    <p class="form-field-hint">Escribe el número de tu cuenta</p>
+                </div>
+            </div>
+        </div>
+        <div class="buttons-container">
+            <button class="button-cancel" (click)="close()">Cancelar</button>
+            <button class="button-acept" (click)="openDialog()">Guardar</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,150 @@
+.breadcrumb {
+    display: inline-flex;
+    align-self: stretch;
+    align-items: flex-start;
+    gap: 22px;
+    padding-left: 10px;
+}
+
+.breadcrumb ul {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 22px;
+    cursor: pointer;
+}
+
+.breadcrumb li {
+    color: #BE272D;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 155%;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+    cursor: pointer;
+}
+
+.breadcrumb a {
+    color: #BE272D;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 155%;
+    cursor: pointer;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+}
+
+.breadcrumb img {
+    width: 13.095px;
+    height: 18.589px;
+    fill: #BE272D;
+}
+
+
+.main-div {
+    width: 1440px;
+    height: 875px;
+    display: flex;
+    background: #F1F1F1;
+}
+
+.lateral {
+    display: inline-flex;
+    height: 875px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+
+.main-container {
+    padding: 40px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.content-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 53px;
+    cursor: pointer;
+}
+
+.title-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.main-title {
+    height: 10px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 155%;
+    /* 27.9px */
+    letter-spacing: 0.18px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+table {
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.header {
+    background: #8B8989;
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    justify-content: center;
+}
+
+.row {
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    align-content: center;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    width: 64px;
+    padding: 0px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    color: #BE272D;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 155%;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+    text-decoration-line: underline;
+}

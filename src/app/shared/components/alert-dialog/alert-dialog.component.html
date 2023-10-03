@@ -1,0 +1,8 @@
+<div class="main-container">
+    <img class="check-img" [src]="tipo=='confirmacion'?'assets/images/how-to-sell/check.svg':'assets/images/seller/exclamationSign.svg'" alt="">
+    <p [class]="tipo=='confirmacion'?'title':'title-red'">{{titulo}}</p>
+    <p class="message">{{mensaje}}</p>
+    <button class="button" (click)="close()">
+        <p>Aceptar</p>
+    </button>
+</div>

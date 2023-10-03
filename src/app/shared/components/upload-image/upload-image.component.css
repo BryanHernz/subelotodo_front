@@ -1,0 +1,141 @@
+::ng-deep .mat-mdc-dialog-container {
+    --mdc-dialog-container-color: transparent;
+    margin: 5%;
+}
+
+.main-container {
+    display: flex;
+    width: 518px;
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    border-radius: 10px;
+    background: #FFF;
+}
+
+.title-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1 0 0;
+}
+
+.title-container img {
+    width: 20.537px;
+    height: 21.738px;
+}
+
+.title-container p {
+    width: 400px;
+    color: #BE272D;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    align-self: stretch;
+}
+
+.button {
+    display: flex;
+    padding: 10px 100px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 45px;
+    border-radius: 10px;
+    background: #BE272D;
+}
+
+.button p {
+    padding-top: 8px;
+    color: #FFF;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 155%;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+}
+
+.body-container {
+    display: flex;
+    padding: 40px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.body-container img {
+    width: 53.438px;
+    height: 41.397px;
+}
+
+.body-container p {
+    color: #000;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.separation-line {
+    display: flex;
+    padding: 10px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.select-image-container {
+    display: flex;
+    padding: 0px 0px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 10px;
+    height: 33px;
+    width: 398px;
+    border: 1px solid #000;
+}
+
+.select-image-button {
+    display: flex;
+    width: 145px;
+    height: 33px;
+    padding: 10px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: #BE272D;
+    color: #FFF;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 155%;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+}
+
+.select-image-container p {
+    color: #000;
+    text-align: right;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    padding-top: 10px;
+    font-weight: 400;
+    line-height: normal;
+    width: 226.222px;
+}

@@ -1,0 +1,27 @@
+<div class="main-div">
+    <div class="lateral">
+        <app-admin-vertical-menu></app-admin-vertical-menu>
+    </div>
+    <div class="main-container">
+        <div class="title-container">
+            <p class="main-title">Banners</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="950" height="2" viewBox="0 0 950 2" fill="none">
+                <path d="M0.11377 0.858582H1087.85" stroke="#BE272D"/>
+            </svg>
+        </div>
+        <div class="content-container">
+            <div class="content-section-white" [routerLink]="['/banners-home']">
+                <p>Banner Home</p>
+                <img src="assets/images/iconos-generales/ArrowRight.svg" alt="">
+            </div>
+            <div class="content-section-white" [routerLink]="['/banners-categories']">
+                <p>Banner por Categoría</p>
+                <img src="assets/images/iconos-generales/ArrowRight.svg" alt="">
+            </div>
+            <div class="content-section-white" [routerLink]="['/banners-others']">
+                <p>Banner Otros</p>
+                <img src="assets/images/iconos-generales/ArrowRight.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div>  

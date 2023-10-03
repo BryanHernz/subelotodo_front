@@ -1,0 +1,24 @@
+<div class="main-div">
+    <div class="lateral">
+        <app-admin-vertical-menu></app-admin-vertical-menu>
+    </div>
+    <div class="main-container">
+        <div class="breadcrumb">
+            <ul>
+                <li><a [routerLink]="['/admin-posts']">Publicaciones</a></li>
+                <img src="assets\images\iconos-generales\ArrowRight.svg" alt="">
+                <li [routerLink]="['/admin-posts-control']">Control de productos publicados</li>
+            </ul>
+        </div>
+        <div class="content-container">
+            <div class="content-section-white" [routerLink]="['/admin-posts-validate']">
+                <p>Validar publicaciones</p>
+                <img src="assets/images/iconos-generales/ArrowRight.svg" alt="">
+            </div>
+            <div class="content-section-white" [routerLink]="['/admin-sales-register']">
+                <p>Registro de venta </p>
+                <img src="assets/images/iconos-generales/ArrowRight.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div>  

@@ -1,0 +1,23 @@
+<div class="main-container">
+    <div class="title-container">
+        <p>{{titulo}}</p>
+        <img src="assets/images/seller/x.svg" alt="" (click)="close()">
+    </div>
+    <div class="body-container">
+        <img src="assets/images/how-to-sell/sube tu producto icono.svg" alt="">
+        <p>Arrastra una imagen aquí</p>
+        <div class="separation-line">
+            <svg xmlns="http://www.w3.org/2000/svg" width="159" height="2" viewBox="0 0 159 2" fill="none">
+                <path d="M0.305664 0.593506H158.961" stroke="black"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="159" height="2" viewBox="0 0 159 2" fill="none">
+                <path d="M0.305664 0.593506H158.961" stroke="black"/>
+            </svg>
+        </div>
+        <div class="select-image-container">
+            <button class="select-image-button">Selecciona imagen</button>
+            <p>Ninguna imagen seleccionada</p>
+        </div>
+    </div>
+    <button class="select-image-button" (click)="openDialog()">Subir imagen</button>
+</div>

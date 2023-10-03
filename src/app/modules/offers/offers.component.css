@@ -1,4 +1,4 @@
-.body{
+.body {
     width: 1440px;
     display: flex;
     flex-direction: column;
@@ -9,13 +9,13 @@
     padding-bottom: 40px;
 }
 
-.banner{
-    width: 1444px;
+.banner {
+    width: 1440px;
     height: 268.507px;
     flex-shrink: 0;
 }
 
-.offers-main-cards{
+.offers-main-cards {
     display: inline-flex;
     align-items: flex-start;
     gap: 40px;
@@ -23,7 +23,7 @@
     height: 144px;
 }
 
-.offers-main-card{
+.offers-main-card {
     width: 807px;
     height: 144px;
     display: flex;
@@ -35,13 +35,13 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.offers-main-card img{
+.offers-main-card img {
     width: 233px;
     height: 124px;
     flex-shrink: 0;
 }
 
-.offers-main-card-data{
+.offers-main-card-data {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -49,12 +49,12 @@
     align-self: stretch;
 }
 
-.offers-main-card-title{
+.offers-main-card-title {
     height: 58.621px;
     align-self: stretch;
 }
 
-.offers-main-card-title p{
+.offers-main-card-title p {
     color: #000;
     text-align: center;
     font-family: Roboto;
@@ -64,7 +64,7 @@
     line-height: normal;
 }
 
-.offers-main-card div button{
+.offers-main-card div button {
     width: 154px;
     height: 45px;
     display: flex;
@@ -76,7 +76,7 @@
     background: #BE272D;
 }
 
-.offers-main-card div button p{
+.offers-main-card div button p {
     padding-top: 8px;
     color: #FFF;
     text-align: center;
@@ -84,11 +84,12 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }
 
-.offers-group{
+.offers-group {
     display: flex;
     width: 1440px;
     padding: 20px 40px 40px 20px;
@@ -98,7 +99,7 @@
     background: #F1F1F1;
 }
 
-.offers-group-title{
+.offers-group-title {
     height: 34px;
     width: 1360px;
     display: flex;
@@ -108,32 +109,33 @@
     color: #BE272D;
 }
 
-.offers-group-title p{
+.offers-group-title p {
     height: 1px;
     color: #BE272D;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }
 
-.line{
+.line {
     stroke-width: 1px;
     stroke: #BE272D;
     width: 1360px;
     height: 0px;
 }
 
-.offers-row{
+.offers-row {
     display: flex;
     width: 1360px;
     align-items: flex-start;
     gap: 40px;
 }
 
-.offer-card{
+.offer-card {
     display: flex;
     height: 378px;
     width: 200px;
@@ -147,14 +149,14 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.offer-card-title{
+.offer-card-title {
     display: flex;
     align-items: center;
     gap: 20px;
     align-self: stretch;
 }
 
-.offer-tag{
+.offer-tag {
     height: 25px;
     display: flex;
     width: 88px;
@@ -166,7 +168,7 @@
     background: #128C16;
 }
 
-.offer-tag p{
+.offer-tag p {
     padding-top: 12px;
     color: #FFF;
     text-align: right;
@@ -174,11 +176,12 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }
 
-.offer-percent{
+.offer-percent {
     flex: 1 0 0;
     color: #128C16;
     text-align: right;
@@ -186,11 +189,12 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 31px */
+    line-height: 155%;
+    /* 31px */
     letter-spacing: 0.2px;
 }
 
-.offer-card img{
+.offer-card img {
     width: 200px;
     height: 95px;
     flex: 1 0 0;
@@ -198,30 +202,32 @@
     object-fit: cover;
 }
 
-.offer-before{
+.offer-before {
     color: #9B9B9B;
     text-align: center;
     font-family: TitilliumWeb;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 155%; /* 31px */
+    line-height: 155%;
+    /* 31px */
     letter-spacing: 0.2px;
     text-decoration-line: strikethrough;
 }
 
-.offer-price{
+.offer-price {
     color: #000;
     text-align: center;
     font-family: TitilliumWeb;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 31px */
+    line-height: 155%;
+    /* 31px */
     letter-spacing: 0.2px;
 }
 
-.offer-description{
+.offer-description {
     text-align: center;
     color: #000;
     font-family: TitilliumWeb;
@@ -232,7 +238,7 @@
     letter-spacing: 0.16px;
 }
 
-.offer-button{
+.offer-button {
     display: flex;
     padding-top: 8px;
     justify-content: center;
@@ -242,18 +248,19 @@
     background: #BE272D;
 }
 
-.offer-button p{
+.offer-button p {
     color: #FFF;
     text-align: center;
     font-family: TitilliumWeb;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }
 
-.more-button{
+.more-button {
     align-self: center;
     height: 45px;
     display: flex;
@@ -266,7 +273,7 @@
     background: #FFF;
 }
 
-.more-button p{
+.more-button p {
     padding-top: 8px;
     color: #BE272D;
     text-align: center;
@@ -274,6 +281,7 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }

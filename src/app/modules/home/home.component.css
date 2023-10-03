@@ -87,28 +87,6 @@
    color: red;
  }
 
- .prev-button {
-   /* Estilos para los botones de flecha */
-   background-color: transparent;
-   background-image: url(src\assets\images\iconos-generales\rightCircle.svg);
-   border: none;
-   font-size: 2rem;
-   color: #000;
-   cursor: pointer;
-   outline: none;
- }
-
- .next-button {
-   /* Estilos para los botones de flecha */
-   background-color: transparent;
-   background-image: url(src\assets\images\iconos-generales\rightCircle.svg);
-   border: none;
-   font-size: 2rem;
-   color: #000;
-   cursor: pointer;
-   outline: none;
- }
-
 
  /*-----------------------------------*\
   #PRODUCTO MAS VENDIDO

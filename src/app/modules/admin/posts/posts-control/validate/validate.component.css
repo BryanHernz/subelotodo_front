@@ -1,0 +1,148 @@
+::ng-deep .mat-mdc-dialog-container {
+    --mdc-dialog-container-color: transparent;
+    margin: 5%;
+}
+
+.main-div {
+    display: inline-flex;
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    background: #FFF;
+    width: 563px;
+}
+
+.title-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1 0 0;
+}
+
+.title-container img {
+    width: 20.537px;
+    height: 21.738px;
+}
+
+.title-container p {
+    width: 435px;
+    color: #BE272D;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    align-self: stretch;
+}
+
+.subtitle {
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 155%;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+    width: 483px;
+}
+
+.normal-text {
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 155%;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+    align-self: stretch;
+}
+
+.images-container {
+    display: flex;
+    width: 483px;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.images-container img {
+    height: 101.006px;
+    width: 72px;
+    flex: 1 0 0;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 49px;
+    align-self: stretch;
+}
+
+.white-button {
+    display: flex;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    border-radius: 10px;
+    border: 1px solid #BE272D;
+    background: #FFF;
+    color: #BE272D;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 155%;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+    width: 217px;
+}
+
+.red-button {
+    display: flex;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    border-radius: 10px;
+    background: #BE272D;
+    color: #FFF;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 155%;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+    width: 217px;
+}
+
+span {
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 155%;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+    align-self: stretch;
+}

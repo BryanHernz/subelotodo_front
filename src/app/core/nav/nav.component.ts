@@ -15,10 +15,19 @@ export class NavComponent {
   regiones: boolean = false;
   sellerLogged: boolean = false;
   sellerMenuOpen: boolean = false;
+  adminLogged: boolean = false;
+  adminMenuOpen: boolean = false;
 
   sellerMode()
   {
-    this.sellerLogged = true;       
+    this.sellerLogged = true;    
+    this.adminLogged=false;   
+  }
+
+  adminMode()
+  {
+    this.adminLogged = true;      
+    this.sellerLogged=false; 
   }
 
   addToggle()

@@ -1,0 +1,24 @@
+<div class="main-div">
+    <div class="title-row">
+        <p>Editar categoría</p>
+        <img src="assets/images/seller/x.svg" alt="" (click)="close()">
+    </div>
+    <div class="category-container">
+        <p class="title">Categoría</p>
+        <div class="cat-row">
+            <p>{{categoria.name}}</p>
+            <button class="delete-button">Eliminar</button>
+        </div>
+    </div>
+    <div class="content-container">
+        <p class="title">Subcategoria </p>
+        <div class="subcat-row" *ngFor="let item of categoria.subCategories">
+            <p>{{item.name}}</p>
+            <button class="delete-button">Eliminar</button>
+        </div>
+        <div class="add-item-row">
+            <p>Agregar otra subcategoría</p>
+            <button class="link-button" (click)="openAddDialog()">Agregar</button>
+        </div>
+    </div>
+</div>

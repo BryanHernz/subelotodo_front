@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LogoutComponent } from '../logout/logout.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-seller-vertical-menu',
@@ -8,8 +10,12 @@ import { Router } from '@angular/router';
 })
 export class SellerVerticalMenuComponent {
 
-  constructor(private router: Router ) { }
+  constructor(private router: Router, private dialog: MatDialog) { }
 
   ubicacion:string=this.router.url;
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(LogoutComponent);
+  }  
 
 }

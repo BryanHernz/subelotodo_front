@@ -1,0 +1,122 @@
+.breadcrumb {
+    display: inline-flex;
+    align-self: stretch;
+    align-items: flex-start;
+    gap: 22px;
+}
+
+.breadcrumb ul {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 22px;
+    cursor: pointer;
+}
+
+.breadcrumb li {
+    color: #BE272D;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 155%;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+    cursor: pointer;
+}
+
+.breadcrumb a {
+    color: #BE272D;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 155%;
+    cursor: pointer;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+}
+
+.breadcrumb img {
+    width: 13.095px;
+    height: 18.589px;
+    fill: #BE272D;
+}
+
+
+.main-div {
+    width: 1440px;
+    height: 875px;
+    display: flex;
+    background: #F1F1F1;
+}
+
+.lateral {
+    display: inline-flex;
+    height: 875px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+
+.main-container {
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.content-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 53px;
+    cursor: pointer;
+}
+
+.content-section-red {
+    display: flex;
+    width: 931px;
+    height: 111px;
+    padding: 40px;
+    justify-content: space-between;
+    background: #BE272D;
+}
+
+.content-section-red p {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    height: 10px;
+    flex-shrink: 0;
+}
+
+.content-section-white {
+    display: flex;
+    width: 931px;
+    height: 111px;
+    padding: 40px;
+    justify-content: space-between;
+    background: #FFF;
+}
+
+.content-section-white p {
+    color: #000;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    height: 10px;
+    flex-shrink: 0;
+}
+
+img {
+    width: 19.726px;
+    height: 28.002px;
+    flex-shrink: 0;
+}
