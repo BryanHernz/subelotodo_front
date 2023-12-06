@@ -1,21 +1,37 @@
 <div class="main-div">
+  <form class="" [formGroup]="newsubcat">
     <div class="title-row">
-        <p>Agregar subcategoría</p>
-        <img src="assets/images/seller/x.svg" alt="" (click)="close()">
+      <p>Agregar subcategoría</p>
+      <img src="assets/images/seller/x.svg" alt="" (click)="close()" />
     </div>
     <div class="form-field">
-        <p class="form-field-label">Subcategoría</p>
-        <input class="form-field-input" placeholder="Pelo novia">
-        <div class="hint-div">
-            <svg xmlns="http://www.w3.org/2000/svg" width="423" height="2" viewBox="0 0 423 2" fill="none">
-                <path d="M0.0324707 0.876892H666.032" stroke="black"/>
-            </svg>
-            <p class="form-field-hint">Escribe la subcategoría que quieres agregar</p>
-        </div>
+      <p class="form-field-label">Subcategoría</p>
+      <input
+        type="text"
+        class="form-field-input"
+        id="validationDefault01"
+        formControlName="name"
+        required
+      />
+      <div class="hint-div">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="423"
+          height="2"
+          viewBox="0 0 423 2"
+          fill="none"
+        >
+          <path d="M0.0324707 0.876892H666.032" stroke="black" />
+        </svg>
+        <p class="form-field-hint">
+          Escribe la subcategoría que quieres agregar
+        </p>
+      </div>
     </div>
-    
+
     <div class="buttons-container">
-        <button class="white-button" (click)="close()">Cancelar</button>
-        <button class="red-button" (click)="openDialog()" >Guardar</button>
+      <button class="white-button" (click)="close()">Cancelar</button>
+      <button class="red-button" (click)="postSubcat()">Guardar</button>
     </div>
+  </form>
 </div>

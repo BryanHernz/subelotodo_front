@@ -1,195 +1,307 @@
-<!--<div class="main-div">
-  <div class="main-row">
-    <img class="logo-image" src="assets/img/logo.png" alt="">
-    <div class="navigation-container">
-      <div class="navbar-container">
-        <button class="navbar-button hover-underline-animation" [routerLink]="['/home']" >Home</button>
-        <button class="navbar-button hover-underline-animation" [routerLink]="['/offers']">Ofertas</button>
-        <button class="navbar-button hover-underline-animation" [routerLink]="['/how-to-sale']">Cómo vender</button>
-        <button class="navbar-button hover-underline-animation" [routerLink]="['/frequent-questions']">Preguntas frecuentes</button>
-        <button class="navbar-button hover-underline-animation" [routerLink]="['/inform']">Súbelo todo informa</button>
+<header class="header" data-header>
+  <div class="container">
+    <div class="container-leading">
+      <a routerLink="/home" class="logo">
+        <img src="assets/img/logo.svg" height="51.63" alt="Jassa home" />
+      </a>
+
+      <nav class="navbar" data-navbar [ngClass]="status ? 'active' : ''">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a
+              [routerLink]="['/home']"
+              class="header-label navbar-link"
+              routerLinkActive="active"
+              >Home</a
+            >
+          </li>
+
+          <li class="navbar-item">
+            <a
+              [routerLink]="['/offers']"
+              class="header-label navbar-link"
+              routerLinkActive="active"
+              >Ofertas</a
+            >
+          </li>
+
+          <li class="navbar-item">
+            <a
+              [routerLink]="['/how-to-sale']"
+              class="header-label navbar-link"
+              routerLinkActive="active"
+              >¿Cómo vender?</a
+            >
+          </li>
+
+          <li class="navbar-item">
+            <a
+              [routerLink]="['/frequent-questions']"
+              class="header-label navbar-link"
+              routerLinkActive="active"
+              >Preguntas frecuentes</a
+            >
+          </li>
+
+          <li class="navbar-item">
+            <a
+              [routerLink]="['/inform']"
+              class="header-label navbar-link"
+              routerLinkActive="active"
+              >Subelo todo informa</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!--<button class="nav-toggle-btn" aria-label="menu" data-nav-toggler (click)="addToggle()">
+            <img src="assets\images\iconos-generales\categorias.svg">
+          </button>-->
+
+    <div class="container-icons">
+      <button
+        mat-icon-button
+        class="btn btn-text"
+        aria-label="menu"
+        data-nav-toggler
+        (click)="toggleMenu()"
+      >
+        <img
+          class="img_menu"
+          src="assets\images\iconos-generales\categorias.svg"
+        />
+      </button>
+
+      <button
+        mat-icon-button
+        class="btn btn-text"
+        aria-label="menu"
+        data-nav-toggler
+      >
+        <img
+          class="img_menu"
+          src="assets\images\iconos-generales\campana icono.svg"
+        />
+      </button>
+
+      <button
+        [routerLink]="['/shopping-cart']"
+        mat-icon-button
+        class="btn btn-text"
+      >
+        <img
+          class="img_menu"
+          src="assets\images\iconos-generales\bolsa icono.svg"
+        />
+      </button>
+
+      <button
+        *ngIf="sellerLogged == false && adminLogged == false"
+        mat-icon-button
+        class="btn btn-text"
+        aria-label="menu"
+        data-nav-toggler
+        (click)="openDialog()"
+      >
+        <img
+          class="img_menu"
+          src="assets\images\iconos-generales\persona icono.svg"
+        />
+      </button>
+
+      <button
+        class="profile-button"
+        *ngIf="sellerLogged"
+        [matMenuTriggerFor]="menu"
+      >
+        <div style="position: relative; left: 0; top: 0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="33"
+            viewBox="0 0 32 33"
+            fill="none"
+            style="width: 31.982px; height: 31.982px"
+          >
+            <circle cx="16.0087" cy="16.075" r="15.9911" fill="#D9D9D9" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            style="
+              position: absolute;
+              right: 7px;
+              bottom: 13px;
+              width: 18.65px;
+              height: 19.741px;
+            "
+          >
+            <path
+              d="M18.6021 16.3149C18.1343 15.2067 17.4554 14.2001 16.6032 13.3512C15.7536 12.4998 14.7472 11.821 13.6395 11.3523C13.6296 11.3473 13.6197 11.3448 13.6097 11.3399C15.1548 10.2238 16.1592 8.40595 16.1592 6.35493C16.1592 2.95725 13.4064 0.204376 10.0087 0.204376C6.61101 0.204376 3.85814 2.95725 3.85814 6.35493C3.85814 8.40595 4.86256 10.2238 6.40764 11.3423C6.39772 11.3473 6.3878 11.3498 6.37788 11.3547C5.26681 11.8235 4.26983 12.4956 3.41421 13.3537C2.56282 14.2033 1.88402 15.2097 1.41527 16.3173C0.954782 17.4018 0.706428 18.5644 0.683656 19.7423C0.682994 19.7688 0.687637 19.7951 0.697311 19.8198C0.706985 19.8444 0.721494 19.8669 0.739984 19.8858C0.758474 19.9048 0.78057 19.9198 0.804971 19.9301C0.829372 19.9404 0.855583 19.9457 0.882061 19.9457H2.3701C2.47922 19.9457 2.56602 19.8589 2.5685 19.7522C2.6181 17.8376 3.38692 16.0445 4.746 14.6855C6.15219 13.2793 8.01968 12.5055 10.0087 12.5055C11.9977 12.5055 13.8652 13.2793 15.2714 14.6855C16.6305 16.0445 17.3993 17.8376 17.4489 19.7522C17.4514 19.8614 17.5382 19.9457 17.6473 19.9457H19.1353C19.1618 19.9457 19.188 19.9404 19.2124 19.9301C19.2368 19.9198 19.2589 19.9048 19.2774 19.8858C19.2959 19.8669 19.3104 19.8444 19.3201 19.8198C19.3297 19.7951 19.3344 19.7688 19.3337 19.7423C19.3089 18.5568 19.0634 17.4036 18.6021 16.3149ZM10.0087 10.6206C8.87034 10.6206 7.79896 10.1767 6.99294 9.37069C6.18692 8.56467 5.74298 7.49328 5.74298 6.35493C5.74298 5.21658 6.18692 4.1452 6.99294 3.33918C7.79896 2.53316 8.87034 2.08922 10.0087 2.08922C11.147 2.08922 12.2184 2.53316 13.0244 3.33918C13.8305 4.1452 14.2744 5.21658 14.2744 6.35493C14.2744 7.49328 13.8305 8.56467 13.0244 9.37069C12.2184 10.1767 11.147 10.6206 10.0087 10.6206Z"
+              fill="#BE272D"
+            />
+          </svg>
+        </div>
+        <p class="profile-name">{{ name }} {{ lastName }}</p>
+      </button>
+      <mat-menu #menu="matMenu" xPosition="before">
+        <app-seller-vertical-menu></app-seller-vertical-menu>
+      </mat-menu>
+
+      <button
+        class="profile-button"
+        *ngIf="adminLogged"
+        [matMenuTriggerFor]="menuad"
+      >
+        <div style="position: relative; left: 0; top: 0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="33"
+            viewBox="0 0 32 33"
+            fill="none"
+            style="width: 31.982px; height: 31.982px"
+          >
+            <circle cx="16.0087" cy="16.075" r="15.9911" fill="#D9D9D9" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            style="
+              position: absolute;
+              right: 7px;
+              bottom: 13px;
+              width: 18.65px;
+              height: 19.741px;
+            "
+          >
+            <path
+              d="M18.6021 16.3149C18.1343 15.2067 17.4554 14.2001 16.6032 13.3512C15.7536 12.4998 14.7472 11.821 13.6395 11.3523C13.6296 11.3473 13.6197 11.3448 13.6097 11.3399C15.1548 10.2238 16.1592 8.40595 16.1592 6.35493C16.1592 2.95725 13.4064 0.204376 10.0087 0.204376C6.61101 0.204376 3.85814 2.95725 3.85814 6.35493C3.85814 8.40595 4.86256 10.2238 6.40764 11.3423C6.39772 11.3473 6.3878 11.3498 6.37788 11.3547C5.26681 11.8235 4.26983 12.4956 3.41421 13.3537C2.56282 14.2033 1.88402 15.2097 1.41527 16.3173C0.954782 17.4018 0.706428 18.5644 0.683656 19.7423C0.682994 19.7688 0.687637 19.7951 0.697311 19.8198C0.706985 19.8444 0.721494 19.8669 0.739984 19.8858C0.758474 19.9048 0.78057 19.9198 0.804971 19.9301C0.829372 19.9404 0.855583 19.9457 0.882061 19.9457H2.3701C2.47922 19.9457 2.56602 19.8589 2.5685 19.7522C2.6181 17.8376 3.38692 16.0445 4.746 14.6855C6.15219 13.2793 8.01968 12.5055 10.0087 12.5055C11.9977 12.5055 13.8652 13.2793 15.2714 14.6855C16.6305 16.0445 17.3993 17.8376 17.4489 19.7522C17.4514 19.8614 17.5382 19.9457 17.6473 19.9457H19.1353C19.1618 19.9457 19.188 19.9404 19.2124 19.9301C19.2368 19.9198 19.2589 19.9048 19.2774 19.8858C19.2959 19.8669 19.3104 19.8444 19.3201 19.8198C19.3297 19.7951 19.3344 19.7688 19.3337 19.7423C19.3089 18.5568 19.0634 17.4036 18.6021 16.3149ZM10.0087 10.6206C8.87034 10.6206 7.79896 10.1767 6.99294 9.37069C6.18692 8.56467 5.74298 7.49328 5.74298 6.35493C5.74298 5.21658 6.18692 4.1452 6.99294 3.33918C7.79896 2.53316 8.87034 2.08922 10.0087 2.08922C11.147 2.08922 12.2184 2.53316 13.0244 3.33918C13.8305 4.1452 14.2744 5.21658 14.2744 6.35493C14.2744 7.49328 13.8305 8.56467 13.0244 9.37069C12.2184 10.1767 11.147 10.6206 10.0087 10.6206Z"
+              fill="#BE272D"
+            />
+          </svg>
+        </div>
+        <p class="profile-name">Admin</p>
+      </button>
+      <mat-menu #menuad="matMenu" xPosition="before">
+        <app-admin-vertical-menu></app-admin-vertical-menu>
+      </mat-menu>
+    </div>
+
+    <!-- ... (código anterior) ... -->
+
+    <div
+      class="category-menu"
+      [ngClass]="menuOpen ? 'open' : ''"
+      [ngStyle]="{ height: regiones ? '1157px' : '894px', width: '973px' }"
+    >
+      <div>
+        <button
+          [ngClass]="regiones ? 'switch-button' : 'switch-button-active'"
+          (click)="regiones = false"
+        >
+          <p
+            [ngClass]="
+              regiones ? 'switch-button-text' : 'switch-button-text-active'
+            "
+          >
+            Categorias
+          </p>
+        </button>
+        <button
+          [ngClass]="regiones ? 'switch-button-active' : 'switch-button'"
+          (click)="regiones = true"
+        >
+          <p
+            [ngClass]="
+              regiones ? 'switch-button-text-active' : 'switch-button-text'
+            "
+          >
+            Regiones
+          </p>
+        </button>
       </div>
-      <div class="icon-buttons-container">
-        <button mat-icon-button class="icon-button">
-          <img class="img_menu" src="assets\images\iconos-generales\campana icono.svg">
-        </button>
-        <button mat-icon-button class="icon-button">
-          <img class="img_menu" src="assets\images\iconos-generales\campana icono.svg">
-        </button>
-        <button mat-icon-button class="icon-button">
-          <img class="img_menu" src="assets\images\iconos-generales\campana icono.svg">
-        </button>
-        <button mat-icon-button class="icon-button">
-          <img class="img_menu" src="assets\images\iconos-generales\campana icono.svg">
+      <div
+        class="category-content"
+        *ngIf="regiones == false"
+        fxLayout="column wrap"
+        style="height: 98%; margin-top: 0; gap: 0"
+      >
+        <div
+          *ngFor="let categoria of categories"
+          class="categoria"
+          style="width: 193px"
+        >
+          <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
+            <img
+              class="categoria-logo"
+              [src]="categoria.logo"
+              alt="Logo de categoría"
+            />
+            <p class="categoria-title">{{ categoria.name }}</p>
+          </div>
+          <div
+            class="subcategorias"
+            fxLayout="column wrap"
+            fxLayoutAlign="space-between"
+            fxFlex="auto"
+            fxLayoutGap="1rem"
+          >
+            <div
+              *ngFor="let subcategoria of categoria.subCategories"
+              class="subcategoria"
+            >
+              {{ subcategoria.name }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="category-content"
+        *ngIf="regiones == true"
+        fxLayout="column wrap"
+        style="height: 98%; margin-top: 0; gap: 0"
+      >
+        <div
+          *ngFor="let region of regions"
+          class="categoria"
+          style="width: 16.25rem"
+        >
+          <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
+            <p class="categoria-title">{{ region.name }}</p>
+          </div>
+          <div
+            class="subcategorias"
+            fxLayout="column wrap"
+            fxLayoutAlign="space-between"
+            fxFlex="auto"
+            fxLayoutGap="1rem"
+          >
+            <div *ngFor="let comuna of region.communes" class="subcategoria">
+              {{ comuna.name }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="search-item">
+      <div class="search-container">
+        <img src="assets\images\iconos-generales\lupa de busqueda.svg" />
+        <input type="text" placeholder="" />
+
+        <button class="search-button">
+          <p class="button-text">Buscar</p>
         </button>
       </div>
     </div>
   </div>
-</div>-->
-
-
-
-
-
-
-
-  <header class="header" data-header>
-        <div class="container">
-          <div class="container-leading">
-            <a routerLink="/home" class="logo">
-              <img src="assets/img/logo.svg" height="51.63" alt="Jassa home">
-            </a>
-    
-              <nav class="navbar" data-navbar [ngClass]="status ? 'active' : ''">
-                <ul class="navbar-list">
-        
-                  <li class="navbar-item">
-                    <a [routerLink]="['/home']" class="header-label navbar-link " routerLinkActive="active">Home</a>
-                  </li>
-        
-                  <li class="navbar-item">
-                    <a [routerLink]="['/offers']" class="header-label navbar-link " routerLinkActive="active">Ofertas</a>
-                  </li>
-        
-                  <li class="navbar-item">
-                    <a [routerLink]="['/how-to-sale']" class="header-label navbar-link " routerLinkActive="active">¿Cómo vender?</a>
-                  </li>
-        
-                  <li class="navbar-item">
-                    <a [routerLink]="['/frequent-questions']"  class="header-label navbar-link " routerLinkActive="active">Preguntas frecuentes</a>
-                  </li>
-        
-                  <li class="navbar-item">
-                    <a [routerLink]="['/inform']"  class="header-label navbar-link " routerLinkActive="active">Subelo todo informa</a>
-                  </li>
-                </ul>
-              </nav>
-          </div>
-          <!--<button class="nav-toggle-btn" aria-label="menu" data-nav-toggler (click)="addToggle()">
-            <img src="assets\images\iconos-generales\categorias.svg">
-          </button>-->
-  
-          <div class="container-icons">
-            
-              <button mat-icon-button class="btn btn-text" aria-label="menu" data-nav-toggler (click)="toggleMenu()">
-                <img class="img_menu" src="assets\images\iconos-generales\categorias.svg">
-              </button>
-      
-              <button mat-icon-button class="btn btn-text" aria-label="menu" data-nav-toggler >
-                <img class="img_menu" src="assets\images\iconos-generales\campana icono.svg">
-              </button>
-      
-              <button mat-icon-button class="btn btn-text" aria-label="menu" data-nav-toggler >
-                <img class="img_menu" src="assets\images\iconos-generales\bolsa icono.svg">
-              </button>
-      
-              <button *ngIf="sellerLogged==false&&adminLogged==false" [matMenuTriggerFor]="menulog"  mat-icon-button class="btn btn-text" aria-label="menu" data-nav-toggler >
-                <img class="img_menu" src="assets\images\iconos-generales\persona icono.svg">
-              </button>
-              <mat-menu #menulog="matMenu" xPosition="before">
-                <button mat-menu-item (click)="adminMode()">
-                  <span>Administrador</span>
-                </button>
-                <button mat-menu-item (click)="sellerMode()">
-                  <span>Vendedor</span>
-                </button>
-              </mat-menu>
-              
-              <button class="profile-button" *ngIf="sellerLogged==true" [matMenuTriggerFor]="menu" >
-                <div style="position: relative; left: 0; top: 0;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none" style="width: 31.982px;
-                  height: 31.982px;">
-                    <circle cx="16.0087" cy="16.075" r="15.9911" fill="#D9D9D9"/>
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" style="position: absolute;
-                  right: 7px;
-                  bottom: 13px;width: 18.65px;
-                  height: 19.741px;">
-                    <path d="M18.6021 16.3149C18.1343 15.2067 17.4554 14.2001 16.6032 13.3512C15.7536 12.4998 14.7472 11.821 13.6395 11.3523C13.6296 11.3473 13.6197 11.3448 13.6097 11.3399C15.1548 10.2238 16.1592 8.40595 16.1592 6.35493C16.1592 2.95725 13.4064 0.204376 10.0087 0.204376C6.61101 0.204376 3.85814 2.95725 3.85814 6.35493C3.85814 8.40595 4.86256 10.2238 6.40764 11.3423C6.39772 11.3473 6.3878 11.3498 6.37788 11.3547C5.26681 11.8235 4.26983 12.4956 3.41421 13.3537C2.56282 14.2033 1.88402 15.2097 1.41527 16.3173C0.954782 17.4018 0.706428 18.5644 0.683656 19.7423C0.682994 19.7688 0.687637 19.7951 0.697311 19.8198C0.706985 19.8444 0.721494 19.8669 0.739984 19.8858C0.758474 19.9048 0.78057 19.9198 0.804971 19.9301C0.829372 19.9404 0.855583 19.9457 0.882061 19.9457H2.3701C2.47922 19.9457 2.56602 19.8589 2.5685 19.7522C2.6181 17.8376 3.38692 16.0445 4.746 14.6855C6.15219 13.2793 8.01968 12.5055 10.0087 12.5055C11.9977 12.5055 13.8652 13.2793 15.2714 14.6855C16.6305 16.0445 17.3993 17.8376 17.4489 19.7522C17.4514 19.8614 17.5382 19.9457 17.6473 19.9457H19.1353C19.1618 19.9457 19.188 19.9404 19.2124 19.9301C19.2368 19.9198 19.2589 19.9048 19.2774 19.8858C19.2959 19.8669 19.3104 19.8444 19.3201 19.8198C19.3297 19.7951 19.3344 19.7688 19.3337 19.7423C19.3089 18.5568 19.0634 17.4036 18.6021 16.3149ZM10.0087 10.6206C8.87034 10.6206 7.79896 10.1767 6.99294 9.37069C6.18692 8.56467 5.74298 7.49328 5.74298 6.35493C5.74298 5.21658 6.18692 4.1452 6.99294 3.33918C7.79896 2.53316 8.87034 2.08922 10.0087 2.08922C11.147 2.08922 12.2184 2.53316 13.0244 3.33918C13.8305 4.1452 14.2744 5.21658 14.2744 6.35493C14.2744 7.49328 13.8305 8.56467 13.0244 9.37069C12.2184 10.1767 11.147 10.6206 10.0087 10.6206Z" fill="#BE272D"/>
-                  </svg>
-                </div>
-                <p class="profile-name">Carolina R.</p>
-              </button>
-              <mat-menu #menu="matMenu" xPosition="before">
-                <app-seller-vertical-menu></app-seller-vertical-menu>
-              </mat-menu>
-
-              <button class="profile-button" *ngIf="adminLogged==true" [matMenuTriggerFor]="menuad" >
-                <div style="position: relative; left: 0; top: 0;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none" style="width: 31.982px;
-                  height: 31.982px;">
-                    <circle cx="16.0087" cy="16.075" r="15.9911" fill="#D9D9D9"/>
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" style="position: absolute;
-                  right: 7px;
-                  bottom: 13px;width: 18.65px;
-                  height: 19.741px;">
-                    <path d="M18.6021 16.3149C18.1343 15.2067 17.4554 14.2001 16.6032 13.3512C15.7536 12.4998 14.7472 11.821 13.6395 11.3523C13.6296 11.3473 13.6197 11.3448 13.6097 11.3399C15.1548 10.2238 16.1592 8.40595 16.1592 6.35493C16.1592 2.95725 13.4064 0.204376 10.0087 0.204376C6.61101 0.204376 3.85814 2.95725 3.85814 6.35493C3.85814 8.40595 4.86256 10.2238 6.40764 11.3423C6.39772 11.3473 6.3878 11.3498 6.37788 11.3547C5.26681 11.8235 4.26983 12.4956 3.41421 13.3537C2.56282 14.2033 1.88402 15.2097 1.41527 16.3173C0.954782 17.4018 0.706428 18.5644 0.683656 19.7423C0.682994 19.7688 0.687637 19.7951 0.697311 19.8198C0.706985 19.8444 0.721494 19.8669 0.739984 19.8858C0.758474 19.9048 0.78057 19.9198 0.804971 19.9301C0.829372 19.9404 0.855583 19.9457 0.882061 19.9457H2.3701C2.47922 19.9457 2.56602 19.8589 2.5685 19.7522C2.6181 17.8376 3.38692 16.0445 4.746 14.6855C6.15219 13.2793 8.01968 12.5055 10.0087 12.5055C11.9977 12.5055 13.8652 13.2793 15.2714 14.6855C16.6305 16.0445 17.3993 17.8376 17.4489 19.7522C17.4514 19.8614 17.5382 19.9457 17.6473 19.9457H19.1353C19.1618 19.9457 19.188 19.9404 19.2124 19.9301C19.2368 19.9198 19.2589 19.9048 19.2774 19.8858C19.2959 19.8669 19.3104 19.8444 19.3201 19.8198C19.3297 19.7951 19.3344 19.7688 19.3337 19.7423C19.3089 18.5568 19.0634 17.4036 18.6021 16.3149ZM10.0087 10.6206C8.87034 10.6206 7.79896 10.1767 6.99294 9.37069C6.18692 8.56467 5.74298 7.49328 5.74298 6.35493C5.74298 5.21658 6.18692 4.1452 6.99294 3.33918C7.79896 2.53316 8.87034 2.08922 10.0087 2.08922C11.147 2.08922 12.2184 2.53316 13.0244 3.33918C13.8305 4.1452 14.2744 5.21658 14.2744 6.35493C14.2744 7.49328 13.8305 8.56467 13.0244 9.37069C12.2184 10.1767 11.147 10.6206 10.0087 10.6206Z" fill="#BE272D"/>
-                  </svg>
-                </div>
-                <p class="profile-name">Admin</p>
-              </button>
-              <mat-menu #menuad="matMenu" xPosition="before">
-                <app-admin-vertical-menu></app-admin-vertical-menu>
-              </mat-menu>
-
-          </div>
-
-        <!-- ... (código anterior) ... -->
-  
-        <div class="category-menu" [ngClass]="menuOpen ? 'open' : ''" [ngStyle]="{ 'height': regiones ? '1157px' : '894px', 'width': '973px'}">
-          
-          <div>
-            <button [ngClass]=" regiones ? 'switch-button' : 'switch-button-active'" (click)="regiones=false" >
-            <p [ngClass]=" regiones ? 'switch-button-text' : 'switch-button-text-active'">Categorias</p>
-          </button>
-          <button [ngClass]=" regiones ? 'switch-button-active' : 'switch-button'" (click)="regiones=true">
-            <p [ngClass]=" regiones ? 'switch-button-text-active': 'switch-button-text'">Regiones</p>
-          </button>
-        </div>
-          <div class="category-content" *ngIf="regiones==false" fxLayout="column wrap" style="height: 98%; margin-top: 0; gap: 0;">
-            <div *ngFor="let categoria of categories" class="categoria" style="width: 193px;">
-              <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
-                <img class="categoria-logo" [src]="categoria.logo" alt="Logo de categoría" >
-                <p class="categoria-title">{{ categoria.name }}</p>
-              </div>
-              <div class="subcategorias" fxLayout="column wrap" fxLayoutAlign="space-between" fxFlex="auto" fxLayoutGap="1rem">
-                <div *ngFor="let subcategoria of categoria.subCategories" class="subcategoria">
-                  {{ subcategoria.name }}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="category-content" *ngIf="regiones==true" fxLayout="column wrap" style="height: 98%; margin-top: 0; gap: 0;">
-            <div *ngFor="let region of regions" class="categoria" style="width: 16.25rem;">
-              <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
-                <p class="categoria-title">{{ region.name }}</p>
-              </div>
-              <div class="subcategorias" fxLayout="column wrap" fxLayoutAlign="space-between" fxFlex="auto" fxLayoutGap="1rem">
-                <div *ngFor="let comuna of region.communes" class="subcategoria">
-                  {{ comuna.name }}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <div class="container">
-      <div class="search-item">
-        <div class="search-container">
-          <img src="assets\images\iconos-generales\lupa de busqueda.svg">
-          <input type="text" placeholder="">
-          
-        <button class="search-button">
-          <p class="button-text">Buscar</p>
-        </button>
-        </div>
-      </div>
-    </div>
-
-
-    
-  
-  </header>
-
+</header>

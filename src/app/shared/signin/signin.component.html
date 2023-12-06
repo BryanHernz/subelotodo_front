@@ -1,0 +1,66 @@
+<div class="body-container">
+  <div class="header-container">
+    <img src="assets/images/logo.svg" alt="" />
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+    <div class="buttons-container">
+      <button class="optional-button">
+        <p>Continuar con Facebook</p>
+      </button>
+      <button class="optional-button">
+        <p>Continuar con Google</p>
+      </button>
+      <div class="fields-container">
+        <div class="form-field">
+          <p class="form-field-label">Email</p>
+          <input class="form-field-input" formControlName="email" />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Contraseña</p>
+          <input
+            class="form-field-input"
+            placeholder
+            type="password"
+            autocomplete="on"
+            formControlName="password"
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <button class="ingress-button" type="submit">
+        <p>Ingresar</p>
+      </button>
+    </div>
+    <div *ngIf="errorStatus" class="error">
+      <p>{{ errorMsj }}</p>
+    </div>
+  </form>
+  <div class="footer-container">
+    <p class="question-text">¿No tienes cuenta?</p>
+    <div class="footer-link-container">
+      <p (click)="openDialog()" class="link-text">Registrate</p>
+    </div>
+  </div>
+</div>

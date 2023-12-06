@@ -1,5 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { ProductModel } from 'src/app/models/productModel';
+import { DeleteDialogComponent } from 'src/app/shared/components/delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-delete-post',
@@ -11,11 +13,18 @@ export class DeletePostComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA) private data: any,
     private dialogRef: MatDialogRef<DeletePostComponent>, private dialog: MatDialog) {
-    
   }
 
+  post:ProductModel=this.data;
+
+  ruta:string='http://localhost:8000/'
+  
   close(): void {
     this.dialogRef.close(true);
   }
-  
+
+  openDeleteDialog(item:ProductModel) {
+    const dialogRef = this.dialog.open(DeleteDialogComponent,{data:[item]});
+    
+  }
 }

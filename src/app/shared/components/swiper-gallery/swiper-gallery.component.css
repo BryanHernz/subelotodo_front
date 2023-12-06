@@ -1,47 +1,48 @@
-.img-container{
+.img-container {
     width: 428px;
     height: 406px;
     display: flex;
     gap: 40px;
 }
 
-.img-containerImage{
+.img-containerImage {
     width: 292px;
     height: 406px;
     overflow: hidden;
-    object-fit:contain;
+    object-fit: contain;
     border: 1px solid #000;
+    border-radius: 5px;
     align-self: stretch;
 }
 
-.img-slide img{
+.img-slide img {
     height: 106px;
     width: 96px;
     opacity: 1;
-    object-fit:cover;
+    object-fit: cover;
     cursor: pointer;
 }
 
-.active{
+.active {
     display: none;
 }
 
-.galleryColumn{
+.galleryColumn {
     height: 100%;
-    flex-direction:column;
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.galleryColumnIcon{
+.galleryColumnIcon {
     height: 14.2px;
     width: 10px;
 }
 
-.img-prev{
+.img-prev {
     height: 358px;
-    flex-direction:column;
+    flex-direction: column;
     display: flex;
     justify-content: space-between;
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-logout',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LogoutComponent {
   constructor(
-    private dialogRef: MatDialogRef<LogoutComponent>, private router: Router){
+    private dialogRef: MatDialogRef<LogoutComponent>, private router: Router,private api:ApiService){
   }
   
   close(): void {
@@ -17,9 +18,10 @@ export class LogoutComponent {
   }
 
   logout():void{
-    this.router.navigate(['/'])
-    .then(() => {
-      window.location.reload();
-    });
+    this.close();
+    this.api.logout();
+    localStorage.clear();
+    this.router.navigate(['']).then(()=>
+      {window.location.reload()})
   }
 }

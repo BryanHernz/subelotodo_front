@@ -1,40 +1,63 @@
 <div class="main-div">
-    <div class="lateral">
-        <app-seller-vertical-menu></app-seller-vertical-menu>
+  <div class="lateral">
+    <app-seller-vertical-menu></app-seller-vertical-menu>
+  </div>
+  <div class="main-container">
+    <div class="title-container">
+      <p class="main-title">Mis publicaciones de productos</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="950"
+        height="2"
+        viewBox="0 0 950 2"
+        fill="none"
+      >
+        <path d="M0.11377 0.858582H1087.85" stroke="#BE272D" />
+      </svg>
     </div>
-    <div class="main-container">
-        <div class="title-container">
-            <p class="main-title">Mis publicaciones de productos</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="950" height="2" viewBox="0 0 950 2" fill="none">
-                <path d="M0.11377 0.858582H1087.85" stroke="#BE272D"/>
-            </svg>
+    <div class="body">
+      <div class="header-card">
+        <input
+          type="checkbox"
+          class="checkbox-style"
+          [(ngModel)]="allChecked"
+          (change)="checkUncheckAll()"
+        />
+        <button class="button" (click)="openDeleteMultiDialog()">
+          <p>Eliminar</p>
+        </button>
+      </div>
+      <div class="body-card">
+        <div class="row-post" *ngFor="let item of productos">
+          <input
+            type="checkbox"
+            class="checkbox-style"
+            [ngModel]="isSelected(item)"
+            (change)="checkChecked(item)"
+          />
+          <img src="{{ ruta + item.ProductImages!.at(0)?.filePath }}" alt="" />
+          <p class="row-post-name">{{ item.title }}</p>
+          <div class="date-location-container">
+            <p>Fecha: {{ item.createdAt | date : "dd.MM.yyyy" }}</p>
+            <p>Comuna: {{ item.city!.name }}</p>
+          </div>
+          <div class="price-category-container">
+            <p>
+              {{ (item.price | currency : "CLP" : "$")?.replaceAll(",", ".") }}
+              CLP
+            </p>
+            <p>Categoría: {{ item.category!.name }}</p>
+          </div>
+          <div class="buttons-container">
+            <button class="row-button" (click)="openDialog(item)">
+              Ver más
+            </button>
+            <button class="row-button" (click)="openDeleteDialog(item)">
+              Eliminar
+            </button>
+          </div>
         </div>
-        <div class="body">
-            <div class="header-card">
-                <input type="checkbox" class="checkbox-style" [(ngModel)]="allChecked" (change)="checkUncheckAll()">
-                <button class="button">
-                    <p>Eliminar</p>
-                </button>
-            </div>
-            <div class="body-card">
-                <div class="row-post" *ngFor="let item of posts">
-                    <input type="checkbox" class="checkbox-style" [(ngModel)]="item.isSelected" (change)="checkChecked()">
-                    <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                    <p class="row-post-name">Estufa a leña Neoflam grande</p>
-                    <div class="date-location-container">
-                        <p>Fecha:00.00.00</p>
-                        <p>Comuna: San Bernardo</p>
-                    </div>
-                    <div class="price-category-container">
-                        <p>$70.000 CLP</p>
-                        <p>Categoría: Hogar</p>
-                    </div>
-                    <div class="buttons-container">
-                        <button class="row-button" (click)="openDialog()">Ver más</button>
-                        <button class="row-button">Eliminar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </div>

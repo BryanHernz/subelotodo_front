@@ -1,32 +1,44 @@
 <div class="main-div">
-    <div class="lateral">
-        <app-admin-vertical-menu></app-admin-vertical-menu>
+  <div class="lateral">
+    <app-admin-vertical-menu></app-admin-vertical-menu>
+  </div>
+  <div class="main-container">
+    <div class="title-container">
+      <p class="main-title">Categorías</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1089"
+        height="2"
+        viewBox="0 0 1089 2"
+        fill="none"
+      >
+        <path d="M0.694336 0.604797H1088.43" stroke="#BE272D" />
+      </svg>
     </div>
-    <div class="main-container">
-        <div class="title-container">
-            <p class="main-title">Categorías</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="1089" height="2" viewBox="0 0 1089 2" fill="none">
-                <path d="M0.694336 0.604797H1088.43" stroke="#BE272D"/>
-            </svg>
+    <div class="content-container">
+      <div class="card-container" *ngFor="let item of categories">
+        <div class="icon-title-container">
+          <img src="{{ item.logo }}" alt="" />
+          <p>{{ item.name }}</p>
         </div>
-        <div class="content-container">
-            <div class="card-container" *ngFor="let item of categories">
-                <div class="icon-title-container">
-                    <img src={{item.logo}} alt="">
-                    <p>{{item.name}}</p>
-                </div>
-                <div class="buttons-container">
-                    <button class="edit-button" (click)="openEditDialog(item)">Editar</button>
-                    <button class="delete-button" (click)="openDeleteDialog()">Eliminar</button>
-                </div>
-            </div>
-            <div class="card-container add">
-                <div class="icon-title-container">
-                    <img src="assets/images/iconos-categorias/addblack.svg" alt="">
-                    <p>Agregar otra categoría</p>
-                </div>
-                <button class="delete-button addbutton" (click)="openAddDialog()">Agregar</button>
-            </div>
+        <div class="buttons-container">
+          <button class="edit-button" (click)="openEditDialog(item)">
+            Editar
+          </button>
+          <!--<button class="delete-button" (click)="openDeleteDialog()">
+            Eliminar
+          </button>-->
         </div>
+      </div>
+      <div class="card-container add">
+        <div class="icon-title-container">
+          <img src="assets/images/iconos-categorias/addblack.svg" alt="" />
+          <p>Agregar otra categoría</p>
+        </div>
+        <button class="delete-button addbutton" (click)="openAddDialog()">
+          Agregar
+        </button>
+      </div>
     </div>
-</div>  
+  </div>
+</div>

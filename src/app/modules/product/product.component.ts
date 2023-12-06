@@ -1,7 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from "../../shared/models/product";
 import { SwiperOptions } from 'swiper/types/swiper-options';
 import { ProductCard } from 'src/app/shared/models/product-card';
+import { ActivatedRoute } from '@angular/router';
+import { ProductsService } from 'src/app/services/productsservice/products.service';
+import { ProductModel } from 'src/app/models/productModel';
+import { ShoppingCartService } from 'src/app/services/cartservice/shopping-cart.service';
 
 @Component({
   selector: 'app-product',
@@ -9,7 +13,19 @@ import { ProductCard } from 'src/app/shared/models/product-card';
   styleUrls: ['./product.component.css']
 })
 
-export class ProductComponent {
+export class ProductComponent implements OnInit{
+
+  id!: number;
+  product!: ProductModel;
+
+  constructor(private route: ActivatedRoute,private productserv:ProductsService,private cartservice:ShoppingCartService) {}
+
+  ngOnInit() {
+    this.id = parseInt(this.route.snapshot.paramMap.get("id")!);
+      this.productserv.getProduct(this.id).subscribe(data=>{
+        this.product=data;
+      })
+  }
 
   public config: SwiperOptions = {
     slidesPerView:3,
@@ -21,52 +37,16 @@ export class ProductComponent {
       draggable: true
     }
   }
-  
-  myValue= 0;
 
-  product: Product = 
-    {
-      id: 1,
-      title: 'Estufa a leña Neoflam grande',
-      description: "Tiene 20 años, uso ocasional. Se realizó limpieza en cañón anual hasta 2021. Actualmente desinstalada. Incluye cañones para casa de 2 pisos, base acero Inox cuadrada para proteger el piso. Sirve para cualquier espacio del hogar.",
-      subCategories: [],
-      tag: 'Hogar', // ???
-      location: 'R.Metropolitana, Gran Santiago, San Bernardo',
-      condition: 'Usado-Como nuevo',
-      price: 300000,
-      referencePrice:1000000,
-      dimensions:'Medidas: 50 ancho, 63 fondo y 78 cm alto',
-      weight:'100 kilos',
-      seller:'María Carmen de la Manzana',
-      sellerContact:'+56912345678',
-      photosUrl: 
-      [
-        {
-          id:1,
-          path:'assets/images/imagenes-productos/fotografi╠üa 1 estufa de len╠âa.jpg',
-        },
-        {
-          id:2,
-          path:'assets/images/imagenes-productos/fotografi╠üa 2 estufa de len╠âa.jpg',
-        },
-        {
-          id:3,
-          path:'assets/images/imagenes-productos/fotografi╠üa 3 estufa de len╠âa.jpg',
-        },
-        {
-          id:4,
-          path:'assets/images/imagenes-productos/fotografi╠üa 4 estufa de len╠âa.jpg',
-        },
-        {
-          id:5,
-          path:'assets/images/imagenes-productos/scantek-380-estufa-a-lena-amesti (1).jpg',
-        },
-        {
-          id:6,
-          path:'assets/images/imagenes-productos/scantek-380-estufa-a-lena-amesti.jpg',
-        }
-      ],
-  };
+  addToCart(){
+    this.cartservice.postShoppingCartItem(
+      {
+        'productId':this.product.id!,
+        'amount':1,
+        'userId':parseInt(localStorage.getItem("userId")!),
+      }
+  ).subscribe();
+  }
 
   productsCards: ProductCard [] = [
     {

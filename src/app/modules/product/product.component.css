@@ -1,4 +1,4 @@
-.body{
+.body {
   width: 1440px;
   height: 920px;
   display: flex;
@@ -9,7 +9,7 @@
   align-self: stretch;
 }
 
-.product-section{
+.product-section {
   display: inline-flex;
   align-items: flex-start;
   gap: 40px;
@@ -17,7 +17,7 @@
   width: 1360px;
 }
 
-.images-section{
+.images-section {
   width: 428px;
   height: 100%;
   display: flex;
@@ -27,21 +27,22 @@
   align-self: stretch;
 }
 
-.title.container{
+.title.container {
   align-self: stretch;
 }
 
-.title{
+.title {
   color: #000;
   font-family: Roboto;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
-  line-height: 155%; /* 37.2px */
+  line-height: 155%;
+  /* 37.2px */
   letter-spacing: 0.24px;
 }
 
-.details-container{
+.details-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -50,7 +51,7 @@
   width: 892px;
 }
 
-.data-container{
+.data-container {
   display: flex;
   width: 892px;
   flex-direction: column;
@@ -59,78 +60,83 @@
   height: 181px;
 }
 
-.price-container{
+.price-container {
   flex: 1 0 0;
   align-self: stretch;
 }
 
-.price{
+.price {
   color: #000;
   font-family: Roboto;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
-  line-height: 155%; /* 37.2px */
+  line-height: 155%;
+  /* 37.2px */
   letter-spacing: 0.24px;
 }
 
-.ref-price-container{
+.ref-price-container {
   align-self: stretch;
 }
 
-.ref-price{
+.ref-price {
   color: #000;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 155%; /* 24.8px */
+  line-height: 155%;
+  /* 24.8px */
   letter-spacing: 0.16px;
 }
 
-.description-container{
+.description-container {
   align-self: stretch;
 }
 
-.description{
+.description {
   color: #000;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 155%; /* 24.8px */
+  line-height: 155%;
+  /* 24.8px */
   letter-spacing: 0.16px;
 }
 
-.info-container{
+.info-container {
   display: flex;
   align-items: flex-end;
   gap: 40px;
 }
 
-.specifications-container{
+.specifications-container {
   display: flex;
   width: 426px;
   height: 262px;
   padding: 20px;
   flex-direction: column;
   align-items: flex-start;
+  border-radius: 10px;
   background: #FFF;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.text-style{
+.text-style {
   color: #000;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 155%; /* 24.8px */
+  line-height: 155%;
+  /* 24.8px */
   letter-spacing: 0.16px;
   align-self: stretch;
 }
 
-.sale-details-container{
+.sale-details-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -138,30 +144,32 @@
   align-self: stretch;
 }
 
-.seller-details{
+.seller-details {
   color: #000;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 155%; /* 24.8px */
+  line-height: 155%;
+  /* 24.8px */
   letter-spacing: 0.16px;
   width: 248px;
   height: 112.931px;
 }
 
-.buy-button{
+.buy-button {
   display: flex;
   width: 248px;
   height: 57px;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
   border-radius: 10px;
   background: #BE272D;
 }
 
-.buy-button p{
+.buy-button p {
   padding-top: 5px;
   color: #FFF;
   text-align: center;
@@ -169,11 +177,12 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 155%; /* 24.8px */
+  line-height: 155%;
+  /* 24.8px */
   letter-spacing: 0.16px;
 }
 
-.recomendations-section{
+.recomendations-section {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -182,38 +191,39 @@
   width: 100%;
 }
 
-.recomendations-section-title{
+.recomendations-section-title {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0px;
 }
 
-.recomendations-title{
+.recomendations-title {
   color: #BE272D;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 155%; /* 24.8px */
+  line-height: 155%;
+  /* 24.8px */
   letter-spacing: 0.16px;
 }
 
-.line{
+.line {
   width: 1360px;
   height: 0;
   stroke-width: 1px;
   stroke: #BE272D;
 }
 
-.recomendations{
+.recomendations {
   display: flex;
   align-items: center;
   gap: 20px;
   align-self: stretch;
 }
 
-.recomendation-card{
+.recomendation-card {
   display: flex;
   width: 406px;
   padding: 20px;
@@ -221,7 +231,7 @@
   gap: 20px;
 }
 
-.recomendation-card img{
+.recomendation-card img {
   flex: 1 0 0;
   align-self: stretch;
   width: 190px;
@@ -229,7 +239,7 @@
   object-fit: cover;
 }
 
-.recomendation-info{
+.recomendation-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -238,28 +248,30 @@
   align-self: stretch;
 }
 
-.recomendation-title{
+.recomendation-title {
   color: #000;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 155%; /* 24.8px */
+  line-height: 155%;
+  /* 24.8px */
   letter-spacing: 0.16px;
   align-self: stretch;
 }
 
-.recomendation-price{
+.recomendation-price {
   color: #000;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 155%; /* 24.8px */
+  line-height: 155%;
+  /* 24.8px */
   letter-spacing: 0.16px;
 }
 
-.recomendation-button{
+.recomendation-button {
   display: flex;
   height: 35px;
   padding: 10px 30px;
@@ -272,7 +284,7 @@
   background: #FFF;
 }
 
-.recomendation-button p{
+.recomendation-button p {
   padding-top: 8px;
   color: #BE272D;
   text-align: center;
@@ -280,11 +292,12 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 155%; /* 24.8px */
+  line-height: 155%;
+  /* 24.8px */
   letter-spacing: 0.16px;
 }
 
-.imgIcon{
+.imgIcon {
   width: 31.5px;
   height: 31.5px;
 }

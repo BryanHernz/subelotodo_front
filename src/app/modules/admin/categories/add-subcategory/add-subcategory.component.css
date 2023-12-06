@@ -80,6 +80,7 @@
 
 .buttons-container {
     display: flex;
+    padding-top: 20px;
     align-items: flex-start;
     gap: 40px;
     align-self: stretch;

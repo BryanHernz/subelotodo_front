@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { ValidateComponent } from '../validate/validate.component';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-posts-validate',

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DeletePostComponent } from '../delete-post/delete-post.component';
 import { DeletePostsSeeMoreComponent } from '../delete-posts-see-more/delete-posts-see-more.component';
+import { ProductsService } from 'src/app/services/productsservice/products.service';
+import { ProductModel } from 'src/app/models/productModel';
 
 @Component({
   selector: 'app-delete-posts',
@@ -10,18 +12,25 @@ import { DeletePostsSeeMoreComponent } from '../delete-posts-see-more/delete-pos
 })
 export class DeletePostsComponent {
   
-  posts:number[] = [1,2,3,4,5] 
+  posts:ProductModel[]=[];
+  
+  ruta:string='http://localhost:8000/'
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog,private productserv:ProductsService) {}
 
+  ngOnInit():void{
+    const userId=parseInt(localStorage.getItem("userId")!)
+    this.productserv.getProductsByUser(userId).subscribe(data=>{
+      this.posts=data;
+    })
+  }
     
-  openDeleteDialog() {
-    const dialogRef = this.dialog.open(DeletePostComponent);
+  openDeleteDialog(item:ProductModel) {
+    const dialogRef = this.dialog.open(DeletePostComponent,{data:item});
   }  
 
-
-  openSeeMoreDialog() {
-    const dialogRef = this.dialog.open(DeletePostsSeeMoreComponent);
+  openSeeMoreDialog(item:ProductModel) {
+    const dialogRef = this.dialog.open(DeletePostsSeeMoreComponent,{data:item});
   }
 
 

@@ -1,45 +1,188 @@
 <div class="main-container">
-    <div [ngClass]="ubicacion!='/admin-data' ? 'header-container' : 'header-container-sel'">
-        <div style="position: relative; left: 0; top: 0; padding-top: 8px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none" style="width: 31.982px;
-            height: 31.982px;">
-              <circle cx="16.0087" cy="16.075" r="15.9911" fill="#D9D9D9"/>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" style="position: absolute;
-            right: 7px;
-            bottom: 13px;width: 18.65px;
-            height: 19.741px;">
-              <path d="M18.6021 16.3149C18.1343 15.2067 17.4554 14.2001 16.6032 13.3512C15.7536 12.4998 14.7472 11.821 13.6395 11.3523C13.6296 11.3473 13.6197 11.3448 13.6097 11.3399C15.1548 10.2238 16.1592 8.40595 16.1592 6.35493C16.1592 2.95725 13.4064 0.204376 10.0087 0.204376C6.61101 0.204376 3.85814 2.95725 3.85814 6.35493C3.85814 8.40595 4.86256 10.2238 6.40764 11.3423C6.39772 11.3473 6.3878 11.3498 6.37788 11.3547C5.26681 11.8235 4.26983 12.4956 3.41421 13.3537C2.56282 14.2033 1.88402 15.2097 1.41527 16.3173C0.954782 17.4018 0.706428 18.5644 0.683656 19.7423C0.682994 19.7688 0.687637 19.7951 0.697311 19.8198C0.706985 19.8444 0.721494 19.8669 0.739984 19.8858C0.758474 19.9048 0.78057 19.9198 0.804971 19.9301C0.829372 19.9404 0.855583 19.9457 0.882061 19.9457H2.3701C2.47922 19.9457 2.56602 19.8589 2.5685 19.7522C2.6181 17.8376 3.38692 16.0445 4.746 14.6855C6.15219 13.2793 8.01968 12.5055 10.0087 12.5055C11.9977 12.5055 13.8652 13.2793 15.2714 14.6855C16.6305 16.0445 17.3993 17.8376 17.4489 19.7522C17.4514 19.8614 17.5382 19.9457 17.6473 19.9457H19.1353C19.1618 19.9457 19.188 19.9404 19.2124 19.9301C19.2368 19.9198 19.2589 19.9048 19.2774 19.8858C19.2959 19.8669 19.3104 19.8444 19.3201 19.8198C19.3297 19.7951 19.3344 19.7688 19.3337 19.7423C19.3089 18.5568 19.0634 17.4036 18.6021 16.3149ZM10.0087 10.6206C8.87034 10.6206 7.79896 10.1767 6.99294 9.37069C6.18692 8.56467 5.74298 7.49328 5.74298 6.35493C5.74298 5.21658 6.18692 4.1452 6.99294 3.33918C7.79896 2.53316 8.87034 2.08922 10.0087 2.08922C11.147 2.08922 12.2184 2.53316 13.0244 3.33918C13.8305 4.1452 14.2744 5.21658 14.2744 6.35493C14.2744 7.49328 13.8305 8.56467 13.0244 9.37069C12.2184 10.1767 11.147 10.6206 10.0087 10.6206Z" fill="#BE272D"/>
-            </svg>
-        </div>
-        <button class="info" [routerLink]="['/admin-data']">
-            <p [ngClass]="ubicacion=='/admin-data' ? 'info-name-sel' : 'info-name'">Nombre admin</p>
-            <p [ngClass]="ubicacion=='/admin-data' ? 'info-email-sel' : 'info-email'">admin@gmail.com</p>
-        </button>
-        <img [src]="ubicacion!='/admin-data' ? 'assets/images/iconos-generales/ArrowRight.svg' :'assets/images/iconos-generales/arrowRightWhite.svg'" alt="">
+  <div
+    [ngClass]="
+      ubicacion != '/admin/admin-data'
+        ? 'header-container'
+        : 'header-container-sel'
+    "
+  >
+    <div style="position: relative; left: 0; top: 0; padding-top: 8px">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="33"
+        viewBox="0 0 32 33"
+        fill="none"
+        style="width: 31.982px; height: 31.982px"
+      >
+        <circle cx="16.0087" cy="16.075" r="15.9911" fill="#D9D9D9" />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        style="
+          position: absolute;
+          right: 7px;
+          bottom: 13px;
+          width: 18.65px;
+          height: 19.741px;
+        "
+      >
+        <path
+          d="M18.6021 16.3149C18.1343 15.2067 17.4554 14.2001 16.6032 13.3512C15.7536 12.4998 14.7472 11.821 13.6395 11.3523C13.6296 11.3473 13.6197 11.3448 13.6097 11.3399C15.1548 10.2238 16.1592 8.40595 16.1592 6.35493C16.1592 2.95725 13.4064 0.204376 10.0087 0.204376C6.61101 0.204376 3.85814 2.95725 3.85814 6.35493C3.85814 8.40595 4.86256 10.2238 6.40764 11.3423C6.39772 11.3473 6.3878 11.3498 6.37788 11.3547C5.26681 11.8235 4.26983 12.4956 3.41421 13.3537C2.56282 14.2033 1.88402 15.2097 1.41527 16.3173C0.954782 17.4018 0.706428 18.5644 0.683656 19.7423C0.682994 19.7688 0.687637 19.7951 0.697311 19.8198C0.706985 19.8444 0.721494 19.8669 0.739984 19.8858C0.758474 19.9048 0.78057 19.9198 0.804971 19.9301C0.829372 19.9404 0.855583 19.9457 0.882061 19.9457H2.3701C2.47922 19.9457 2.56602 19.8589 2.5685 19.7522C2.6181 17.8376 3.38692 16.0445 4.746 14.6855C6.15219 13.2793 8.01968 12.5055 10.0087 12.5055C11.9977 12.5055 13.8652 13.2793 15.2714 14.6855C16.6305 16.0445 17.3993 17.8376 17.4489 19.7522C17.4514 19.8614 17.5382 19.9457 17.6473 19.9457H19.1353C19.1618 19.9457 19.188 19.9404 19.2124 19.9301C19.2368 19.9198 19.2589 19.9048 19.2774 19.8858C19.2959 19.8669 19.3104 19.8444 19.3201 19.8198C19.3297 19.7951 19.3344 19.7688 19.3337 19.7423C19.3089 18.5568 19.0634 17.4036 18.6021 16.3149ZM10.0087 10.6206C8.87034 10.6206 7.79896 10.1767 6.99294 9.37069C6.18692 8.56467 5.74298 7.49328 5.74298 6.35493C5.74298 5.21658 6.18692 4.1452 6.99294 3.33918C7.79896 2.53316 8.87034 2.08922 10.0087 2.08922C11.147 2.08922 12.2184 2.53316 13.0244 3.33918C13.8305 4.1452 14.2744 5.21658 14.2744 6.35493C14.2744 7.49328 13.8305 8.56467 13.0244 9.37069C12.2184 10.1767 11.147 10.6206 10.0087 10.6206Z"
+          fill="#BE272D"
+        />
+      </svg>
     </div>
-    <div class="body-container">
-        
-        <div class="options-section">
-            <button [routerLink]="['/banners']"><p [ngClass]="ubicacion=='/banners' ? 'options-selected' : 'options-unselected'">Banners</p></button>
-            <button [routerLink]="['/admin-posts']"><p [ngClass]="ubicacion=='/admin-posts' ? 'options-selected' : 'options-unselected'">Publicaciones</p></button>
-            <button [routerLink]="['/admin-categories']"><p [ngClass]="ubicacion=='/admin-categories' ? 'options-selected' : 'options-unselected'">Categorías</p></button>
-            <button [routerLink]="['/admin-sellers']"><p [ngClass]="ubicacion=='/admin-sellers' ? 'options-selected' : 'options-unselected'">Vendedores</p></button>
-            <button [routerLink]="['/admin-frequent-questions']"><p [ngClass]="ubicacion=='/admin-frequent-questions' ? 'options-selected' : 'options-unselected'">Preguntas frecuentes</p></button>
-            <button [routerLink]="['/admin-metrics']"><p [ngClass]="ubicacion=='/admin-metrics' ? 'options-selected' : 'options-unselected'">Métrica</p></button>
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="215" height="2" viewBox="0 0 215 2" fill="none">
-            <path d="M0.296631 0.998535H214.743" stroke="#BE272D" stroke-width="0.5"/>
-        </svg>
-        <div class="options-section">
-            <button [routerLink]="['/admin-notifications']"><p [ngClass]="ubicacion=='/admin-notifications' ? 'options-selected' : 'options-unselected'">Notificaciones</p></button>
-            <button [routerLink]="['/admin-payments']"><p [ngClass]="ubicacion=='/admin-payments' ? 'options-selected' : 'options-unselected'">Pagos</p></button>
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="215" height="2" viewBox="0 0 215 2" fill="none">
-            <path d="M0.296631 0.998535H214.743" stroke="#BE272D" stroke-width="0.5"/>
-        </svg>
-        <div class="options-section">
-            <button (click)="openDialog()"><p>Cerrar Sesión</p></button>
-        </div>
+    <button class="info" [routerLink]="['/admin/admin-data']">
+      <p
+        [ngClass]="
+          ubicacion == '/admin/admin-data' ? 'info-name-sel' : 'info-name'
+        "
+      >
+        {{ name }} {{ lastName }}
+      </p>
+      <p
+        [ngClass]="
+          ubicacion == '/admin/admin-data' ? 'info-email-sel' : 'info-email'
+        "
+      >
+        {{ email }}
+      </p>
+    </button>
+    <img
+      [src]="
+        ubicacion != '/admin/admin-data'
+          ? 'assets/images/iconos-generales/ArrowRight.svg'
+          : 'assets/images/iconos-generales/arrowRightWhite.svg'
+      "
+      alt=""
+    />
+  </div>
+  <div class="body-container">
+    <div class="options-section">
+      <button [routerLink]="['/admin/banners/banners-options']">
+        <p
+          [ngClass]="
+            ubicacion.includes('/admin/banners')
+              ? 'options-selected'
+              : 'options-unselected'
+          "
+        >
+          Banners
+        </p>
+      </button>
+      <button [routerLink]="['/admin/admin-posts/admin-posts-control']">
+        <p
+          [ngClass]="
+            ubicacion == '/admin/admin-posts/admin-posts-control'
+              ? 'options-selected'
+              : 'options-unselected'
+          "
+        >
+          Publicaciones
+        </p>
+      </button>
+      <button [routerLink]="['/admin/admin-categories']">
+        <p
+          [ngClass]="
+            ubicacion == '/admin/admin-categories'
+              ? 'options-selected'
+              : 'options-unselected'
+          "
+        >
+          Categorías
+        </p>
+      </button>
+      <button [routerLink]="['/admin/admin-sellers']">
+        <p
+          [ngClass]="
+            ubicacion == '/admin/admin-sellers'
+              ? 'options-selected'
+              : 'options-unselected'
+          "
+        >
+          Vendedores
+        </p>
+      </button>
+      <button [routerLink]="['/admin/admin-frequent-questions']">
+        <p
+          [ngClass]="
+            ubicacion == '/admin/admin-frequent-questions'
+              ? 'options-selected'
+              : 'options-unselected'
+          "
+        >
+          Preguntas frecuentes
+        </p>
+      </button>
+      <button [routerLink]="['/admin/admin-metrics']">
+        <p
+          [ngClass]="
+            ubicacion == '/admin/admin-metrics'
+              ? 'options-selected'
+              : 'options-unselected'
+          "
+        >
+          Métrica
+        </p>
+      </button>
     </div>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="215"
+      height="2"
+      viewBox="0 0 215 2"
+      fill="none"
+    >
+      <path
+        d="M0.296631 0.998535H214.743"
+        stroke="#BE272D"
+        stroke-width="0.5"
+      />
+    </svg>
+    <div class="options-section">
+      <button [routerLink]="['/admin/admin-notifications']">
+        <p
+          [ngClass]="
+            ubicacion == '/admin/admin-notifications'
+              ? 'options-selected'
+              : 'options-unselected'
+          "
+        >
+          Notificaciones
+        </p>
+      </button>
+      <button [routerLink]="['/admin/admin-payments']">
+        <p
+          [ngClass]="
+            ubicacion == '/admin/admin-payments'
+              ? 'options-selected'
+              : 'options-unselected'
+          "
+        >
+          Pagos
+        </p>
+      </button>
+    </div>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="215"
+      height="2"
+      viewBox="0 0 215 2"
+      fill="none"
+    >
+      <path
+        d="M0.296631 0.998535H214.743"
+        stroke="#BE272D"
+        stroke-width="0.5"
+      />
+    </svg>
+    <div class="options-section">
+      <button (click)="openDialog()"><p>Cerrar Sesión</p></button>
+    </div>
+  </div>
 </div>

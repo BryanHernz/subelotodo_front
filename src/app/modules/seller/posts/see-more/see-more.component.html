@@ -1,38 +1,54 @@
 <div class="main-div">
-    <div class="main-content">
-        <div class="title-row">
-            <p>Publicación</p>
-            <img src="assets/images/seller/x.svg" alt="" (click)="close()">
-        </div>
-        <p class="name-price-text">Estufa a leña Neoflam grande - $70.000 CLP</p>
-        <div class="content-container">
-            <div class="images-content">
-                <img src="assets/images/imagenes-productos/fotografi╠üa 1 estufa de len╠âa.jpg" alt="">
-                <img src="assets/images/imagenes-productos/fotografi╠üa 2 estufa de len╠âa.jpg" alt="">
-                <img src="assets/images/imagenes-productos/fotografi╠üa 3 estufa de len╠âa.jpg" alt="">
-                <img src="assets/images/imagenes-productos/fotografi╠üa 4 estufa de len╠âa.jpg" alt="">
-                <img src="assets/images/imagenes-productos/fotografi╠üa 1 estufa de len╠âa.jpg" alt="">
-                <img src="assets/images/imagenes-productos/fotografi╠üa 2 estufa de len╠âa.jpg" alt="">
-            </div>
-            <div class="info-container">
-                <p class="info-title">Especificación de artículo:</p>
-                <p>Categoría: Hogar</p>
-                <p>Comuna: R.metropolitana, San Bernardo</p>
-                <p>Estado de producto: Usado-Como nuevo</p>
-                <p>Medidas: 50 ancho, 63 fondo y 78 cm alto</p>
-                <p>Peso: 100 kilos</p>
-                <p>Estado: En venta</p>
-                <p>Precio referencial: $100.000 CLP</p>
-            </div>
-        </div>
-        <p class="description-text">
-            Descripción de artículo:
-            <br><br>
-            Tiene 20 años, uso ocasional. Se realizó limpieza en cañón anual hasta 2021. Actualmente desinstalada. Incluye cañones para casa de 2 pisos, base acero Inox cuadrada para proteger el piso. Sirve para cualquier espacio del hogar.
+  <div class="main-content">
+    <div class="title-row">
+      <p>Publicación</p>
+      <img src="assets/images/seller/x.svg" alt="" (click)="close()" />
+    </div>
+    <p class="name-price-text">
+      {{ post.title }} -
+      {{ (post.price | currency : "CLP" : "$")?.replaceAll(",", ".") }} CLP
+    </p>
+    <div class="content-container">
+      <div class="images-content">
+        <img
+          *ngFor="let item of post.ProductImages"
+          src="{{ ruta + item.filePath }}"
+          alt=""
+        />
+      </div>
+      <div class="info-container">
+        <p class="info-title">Especificación de artículo:</p>
+        <p>Categoría: {{ post.category?.name }}</p>
+        <p>Comuna: {{ post.state?.name }}, {{ post.city?.name }}</p>
+        <p>Estado de producto: {{ post.condition }}</p>
+        <p>
+          Medidas: {{ post.width }} ancho, {{ post.length }} fondo y
+          {{ post.height }} cm alto
         </p>
+        <p>Peso: {{ post.weight }} kilos</p>
+        <p>Stock: {{ post.stock }}</p>
+        <p *ngIf="post.aproved">Estado: {{ post.saleState }}</p>
+        <p *ngIf="!post.aproved">Estado: Aprobación pendiente</p>
+        <p>
+          Precio referencial:
+          {{
+            (post.referencialPrice | currency : "CLP" : "$")?.replaceAll(
+              ",",
+              "."
+            )
+          }}
+          CLP
+        </p>
+      </div>
     </div>
-    <div class="buttons-container">
-        <button class="button-cancel" (click)="close()">Cancelar</button>
-        <button class="button-edit" (click)="openDialog()">Editar</button>
-    </div>
+    <p class="description-text">
+      Descripción de artículo:
+      <br /><br />
+      {{ post.description }}
+    </p>
+  </div>
+  <div class="buttons-container">
+    <button class="button-cancel" (click)="close()">Cancelar</button>
+    <button class="button-edit" (click)="openDialog(post)">Editar</button>
+  </div>
 </div>

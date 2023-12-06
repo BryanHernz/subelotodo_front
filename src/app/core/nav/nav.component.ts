@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Category } from "../../shared/models/categories";
-import { SubCategory } from "../../shared/models/subcategories";
 import { Region } from 'src/app/shared/models/regions';
-import { Commune } from 'src/app/shared/models/communes';
+import { MatDialog } from '@angular/material/dialog';
+import { SigninComponent } from 'src/app/shared/signin/signin.component';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent {
+export class NavComponent implements OnInit {
   status = false;
   menuOpen: boolean = false;
   regiones: boolean = false;
@@ -17,6 +18,41 @@ export class NavComponent {
   sellerMenuOpen: boolean = false;
   adminLogged: boolean = false;
   adminMenuOpen: boolean = false;
+  isLoggedIn$ = this.api.isLoggedIn$;
+  isLoggedIn:boolean=false;
+  name:string=localStorage.getItem('userName')?.split(' ')[0]!;
+  lastName:string=localStorage.getItem('userLastName')?.substring(0,1)!;
+
+  constructor(
+    private dialog: MatDialog,
+    private api:ApiService,
+  ) {}
+
+  ngOnInit():void{
+    this.checkLocalStorage();
+  }
+
+  checkLocalStorage(){
+    if (localStorage.getItem("token")) {
+      this.isLoggedIn=true;
+      if(localStorage.getItem("userType")=='1'){
+        this.adminLogged=true;
+      }
+      if(localStorage.getItem("userType")=='2'){
+        this.sellerLogged=true;
+      }
+    }
+    else{
+      this.isLoggedIn=true;
+    }
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(SigninComponent);
+    if (dialogRef.afterClosed()) {
+      this.checkLocalStorage();
+    }
+  }
 
   sellerMode()
   {
@@ -47,6 +83,10 @@ export class NavComponent {
   toggleSwitch() {
     this.regiones = !this.regiones;
   }
+
+  /*openCartDialog() {
+    const dialogRef = this.dialog.open(ShoppingCartComponent);
+  }*/
 
   categories: Category [] = [
     {

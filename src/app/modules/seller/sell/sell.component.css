@@ -1,10 +1,10 @@
-.main-div{
+.main-div {
     width: 1440px;
     display: flex;
     background: #F1F1F1;
 }
 
-.lateral{
+.lateral {
     display: inline-flex;
     padding: 20px;
     flex-direction: column;
@@ -14,7 +14,7 @@
     flex-shrink: 0;
 }
 
-.main-container{
+.main-container {
     padding: 60px;
     display: flex;
     flex-direction: column;
@@ -22,31 +22,33 @@
     align-items: center;
 }
 
-.title-container{
+.title-container {
     flex-direction: column;
     align-items: flex-start;
     gap: 3px;
     flex-shrink: 0;
 }
 
-.main-title{
+.main-title {
     height: 10px;
     color: #000;
     font-family: Roboto;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 27.9px */
+    line-height: 155%;
+    /* 27.9px */
     letter-spacing: 0.18px;
     flex: 1 0 0;
     align-self: stretch;
 }
 
-.body-card{
+.body-card {
     margin-top: 0px;
     margin-bottom: 48px;
     display: flex;
     width: 739px;
+    justify-self: center;
     padding: 40px;
     flex-direction: column;
     align-items: center;
@@ -55,7 +57,7 @@
     background: #FFF;
 }
 
-.card-title{
+.card-title {
     color: #BE272D;
     text-align: center;
     font-family: Roboto;
@@ -67,7 +69,7 @@
     align-self: stretch;
 }
 
-.header-div{
+.header-div {
     display: flex;
     height: 281px;
     padding: 40px;
@@ -81,13 +83,13 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.header-div img{
+.header-div img {
     width: 89.077px;
     height: 69.006px;
     flex-shrink: 0;
 }
 
-.header-p{
+.header-p {
     color: #000;
     text-align: center;
     font-family: TitilliumWeb;
@@ -98,14 +100,14 @@
     width: 203.753px;
 }
 
-.card-contain{
+.card-contain {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
 }
 
-.form-field{
+.form-field {
     height: 96px;
     display: flex;
     flex-direction: column;
@@ -114,7 +116,7 @@
     align-self: stretch;
 }
 
-.form-field-label{
+.form-field-label {
     align-self: stretch;
     color: #000;
     font-family: TitilliumWeb;
@@ -125,7 +127,7 @@
 }
 
 .form-field-input,
-.form-field-input::placeholder{
+.form-field-input::placeholder {
     align-self: stretch;
     color: #000;
     font-family: TitilliumWeb;
@@ -137,7 +139,7 @@
     outline: none;
 }
 
-.form-field-hint{
+.form-field-hint {
     color: #8B8989;
     font-family: TitilliumWeb;
     font-size: 16px;
@@ -146,7 +148,7 @@
     line-height: normal;
 }
 
-.hint-div{
+.hint-div {
     display: flex;
     align-items: flex-start;
     align-content: flex-start;
@@ -156,28 +158,29 @@
     height: 34px;
 }
 
-.buttons-container{
+.buttons-container {
     display: flex;
     align-items: flex-start;
     gap: 147px;
 }
 
-.button{
+.button {
     display: flex;
     padding: 10px 100px;
     justify-content: center;
     align-items: center;
     gap: 10px;
     height: 45px;
+    cursor: pointer;
 }
 
-.cancel{
+.cancel {
     border-radius: 10px;
     border: 1px solid #BE272D;
     background: #FFF;
 }
 
-.cancel p{
+.cancel p {
     padding-top: 8px;
     color: #BE272D;
     text-align: center;
@@ -185,16 +188,18 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }
 
-.next{
+.next {
     border-radius: 10px;
     background: #BE272D;
+    color: #FFF;
 }
 
-.next p{
+.next p {
     padding-top: 8px;
     color: #FFF;
     text-align: center;
@@ -202,11 +207,12 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }
 
-.select{
+.select {
     width: 100%;
     height: 50px;
     border-radius: 10px;
@@ -219,50 +225,50 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-	cursor: pointer;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	background-repeat: no-repeat;
-	background-size: 16px;
-	background-position: 95% 50%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: 95% 50%;
 }
 
-.double-select{
+.double-select {
     display: flex;
     align-items: flex-start;
     gap: 20px;
     align-self: stretch;
 }
 
-.dimensions-div{
+.dimensions-div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
 }
 
-.dimensions-div-row{
+.dimensions-div-row {
     display: flex;
     align-items: flex-end;
     gap: 40px;
 }
 
-.dimension-div{
+.dimension-div {
     display: flex;
     align-items: flex-start;
     gap: 20px;
     width: 198px;
 }
 
-.medida-div{
+.medida-div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
 }
 
-.form-field-mini{
+.form-field-mini {
     height: 58px;
     display: flex;
     flex-direction: column;
@@ -271,7 +277,7 @@
     align-self: stretch;
 }
 
-.form-field-label-mini{
+.form-field-label-mini {
     width: 34px;
     align-self: stretch;
     color: #000;

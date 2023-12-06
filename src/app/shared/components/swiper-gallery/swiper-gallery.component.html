@@ -1,25 +1,40 @@
 <section class="gallery">
-    <div class="container">
-        <div class="img-container">
-            <img class="img-containerImage" [src]="imagenActual" alt="Image" id="preview">
-            <div class="galleryColumn">
-                <img class="galleryColumnIcon" src="assets/images/iconos-generales/ArrowUp.svg" alt="">
-                <div class="img-prev">
-                    <div [ngClass]="imagenActual== 'assets/images/imagenes-productos/fotografi╠üa 1 estufa de len╠âa.jpg' ? 'img-slide active' : 'img-slide'">
-                        <img src="assets/images/imagenes-productos/fotografi╠üa 1 estufa de len╠âa.jpg" alt="Image1" (click)="changeImage('assets/images/imagenes-productos/fotografi╠üa 1 estufa de len╠âa.jpg')">
-                    </div>
-                    <div [ngClass]="imagenActual== 'assets/images/imagenes-productos/fotografi╠üa 2 estufa de len╠âa.jpg' ? 'img-slide active' : 'img-slide'">
-                        <img src="assets/images/imagenes-productos/fotografi╠üa 2 estufa de len╠âa.jpg" alt="Image2" (click)="changeImage('assets/images/imagenes-productos/fotografi╠üa 2 estufa de len╠âa.jpg')">
-                    </div>
-                    <div [ngClass]="imagenActual== 'assets/images/imagenes-productos/fotografi╠üa 3 estufa de len╠âa.jpg' ? 'img-slide active' : 'img-slide'">
-                        <img src="assets/images/imagenes-productos/fotografi╠üa 3 estufa de len╠âa.jpg" alt="Image3" (click)="changeImage('assets/images/imagenes-productos/fotografi╠üa 3 estufa de len╠âa.jpg')">
-                    </div>
-                    <div [ngClass]="imagenActual== 'assets/images/imagenes-productos/fotografi╠üa 4 estufa de len╠âa.jpg' ? 'img-slide active' : 'img-slide'">
-                        <img src="assets/images/imagenes-productos/fotografi╠üa 4 estufa de len╠âa.jpg" alt="Image4" (click)="changeImage('assets/images/imagenes-productos/fotografi╠üa 4 estufa de len╠âa.jpg')">
-                    </div>
-                </div>
-                <img class="galleryColumnIcon" src="assets/images/iconos-generales/ArrowDown.svg" alt="">
-            </div>
+  <div class="container">
+    <div class="img-container">
+      <img
+        class="img-containerImage"
+        [src]="imagenActual"
+        alt="Image"
+        id="preview"
+      />
+      <div class="galleryColumn">
+        <img
+          class="galleryColumnIcon"
+          src="assets/images/iconos-generales/ArrowUp.svg"
+          alt=""
+        />
+        <div class="img-prev">
+          <div
+            *ngFor="let item of imagenes"
+            [ngClass]="
+              imagenActual == ruta + item.filePath
+                ? 'img-slide active'
+                : 'img-slide'
+            "
+          >
+            <img
+              src="{{ ruta + item.filePath }}"
+              alt="Image1"
+              (click)="changeImage(ruta + item.filePath)"
+            />
+          </div>
         </div>
+        <img
+          class="galleryColumnIcon"
+          src="assets/images/iconos-generales/ArrowDown.svg"
+          alt=""
+        />
+      </div>
     </div>
+  </div>
 </section>

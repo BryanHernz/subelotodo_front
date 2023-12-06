@@ -1,0 +1,241 @@
+<div class="body-container">
+  <div class="header-container">
+    <img src="assets/images/logo.svg" alt="" />
+  </div>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <div class="buttons-container">
+      <div class="fields-container">
+        <div class="form-field">
+          <p class="form-field-label">Email</p>
+          <input
+            class="form-field-input"
+            formControlName="email"
+            type="email"
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Nombre</p>
+          <input
+            class="form-field-input"
+            placeholder=""
+            type="text"
+            formControlName="firstName"
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Apellido</p>
+          <input
+            class="form-field-input"
+            placeholder=""
+            type="text"
+            formControlName="lastName"
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Dirección</p>
+          <input
+            class="form-field-input"
+            placeholder=""
+            type="text"
+            formControlName="address"
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Región</p>
+          <select
+            class="select"
+            [(ngModel)]="selectedreg"
+            formControlName="stateId"
+            (change)="getCities()"
+            required
+            style="
+              background-image: url(assets/images/iconos-generales/ArrowDown2.svg);
+            "
+          >
+            <option [disabled]="true">- REGIÓN -</option>
+            <option *ngFor="let item of regiones" value="{{ item.id }}">
+              {{ item.name }}
+            </option>
+          </select>
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Comuna</p>
+
+          <select
+            class="select"
+            style="
+              background-image: url(assets/images/iconos-generales/ArrowDown2.svg);
+            "
+            formControlName="cityId"
+            required
+          >
+            <option [disabled]="true">- COMUNA -</option>
+            <option *ngFor="let item of comunas" value="{{ item.id }}">
+              {{ item.name }}
+            </option>
+          </select>
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Zipcode (opcional)</p>
+          <input
+            class="form-field-input"
+            placeholder=""
+            type="number"
+            formControlName="zipcode"
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Teléfono</p>
+          <input
+            class="form-field-input"
+            placeholder=""
+            type="tel"
+            formControlName="phone"
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Fecha de nacimiento</p>
+          <input
+            class="form-field-input"
+            placeholder=""
+            type="date"
+            formControlName="birthday"
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Contraseña</p>
+          <input
+            class="form-field-input"
+            placeholder=""
+            autocomplete="off"
+            type="password"
+            formControlName="password"
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <button class="ingress-button" type="submit">
+        <p>Registrarse</p>
+      </button>
+      <div class="error" *ngIf="errorStatus">
+        <p>{{ errorMsj }}</p>
+      </div>
+      <div class="footer-container">
+        <p class="question-text">¿Ya tienes cuenta?</p>
+        <div class="footer-link-container">
+          <p class="link-text">Iniciar sesión</p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

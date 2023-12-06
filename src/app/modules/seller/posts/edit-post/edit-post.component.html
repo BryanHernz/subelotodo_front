@@ -1,167 +1,377 @@
 <div class="main">
+  <form [formGroup]="editarProducto" (ngSubmit)="updatePost()">
     <div class="main-div">
-        <div class="title-row">
-            <p>Editar publicación</p>
-            <img src="assets/images/seller/x.svg" alt="" (click)="close()">
+      <div class="title-row">
+        <p>Editar publicación</p>
+        <img src="assets/images/seller/x.svg" alt="" (click)="close()" />
+      </div>
+      <div class="images-container">
+        <img
+          *ngFor="let item of post.ProductImages"
+          src="{{ ruta + item.filePath }}"
+          alt=""
+        />
+      </div>
+      <div class="content-container">
+        <div class="form-field">
+          <p class="form-field-label">Título</p>
+          <input
+            class="form-field-input"
+            placeholder=""
+            type="text"
+            id="validationDefault01"
+            formControlName="title"
+            minlength="10"
+            required
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="667"
+              height="2"
+              viewBox="0 0 667 2"
+              fill="none"
+            >
+              <path d="M0.0324707 0.876892H666.032" stroke="black" />
+            </svg>
+            <p class="form-field-hint">Escribe por lo menos 10 letras</p>
+          </div>
         </div>
-        <div class="images-container">
-            <img src="assets/images/imagenes-productos/fotografi╠üa 1 estufa de len╠âa.jpg" alt="">
-            <img src="assets/images/imagenes-productos/fotografi╠üa 2 estufa de len╠âa.jpg" alt="">
-            <img src="assets/images/imagenes-productos/fotografi╠üa 3 estufa de len╠âa.jpg" alt="">
-            <img src="assets/images/imagenes-productos/fotografi╠üa 4 estufa de len╠âa.jpg" alt="">
+        <div class="form-field">
+          <p class="form-field-label">Precio del producto</p>
+          <input
+            class="form-field-input"
+            placeholder="$"
+            type="number"
+            id="input4"
+            formControlName="price"
+            required
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="667"
+              height="2"
+              viewBox="0 0 667 2"
+              fill="none"
+            >
+              <path d="M0.0324707 0.876892H666.032" stroke="black" />
+            </svg>
+            <p class="form-field-hint">Escribe el precio</p>
+          </div>
         </div>
-        <div class="content-container">
-            <div class="form-field">
-                <p class="form-field-label">Título</p>
-                <input class="form-field-input" placeholder="Estufa a leña Neoflam grande">
-                <div class="hint-div">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="667" height="2" viewBox="0 0 667 2" fill="none">
-                        <path d="M0.0324707 0.876892H666.032" stroke="black"/>
-                    </svg>
-                    <p class="form-field-hint">Escribe por lo menos 10 letras</p>
-                </div>
-            </div>
-            <div class="form-field">
-                <p class="form-field-label">Precio del producto</p>
-                <input class="form-field-input" placeholder="$70.000 CLP">
-                <div class="hint-div">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="667" height="2" viewBox="0 0 667 2" fill="none">
-                        <path d="M0.0324707 0.876892H666.032" stroke="black"/>
-                    </svg>
-                    <p class="form-field-hint">Escribe el precio </p>
-                </div>
-            </div>
-            <div class="form-field">
-                <p class="form-field-label">Categoría</p>
-                <select class="select"  id="" style="background-image: url(assets/images/iconos-generales/ArrowDown2.svg)">
-                    <option value="" disabled>   Elige una categoría</option>
-                    <option value="" disabled selected>Hogar</option>
-                </select>
-            </div>
-            <div class="form-field">
-                <p class="form-field-label">Ubicación</p>
-                <div class="double-select">
-                    <select class="select"  id="" style="background-image: url(assets/images/iconos-generales/ArrowDown2.svg)">
-                        <option value="" disabled >Selecciona Región</option>
-                        <option value="" disabled selected>Región Metropolitana</option>
-                    </select>
-                    <select class="select"  id="" style="background-image: url(assets/images/iconos-generales/ArrowDown2.svg)">
-                        <option value="" disabled >Selecciona Comuna</option>
-                        <option value="" disabled selected>San Bernardo</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-field">
-                <p class="form-field-label">Descripción de producto</p>
-                <input class="form-field-input" placeholder="Tiene 20 años, uso ocasional. Se realizó limpieza en cañón anual hasta 2021. Actualmente desinstalada. Incluye cañones para casa de 2 pisos, base acero Inox cuadrada para proteger el piso. Sirve para cualquier espacio del hogar.">
-                <div class="hint-div">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="667" height="2" viewBox="0 0 667 2" fill="none">
-                        <path d="M0.0324707 0.876892H666.032" stroke="black"/>
-                    </svg>
-                    <p class="form-field-hint">Escribe por lo menos 20 letras</p>
-                </div>
-            </div>
-            <div class="form-field">
-                <p class="form-field-label">Estado del Producto</p>
-                <select class="select"  id="" style="background-image: url(assets/images/iconos-generales/ArrowDown2.svg)">
-                    <option value="" disabled >Elige el estado del producto</option>
-                    <option value="" disabled selected>Usado-Como nuevo</option>
-                </select>
-            </div>
-            <div class="dimensions-div">
-                <p class="form-field-label">Dimensiones (Opcional)</p>
-                <div class="dimensions-div-row">
-                    <div class="dimension-div">
-                        <p class="form-field-label-mini">Largo</p>
-                        <div class="medida-div">
-                            <div class="form-field-mini">
-                                <input class="form-field-input" placeholder="63  cm">
-                                <div class="hint-div">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="139" height="2" viewBox="0 0 139 2" fill="none">
-                                        <path d="M0.0324707 0.876892L138.757 0.87688" stroke="black"/>
-                                    </svg>
-                                    <p class="form-field-hint">Escribe los cm</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dimension-div">
-                        <p class="form-field-label-mini">Ancho</p>
-                        <div class="medida-div">
-                            <div class="form-field-mini">
-                                <input class="form-field-input" placeholder="50 cm">
-                                <div class="hint-div">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="139" height="2" viewBox="0 0 139 2" fill="none">
-                                        <path d="M0.0324707 0.876892L138.757 0.87688" stroke="black"/>
-                                    </svg>
-                                    <p class="form-field-hint">Escribe los cm</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dimension-div">
-                        <p class="form-field-label-mini">Alto</p>
-                        <div class="medida-div">
-                            <div class="form-field-mini">
-                                <input class="form-field-input" placeholder="78 cm">
-                                <div class="hint-div">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="139" height="2" viewBox="0 0 139 2" fill="none">
-                                        <path d="M0.0324707 0.876892L138.757 0.87688" stroke="black"/>
-                                    </svg>
-                                    <p class="form-field-hint">Escribe los cm</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dimensions-div-row">
-                    <div class="dimension-div">
-                        <p class="form-field-label-mini">Peso</p>
-                        <div class="medida-div">
-                            <div class="form-field-mini">
-                                <input class="form-field-input" placeholder="100  Kg">
-                                <div class="hint-div">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="139" height="2" viewBox="0 0 139 2" fill="none">
-                                        <path d="M0.0324707 0.876892L138.757 0.87688" stroke="black"/>
-                                    </svg>
-                                    <p class="form-field-hint">Escribe los kg</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-field">
-                <p class="form-field-label">Estado de la venta</p>
-                <select class="select"  id="" style="background-image: url(assets/images/iconos-generales/ArrowDown2.svg)">
-                    <option value="" disabled >Tipo de venta</option>
-                    <option value="" disabled selected>En venta</option>
-                </select>
-            </div>
-            <div class="form-field">
-                <p class="form-field-label">Cantidad de productos (Opcional)</p>
-                <input class="form-field-input" placeholder="000">
-                <div class="hint-div">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="667" height="2" viewBox="0 0 667 2" fill="none">
-                        <path d="M0.0324707 0.876892H666.032" stroke="black"/>
-                    </svg>
-                    <p class="form-field-hint">Escribe cuanto stock tienes</p>
-                </div>
-            </div>
-            <div class="form-field">
-                <p class="form-field-label">Precio referencial</p>
-                <input class="form-field-input" placeholder="$100.000 CLP">
-                <div class="hint-div">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="667" height="2" viewBox="0 0 667 2" fill="none">
-                        <path d="M0.0324707 0.876892H666.032" stroke="black"/>
-                    </svg>
-                    <p class="form-field-hint">Escribe el precio </p>
-                </div>
-            </div>
+        <div class="form-field">
+          <p class="form-field-label">Categoría</p>
+          <select
+            id="inputState"
+            class="select"
+            formControlName="categoryId"
+            (change)="getSubcat()"
+            style="
+              background-image: url(assets/images/iconos-generales/ArrowDown2.svg);
+            "
+            required
+          >
+            <option
+              *ngFor="let item of categorias"
+              ngValue="{{ item.id }}"
+              [selected]="item.id === editarProducto.value.categoryId"
+            >
+              {{ item.name }}
+            </option>
+          </select>
         </div>
-        <div class="buttons-container">
-            <button class="button-cancel" (click)="close()">Cancelar</button>
-            <button class="button-save" (click)="close()">Guardar cambios</button>
+        <div class="form-field">
+          <p class="form-field-label">Subcategoría</p>
+          <select
+            id="inputState"
+            class="select"
+            formControlName="subcategoryId"
+            style="
+              background-image: url(assets/images/iconos-generales/ArrowDown2.svg);
+            "
+            required
+          >
+            <option
+              *ngFor="let item of subcategorias"
+              ngValue="{{ item.id }}"
+              [selected]="item.id === editarProducto.value.subcategoryId"
+            >
+              {{ item.name }}
+            </option>
+          </select>
         </div>
+        <div class="form-field">
+          <p class="form-field-label">Ubicación</p>
+          <div class="double-select">
+            <select
+              id="inputState"
+              class="select"
+              formControlName="stateId"
+              style="
+                background-image: url(assets/images/iconos-generales/ArrowDown2.svg);
+              "
+              (change)="getCities()"
+              required
+            >
+              <option
+                *ngFor="let item of regiones"
+                ngValue="{{ item.id }}"
+                [selected]="item.id === editarProducto.value.stateId"
+              >
+                {{ item.name }}
+              </option>
+            </select>
+            <select
+              id="inputState"
+              class="select"
+              formControlName="cityId"
+              style="
+                background-image: url(assets/images/iconos-generales/ArrowDown2.svg);
+              "
+              required
+            >
+              <option
+                *ngFor="let item of comunas"
+                ngValue="{{ item.id }}"
+                [selected]="item.id === editarProducto.value.cityId"
+              >
+                {{ item.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Descripción de producto</p>
+          <input
+            class="form-field-input"
+            placeholder=""
+            type="text"
+            id="validationDefault02"
+            formControlName="description"
+            minlength="20"
+            required
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="667"
+              height="2"
+              viewBox="0 0 667 2"
+              fill="none"
+            >
+              <path d="M0.0324707 0.876892H666.032" stroke="black" />
+            </svg>
+            <p class="form-field-hint">Escribe por lo menos 20 letras</p>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Estado del Producto</p>
+          <select
+            class="select"
+            id="inputState"
+            formControlName="condition"
+            required
+            style="
+              background-image: url(assets/images/iconos-generales/ArrowDown2.svg);
+            "
+          >
+            <option *ngFor="let item of productConditions" value="{{ item }}">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+        <div class="dimensions-div">
+          <p class="form-field-label">Dimensiones (Opcional)</p>
+          <div class="dimensions-div-row">
+            <div class="dimension-div">
+              <p class="form-field-label-mini">Largo</p>
+              <div class="medida-div">
+                <div class="form-field-mini">
+                  <input
+                    class="form-field-input"
+                    placeholder="X cm"
+                    type="number"
+                    id="inputEmail4"
+                    formControlName="length"
+                  />
+                  <div class="hint-div">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="139"
+                      height="2"
+                      viewBox="0 0 139 2"
+                      fill="none"
+                    >
+                      <path
+                        d="M0.0324707 0.876892L138.757 0.87688"
+                        stroke="black"
+                      />
+                    </svg>
+                    <p class="form-field-hint">Escribe los cm</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dimension-div">
+              <p class="form-field-label-mini">Ancho</p>
+              <div class="medida-div">
+                <div class="form-field-mini">
+                  <input
+                    class="form-field-input"
+                    placeholder="X cm"
+                    type="number"
+                    id="inputPassword4"
+                    formControlName="width"
+                  />
+                  <div class="hint-div">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="139"
+                      height="2"
+                      viewBox="0 0 139 2"
+                      fill="none"
+                    >
+                      <path
+                        d="M0.0324707 0.876892L138.757 0.87688"
+                        stroke="black"
+                      />
+                    </svg>
+                    <p class="form-field-hint">Escribe los cm</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dimension-div">
+              <p class="form-field-label-mini">Alto</p>
+              <div class="medida-div">
+                <div class="form-field-mini">
+                  <input
+                    class="form-field-input"
+                    placeholder="X cm"
+                    type="number"
+                    id="inputEmail4"
+                    formControlName="height"
+                  />
+                  <div class="hint-div">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="139"
+                      height="2"
+                      viewBox="0 0 139 2"
+                      fill="none"
+                    >
+                      <path
+                        d="M0.0324707 0.876892L138.757 0.87688"
+                        stroke="black"
+                      />
+                    </svg>
+                    <p class="form-field-hint">Escribe los cm</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dimensions-div-row">
+            <div class="dimension-div">
+              <p class="form-field-label-mini">Peso</p>
+              <div class="medida-div">
+                <div class="form-field-mini">
+                  <input
+                    class="form-field-input"
+                    placeholder="X Kg"
+                    type="number"
+                    id="inputEmail4"
+                    formControlName="weight"
+                  />
+                  <div class="hint-div">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="139"
+                      height="2"
+                      viewBox="0 0 139 2"
+                      fill="none"
+                    >
+                      <path
+                        d="M0.0324707 0.876892L138.757 0.87688"
+                        stroke="black"
+                      />
+                    </svg>
+                    <p class="form-field-hint">Escribe los kg</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Estado de la venta</p>
+          <select
+            class="select"
+            id="inputState"
+            formControlName="saleState"
+            required
+            style="
+              background-image: url(assets/images/iconos-generales/ArrowDown2.svg);
+            "
+          >
+            <option *ngFor="let item of saleStates" value="{{ item }}">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Cantidad de producto (Opcional)</p>
+          <input
+            class="form-field-input"
+            type="number"
+            id="input3"
+            formControlName="stock"
+            required
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="667"
+              height="2"
+              viewBox="0 0 667 2"
+              fill="none"
+            >
+              <path d="M0.0324707 0.876892H666.032" stroke="black" />
+            </svg>
+            <p class="form-field-hint">Escribe cuanto stock tienes</p>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Precio referencial nuevo (Opcional)</p>
+          <input
+            class="form-field-input"
+            placeholder="$"
+            type="number"
+            id="input3"
+            formControlName="referencialPrice"
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="667"
+              height="2"
+              viewBox="0 0 667 2"
+              fill="none"
+            >
+              <path d="M0.0324707 0.876892H666.032" stroke="black" />
+            </svg>
+            <p class="form-field-hint">Escribe el precio</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="errorStatus" class="error">
+        <p>{{ errorMsj }}</p>
+      </div>
+      <div class="buttons-container">
+        <button class="button-cancel" (click)="close()">Cancelar</button>
+        <button class="button-save" type="submit">Guardar cambios</button>
+      </div>
     </div>
+  </form>
 </div>

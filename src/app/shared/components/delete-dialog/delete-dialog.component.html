@@ -1,0 +1,13 @@
+<div class="main-container">
+  <img
+    class="check-img"
+    src="assets/images/seller/exclamationSign.svg"
+    alt=""
+  />
+  <p class="title-red">Eliminar publicación</p>
+  <p class="message" *ngFor="let item of post">{{ item.title }}</p>
+  <div class="buttons-container">
+    <button class="red-button" (click)="close()">Cancelar</button>
+    <button class="white-button" (click)="eliminar()">Confirmar</button>
+  </div>
+</div>

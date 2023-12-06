@@ -1,0 +1,50 @@
+<div class="main-div">
+  <div class="main-container">
+    <div class="carrito-container">
+      <h2>Carrito de Compras</h2>
+
+      <div class="carrito-resumen">
+        <h3>Resumen del Carrito</h3>
+        <div class="row-post" *ngFor="let item of productos">
+          <img
+            src="{{ ruta + item.product!.ProductImages!.at(0)!.filePath }}"
+            alt=""
+          />
+          <p class="row-post-name">{{ item.product?.title?.toUpperCase() }}</p>
+          <div class="date-location-container">
+            <p>Cantidad: {{ item.amount }}</p>
+            <p>Comuna: {{ item.product?.city?.name }}</p>
+          </div>
+          <div class="price-category-container">
+            <p>
+              {{
+                (item.product?.price | currency : "CLP" : "$")?.replaceAll(
+                  ",",
+                  "."
+                )
+              }}
+              CLP
+            </p>
+          </div>
+          <div class="buttons-container">
+            <button class="row-button" (click)="deleteItem(item)">
+              Eliminar
+            </button>
+          </div>
+        </div>
+        <br />
+        <div class="container">
+          <p class="total">
+            Total:
+            {{
+              (calcularTotal() | currency : "CLP" : "$")?.replaceAll(",", ".")
+            }}
+          </p>
+          <button class="row-button-red" (click)="tbkProcess()">
+            Finalizar compra
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

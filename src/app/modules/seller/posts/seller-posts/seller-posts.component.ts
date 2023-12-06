@@ -1,60 +1,73 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SeeMoreComponent } from '../see-more/see-more.component';
+import { ProductModel } from 'src/app/models/productModel';
+import { ProductsService } from 'src/app/services/productsservice/products.service';
+import { DeleteDialogComponent } from 'src/app/shared/components/delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-seller-posts',
   templateUrl: './seller-posts.component.html',
   styleUrls: ['./seller-posts.component.css']
 })
-export class SellerPostsComponent {
+export class SellerPostsComponent implements OnInit {
   allChecked:boolean;
   checkedList:any;
-  posts:any;
+  posts:ProductModel[]=[];
+  productos:ProductModel[]=[];
+  
+  ruta:string='http://localhost:8000/'
 
-  constructor(private dialog: MatDialog) {
-    this.posts = [
-      {id:1,isSelected:false},
-      {id:2,isSelected:false},
-      {id:3,isSelected:false},
-      {id:4,isSelected:false},
-      {id:5,isSelected:false},
-      {id:6,isSelected:false},
-      {id:7,isSelected:false},
-      {id:8,isSelected:false},
-    ];
+  constructor(private dialog: MatDialog,private productserv:ProductsService) {
     this.allChecked=false;
-    this.getCheckedItemList();
+    //this.getCheckedItemList();
   }
   
-  
-
   checkUncheckAll() {
-    for (var item in this.posts) {
-      this.posts[item].isSelected=this.allChecked;
+    if (this.allChecked) {
+      this.posts=this.productos;
+    } else {
+      this.posts=[];
     }
-    this.getCheckedItemList();
   }
 
-  checkChecked() {
-    this.allChecked = this.posts.every(function(item:any) {
-      return item.isSelected == true;
-    })
-    this.getCheckedItemList();
-  }
-
-  getCheckedItemList(){
-    this.checkedList = [];
-    for (var item in this.posts) {
-      if(this.posts[item].isSelected)
-      this.checkedList.push(this.posts[item]);
+  isSelected(item:ProductModel):boolean{
+    if (this.posts.includes(item)) {
+      return true;
+    } else {
+      return false;
     }
-    this.checkedList = JSON.stringify(this.checkedList);
   }
 
+  checkChecked(item:ProductModel) {
+    if (this.posts.includes(item)) {
+      this.posts=this.posts.filter((e, i) => e !== item);
+    } else {
+      this.posts.push(item);
+    }
+    if (this.posts.length==this.productos.length) {
+      this.allChecked=true
+    }
+  }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(SeeMoreComponent);
+  ngOnInit():void{
+      const userId=parseInt(localStorage.getItem("userId")!)
+      this.productserv.getProductsByUser(userId).subscribe(data=>{
+        this.productos=data;
+      })
+    
+  }
+
+  openDialog(item:ProductModel) {
+    const dialogRef = this.dialog.open(SeeMoreComponent,{data:item});
+  }
+
+  openDeleteDialog(item:ProductModel) {
+    const dialogRef = this.dialog.open(DeleteDialogComponent,{data:[item]});
+  }
+
+  openDeleteMultiDialog() {
+    const dialogRef = this.dialog.open(DeleteDialogComponent,{data:this.posts});
   }
 
 }

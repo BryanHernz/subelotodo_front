@@ -1,146 +1,136 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './modules/home/home.component';
+import { ProductComponent } from './modules/product/product.component';
+import { OffersComponent } from './modules/offers/offers.component';
+import { Offers2Component } from './modules/offers2/offers2.component';
+import { HowToSaleComponent } from './modules/sell-steps/how-to-sale/how-to-sale.component';
+import { IngressComponent } from './modules/sell-steps/ingress/ingress.component';
+import { ProductRegisterComponent } from './modules/sell-steps/product-register/product-register.component';
+import { ProductUploadComponent } from './modules/sell-steps/product-upload/product-upload.component';
+import { FrequentQuestionsComponent } from './modules/questions/frequent-questions/frequent-questions.component';
+import { QuestionComponent } from './modules/questions/question/question.component';
+import { InformComponent } from './modules/inform/inform.component';
+import { SellerDataComponent } from './modules/seller/personal-data/seller-data/seller-data.component';
+import { SellComponent } from './modules/seller/sell/sell.component';
+import { SellerPostsComponent } from './modules/seller/posts/seller-posts/seller-posts.component';
+import { CompletedSalesComponent } from './modules/seller/completed-sales/completed-sales/completed-sales.component';
+import { RejectedSalesComponent } from './modules/seller/rejected-sales/rejected-sales/rejected-sales.component';
+import { DeletePostsComponent } from './modules/seller/delete-posts/delete-posts/delete-posts.component';
+import { NotificationsComponent } from './modules/seller/notifications/notifications/notifications.component';
+import { PaymentsComponent } from './modules/seller/payments/payments/payments.component';
+import { AdminDataComponent } from './modules/admin/personal-data/admin-data/admin-data.component';
+import { BannersComponent } from './modules/admin/banners/banners/banners.component';
+import { BannersHomeComponent } from './modules/admin/banners/banners-home/banners-home.component';
+import { BannersCategoriesComponent } from './modules/admin/banners/banners-categories/banners-categories.component';
+import { BannersOthersComponent } from './modules/admin/banners/banners-others/banners-others.component';
+import { PostsComponent } from './modules/admin/posts/posts/posts.component';
+import { PostsFormComponent } from './modules/admin/posts/posts-form/posts-form/posts-form.component';
+import { PostsControlComponent } from './modules/admin/posts/posts-control/posts-control/posts-control.component';
+import { PostsValidateComponent } from './modules/admin/posts/posts-control/posts-validate/posts-validate.component';
+import { SalesRegisterComponent } from './modules/admin/posts/posts-control/sales-register/sales-register.component';
+import { CategoriesComponent } from './modules/admin/categories/categories/categories.component';
+import { SellersComponent } from './modules/admin/sellers/sellers.component';
+import { AdminFrequentQuestionsComponent } from './modules/admin/admin-frequent-questions/admin-frequent-questions/admin-frequent-questions.component';
+import { MetricsComponent } from './modules/admin/metrics/metrics.component';
+import { AdminNotificationsComponent } from './modules/admin/notifications/admin-notifications/admin-notifications.component';
+import { AdminPaymentsComponent } from './modules/admin/payments/admin-payments/admin-payments.component';
+import { ShoppingCartComponent } from './modules/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   { 
     path: 'home',
-    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule) 
+    component: HomeComponent,
   },
   {
     path: 'product/:id',
-    loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule),
+    component:ProductComponent,
   },
   {
     path: 'offers',
-    loadChildren: () => import('./modules/offers/offers.module').then(m => m.OffersModule),
+    component:OffersComponent,
   },
   {
     path: 'offers2',
-    loadChildren: () => import('./modules/offers2/offers2.module').then(m => m.Offers2Module),
+    component:Offers2Component,
   },
-  {
-    path: 'how-to-sale',
-    loadChildren: () => import('./modules/sell-steps/how-to-sale/how-to-sale.module').then(m => m.HowToSaleModule),
+  { path: 'how-to-sale',
+    children: [
+      { path: '', component:HowToSaleComponent },
+      { path: 'ingress', component:IngressComponent },
+      { path: 'product-register', component:ProductRegisterComponent },
+      { path: 'product-upload', component:ProductUploadComponent }
+    ]
   },
-  {
-    path: 'ingress',
-    loadChildren: () => import('./modules/sell-steps/ingress/ingress.module').then(m => m.IngressModule),
+  { path: 'frequent-questions',
+    children: [
+      { path: '', component:FrequentQuestionsComponent },
+      { path: 'question', component:QuestionComponent },
+    ]
   },
-  {
-    path: 'product-register',
-    loadChildren: () => import('./modules/sell-steps/product-register/product-register.module').then(m => m.ProductRegisterModule),
-  }, 
-  {
-    path: 'product-upload',
-    loadChildren: () => import('./modules/sell-steps/product-upload/product-upload.module').then(m => m.ProductUploadModule),
-  }, 
-  {
-    path: 'frequent-questions',
-    loadChildren: () => import('./modules/questions/frequent-questions/frequent-questions.module').then(m => m.FrequentQuestionsModule),
-  }, 
-  {
-    path: 'question',
-    loadChildren: () => import('./modules/questions/question/question.module').then(m => m.QuestionModule),
-  }, 
   {
     path: 'inform',
-    loadChildren: () => import('./modules/inform/inform.module').then(m => m.InformModule),
-  }, 
-  {
-    path: 'seller-data',
-    loadChildren: () => import('./modules/seller/personal-data/seller-data/seller-data.module').then(m => m.SellerDataModule),
-  }, 
-  {
-    path: 'sell',
-    loadChildren: () => import('./modules/seller/sell/sell.module').then(m => m.SellModule),
-  }, 
-  {
-    path: 'seller-posts',
-    loadChildren: () => import('./modules/seller/posts/seller-posts/seller-posts.module').then(m => m.SellerPostsModule),
-  }, 
-  {
-    path: 'completed-sales',
-    loadChildren: () => import('./modules/seller/completed-sales/completed-sales/completed-sales.module').then(m => m.CompletedSalesModule),
+    component:InformComponent,
+  },
+  { path: 'seller',
+    children: [
+      { path: 'seller-data', component:SellerDataComponent },
+      { path: 'sell', component:SellComponent },
+      { path: 'seller-posts', component:SellerPostsComponent },
+      { path: 'completed-sales', component:CompletedSalesComponent },
+      { path: 'rejected-sales', component:RejectedSalesComponent },
+      { path: 'delete-posts', component:DeletePostsComponent },
+      { path: 'notifications', component:NotificationsComponent },
+      { path: 'payments', component:PaymentsComponent },
+    ]
+  },
+  { path: 'admin',
+    children: [
+      { path: 'admin-data', component:AdminDataComponent },
+      { path: 'banners',
+        children: [
+          { path: 'banners-options', component:BannersComponent },
+          { path: 'banners-home', component:BannersHomeComponent },
+          { path: 'banners-categories', component:BannersCategoriesComponent },
+          { path: 'banners-others', component:BannersOthersComponent },
+        ]
+      },
+      { path: 'admin-posts',
+        children: [
+          { path: 'admin-posts-control',  component:PostsControlComponent },
+          { path: 'admin-posts-validate', component:PostsValidateComponent },
+          { path: 'admin-sales-register', component:SalesRegisterComponent },
+        ]
+      },  
+      {
+        path: 'admin-categories',
+        component:CategoriesComponent,
+      },
+      {
+        path: 'admin-sellers',
+        component:SellersComponent,
+      },
+      {
+        path: 'admin-frequent-questions',
+        component:AdminFrequentQuestionsComponent,
+      },
+      {
+        path: 'admin-metrics',
+        component:MetricsComponent,
+      },
+      {
+        path: 'admin-notifications',
+        component:AdminNotificationsComponent,
+      },
+      {
+        path: 'admin-payments',
+        component:AdminPaymentsComponent,
+      },
+    ]
   },
   {
-    path: 'rejected-sales',
-    loadChildren: () => import('./modules/seller/rejected-sales/rejected-sales/rejected-sales.module').then(m => m.RejectedSalesModule),
-  }, 
-  {
-    path: 'delete-posts',
-    loadChildren: () => import('./modules/seller/delete-posts/delete-posts/delete-posts.module').then(m => m.DeletePostsModule),
-  }, 
-  {
-    path: 'notifications',
-    loadChildren: () => import('./modules/seller/notifications/notifications/notifications.module').then(m => m.NotificationsModule),
-  }, 
-  {
-    path: 'payments',
-    loadChildren: () => import('./modules/seller/payments/payments/payments.module').then(m => m.PaymentsModule),
-  }, 
-  {
-    path: 'admin-data',
-    loadChildren: () => import('./modules/admin/personal-data/admin-data/admin-data.module').then(m => m.AdminDataModule),
-  },
-  {
-    path: 'banners',
-    loadChildren: () => import('./modules/admin/banners/banners/banners.module').then(m => m.BannersModule),
-  }, 
-  {
-    path: 'banners-home',
-    loadChildren: () => import('./modules/admin/banners/banners-home/banners-home.module').then(m => m.BannersHomeModule),
-  }, 
-  {
-    path: 'banners-categories',
-    loadChildren: () => import('./modules/admin/banners/banners-categories/banners-categories.module').then(m => m.BannersCategoriesModule),
-  }, 
-  {
-    path: 'banners-others',
-    loadChildren: () => import('./modules/admin/banners/banners-others/banners-others.module').then(m => m.BannersOthersModule),
-  }, 
-  {
-    path: 'admin-posts',
-    loadChildren: () => import('./modules/admin/posts/posts/posts.module').then(m => m.PostsModule),
-  }, 
-  {
-    path: 'admin-posts-form',
-    loadChildren: () => import('./modules/admin/posts/posts-form/posts-form/posts-form.module').then(m => m.PostsFormModule),
-  }, 
-  {
-    path: 'admin-posts-control',
-    loadChildren: () => import('./modules/admin/posts/posts-control/posts-control/posts-control.module').then(m => m.PostsControlModule),
-  }, 
-  {
-    path: 'admin-posts-validate',
-    loadChildren: () => import('./modules/admin/posts/posts-control/posts-validate/posts-validate.module').then(m => m.PostsValidateModule),
-  }, 
-  {
-    path: 'admin-sales-register',
-    loadChildren: () => import('./modules/admin/posts/posts-control/sales-register/sales-register.module').then(m => m.SalesRegisterModule),
-  }, 
-  {
-    path: 'admin-categories',
-    loadChildren: () => import('./modules/admin/categories/categories/categories.module').then(m => m.CategoriesModule),
-  },
-  {
-    path: 'admin-sellers',
-    loadChildren: () => import('./modules/admin/sellers/sellers.module').then(m => m.SellersModule),
-  },
-  {
-    path: 'admin-frequent-questions',
-    loadChildren: () => import('./modules/admin/admin-frequent-questions/admin-frequent-questions/admin-frequent-questions.module').then(m => m.AdminFrequentQuestionsModule),
-  },
-  {
-    path: 'admin-metrics',
-    loadChildren: () => import('./modules/admin/metrics/metrics.module').then(m => m.MetricsModule),
-  },
-  {
-    path: 'admin-notifications',
-    loadChildren: () => import('./modules/admin/notifications/admin-notifications/admin-notifications.module').then(m => m.AdminNotificationsModule),
-  },
-  {
-    path: 'admin-payments',
-    loadChildren: () => import('./modules/admin/payments/admin-payments/admin-payments.module').then(m => m.AdminPaymentsModule),
+    path: 'shopping-cart',
+    component:ShoppingCartComponent,
   },
   {
     path: '',
@@ -155,3 +145,19 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
+
+
+
+/*{ path: 'admin-posts',
+  children: [
+    { path: '', component:PostsComponent,},
+    //{ path: 'admin-posts-form', component:PostsFormComponent },
+    { path: 'admin-posts-control',
+      children: [
+        { path: '',  component:PostsControlComponent },
+        { path: 'admin-posts-validate', component:PostsValidateComponent },
+        { path: 'admin-sales-register', component:SalesRegisterComponent },
+      ]
+    },    
+  ]
+},*/

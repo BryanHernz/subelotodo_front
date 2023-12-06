@@ -1,37 +1,39 @@
 <div class="main-div">
-    <div class="title-row">
-        <p>Eliminar publicación</p>
-        <img src="assets/images/seller/x.svg" alt="" (click)="close()">
+  <div class="title-row">
+    <p>Eliminar publicación</p>
+    <img src="assets/images/seller/x.svg" alt="" (click)="close()" />
+  </div>
+  <div class="product-container">
+    <div class="second-container">
+      <div class="third-container">
+        <img src="{{ ruta + post.ProductImages![0].filePath }}" alt="" />
+        <p class="title-text">{{ post.title }}</p>
+      </div>
+      <p class="second-container-text">
+        {{ (post.price | currency : "CLP" : "$")?.replaceAll(",", ".") }} CLP
+        <br />
+        Categoría: {{ post.category?.name }}
+      </p>
     </div>
-    <div class="product-container">
-        <div class="second-container">
-            <div class="third-container">
-                <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                <p class="title-text">Manta de Lana de Cachemira </p>
-            </div>
-            <p class="second-container-text">
-                $150.000 CLP
-                <br>
-                Categoría: Hogar
-            </p>
-        </div>
-        <p class="product-container-text">
-            Fecha:00.00.00
-            <br>
-            Comuna: San Bernardo
-        </p>
-    </div>
-    <p class="content-text">
-        Si eliminas las publicación debes saber: 
-        <br><br>
-        1. Las personas no podrán ver tu publicación una vez eliminado. 
-        <br>
-        2. No podrás subir la misma publicación en 1 semana. 
-        <br>
-        3. Se te cobrará un porcentaje por bajar la publicación.
+    <p class="product-container-text">
+      Fecha {{ post.createdAt | date : "dd.MM.yyyy" }}
+      <br />
+      Comuna: {{ post.city?.name }}
     </p>
-    <div class="button-row">
-        <button class="button-cancel" (click)="close()">Cancelar</button>
-        <button class="button-delete">Eliminar</button>
-    </div>
+  </div>
+  <p class="content-text">
+    Si eliminas las publicación debes saber:
+    <br /><br />
+    1. Las personas no podrán ver tu publicación una vez eliminado.
+    <br />
+    2. No podrás subir la misma publicación en 1 semana.
+    <br />
+    3. Se te cobrará un porcentaje por bajar la publicación.
+  </p>
+  <div class="button-row">
+    <button class="button-cancel" (click)="close()">Cancelar</button>
+    <button class="button-delete" (click)="openDeleteDialog(post)">
+      Eliminar
+    </button>
+  </div>
 </div>

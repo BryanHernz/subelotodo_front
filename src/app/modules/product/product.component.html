@@ -6,61 +6,57 @@
     <div class="images-section">
       <div class="title-container">
         <p class="title">
-          {{product.title}}
+          {{ product.title }}
         </p>
-        <app-swiper-gallery></app-swiper-gallery>
+        <app-swiper-gallery
+          [data]="product.ProductImages!"
+        ></app-swiper-gallery>
       </div>
     </div>
     <div class="details-container">
       <div class="data-container">
         <div class="price-container">
           <p class="price">
-            {{product.price | currency : 'CLP' : 'symbol-narrow'}} CLP
+            {{ product.price | currency : "CLP" : "symbol-narrow" }} CLP
           </p>
         </div>
         <div class="ref-price-container">
           <p class="ref-price">
-            Precio referencial: {{product.referencePrice | currency : 'CLP' : 'symbol-narrow'}}
+            Precio referencial:
+            {{ product.referencialPrice | currency : "CLP" : "symbol-narrow" }}
           </p>
         </div>
         <div class="description-container">
           <p class="description">
-            Descripción de artículo: 
-            <br>
-            <br>
-            {{product.description}}
+            Descripción de artículo:
+            <br />
+            <br />
+            {{ product.description }}
           </p>
         </div>
       </div>
       <div class="info-container">
         <div class="specifications-container">
           <p class="text-style">
-            Categoría: {{product.tag}}
+            Ubicación: {{ product.state?.name }}, {{ product.city?.name }}
           </p>
+          <p class="text-style">Estado de producto: {{ product.condition }}</p>
           <p class="text-style">
-            Ubicación: {{product.location}}
+            Medidas: {{ product.width }}cm ancho, {{ product.length }}cm fondo,
+            {{ product.height }}cm alto.
           </p>
-          <p class="text-style">
-            Estado de producto: {{product.condition}}
-          </p>
-          <p class="text-style">
-            Medidas: {{product.dimensions}}
-          </p>
-          <p class="text-style">
-            Peso: {{product.weight}}
-          </p>
-          <p class="text-style">
-            Estado de venta: En venta
-          </p>
+          <p class="text-style">Peso: {{ product.weight }}kg</p>
+          <p class="text-style">Estado de venta: En venta</p>
         </div>
         <div class="sale-details-container">
           <div class="seller-details">
-            Publicado por: {{product.seller}} Contacto: {{product.sellerContact}}
+            Publicado por: {{ product.user?.firstName }}
+            {{ product.user?.lastName }} <br />
+            Contacto:
+            {{ product.user?.phone }}
           </div>
-          <div class="buy-button">
-            <p>
-              Agregar a carro
-            </p>
+          <div class="buy-button" (click)="addToCart()">
+            <p>Agregar a carro</p>
           </div>
         </div>
       </div>
@@ -70,32 +66,45 @@
     <div class="recomendations-section-title">
       <p class="recomendations-title">Productos recomendados</p>
       <div class="line">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1360" height="2" viewBox="0 0 1361 2" fill="none">
-          <path d="M0.567627 0.53656H1360.57" stroke="#BE272D"/>
-          </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1360"
+          height="2"
+          viewBox="0 0 1361 2"
+          fill="none"
+        >
+          <path d="M0.567627 0.53656H1360.57" stroke="#BE272D" />
+        </svg>
       </div>
     </div>
     <div class="recomendations">
-      <img class="imgIcon" src="assets/images/iconos-generales/LeftCircle.svg" alt="">
+      <img
+        class="imgIcon"
+        src="assets/images/iconos-generales/LeftCircle.svg"
+        alt=""
+      />
       <div class="recomendation-card" *ngFor="let item of productsCards">
-        <img src="{{item.photo}}" alt="Imagen">
+        <img src="{{ item.photo }}" alt="Imagen" />
         <div class="recomedation-info">
-          <p class="recomendation-title">{{item.name}}</p>
-          <p class="recomendation-price">{{item.price | currency : 'CLP' : 'symbol-narrow'}}</p>
+          <p class="recomendation-title">{{ item.name }}</p>
+          <p class="recomendation-price">
+            {{ item.price | currency : "CLP" : "symbol-narrow" }}
+          </p>
           <button class="recomendation-button">
             <p>Ver más</p>
           </button>
         </div>
       </div>
-      <img class="imgIcon" src="assets/images/iconos-generales/RightCircle.svg" alt="">
+      <img
+        class="imgIcon"
+        src="assets/images/iconos-generales/RightCircle.svg"
+        alt=""
+      />
     </div>
   </div>
 </div>
-  
 
-
-
-    <!--<article>
+<!--<article>
       <div id="breadcrumb-container" class="breadcrumb">
           <app-breadcrumb></app-breadcrumb>
       </div>

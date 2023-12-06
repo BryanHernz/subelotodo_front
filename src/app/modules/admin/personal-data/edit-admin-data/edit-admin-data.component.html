@@ -1,57 +1,105 @@
 <div class="main-div">
-    <div class="title-container">
-        <img src="assets/images/seller/personaIcono.svg" alt="">
-        <p>Editar datos del administrador</p>
-        <img src="assets/images/seller/x.svg" alt="" (click)="close()">
-    </div>
+  <div class="title-container">
+    <img src="assets/images/seller/personaIcono.svg" alt="" />
+    <p>Editar datos del administrador</p>
+    <img src="assets/images/seller/x.svg" alt="" (click)="close()" />
+  </div>
+  <form [formGroup]="editarAdmin">
     <div class="content-container">
-        <div class="form-field">
-            <p class="form-field-label">Nombre y apellido</p>
-            <input class="form-field-input" placeholder="">
-            <div class="hint-div">
-                <svg xmlns="http://www.w3.org/2000/svg" width="580" height="2" viewBox="0 0 580 2" fill="none">
-                    <path d="M0 1.16846H580" stroke="black"/>
-                    </svg>
-                <p class="form-field-hint">Escribe tu nombre completo</p>
-            </div>
+      <div class="form-field">
+        <p class="form-field-label">Nombre</p>
+        <input
+          class="form-field-input"
+          type="text"
+          formControlName="firstName"
+          required
+        />
+        <div class="hint-div">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="580"
+            height="2"
+            viewBox="0 0 580 2"
+            fill="none"
+          >
+            <path d="M0 1.16846H580" stroke="black" />
+          </svg>
+          <p class="form-field-hint">Escribe tu nombre</p>
         </div>
-        <div class="form-field">
-            <p class="form-field-label">Documento</p>
-            <input class="form-field-input" placeholder="">
-            <div class="hint-div">
-                <svg xmlns="http://www.w3.org/2000/svg" width="580" height="2" viewBox="0 0 580 2" fill="none">
-                    <path d="M0 1.16846H580" stroke="black"/>
-                    </svg>
-                <p class="form-field-hint">Escribe tu rut</p>
-            </div>
+      </div>
+      <div class="form-field">
+        <p class="form-field-label">Apellido</p>
+        <input
+          class="form-field-input"
+          type="text"
+          formControlName="lastName"
+          required
+        />
+        <div class="hint-div">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="580"
+            height="2"
+            viewBox="0 0 580 2"
+            fill="none"
+          >
+            <path d="M0 1.16846H580" stroke="black" />
+          </svg>
+          <p class="form-field-hint">Escribe tu apellido</p>
         </div>
-        <div class="form-field">
-            <p class="form-field-label">Email</p>
-            <input class="form-field-input" placeholder="">
-            <div class="hint-div">
-                <svg xmlns="http://www.w3.org/2000/svg" width="580" height="2" viewBox="0 0 580 2" fill="none">
-                    <path d="M0 1.16846H580" stroke="black"/>
-                    </svg>
-                <p class="form-field-hint">Escribe tu mail</p>
-            </div>
+      </div>
+      <div class="form-field">
+        <p class="form-field-label">Documento</p>
+        <input
+          class="form-field-input"
+          type="text"
+          formControlName="document"
+          required
+        />
+        <div class="hint-div">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="580"
+            height="2"
+            viewBox="0 0 580 2"
+            fill="none"
+          >
+            <path d="M0 1.16846H580" stroke="black" />
+          </svg>
+          <p class="form-field-hint">Escribe tu rut</p>
         </div>
-        <div class="form-field">
-            <p class="form-field-label">Teléfono</p>
-            <input class="form-field-input" placeholder="">
-            <div class="hint-div">
-                <svg xmlns="http://www.w3.org/2000/svg" width="580" height="2" viewBox="0 0 580 2" fill="none">
-                    <path d="M0 1.16846H580" stroke="black"/>
-                    </svg>
-                <p class="form-field-hint">Escribe tu número, recuerda agregar el 09 al principio</p>
-            </div>
+      </div>
+      <div class="form-field">
+        <p class="form-field-label">Teléfono</p>
+        <input
+          class="form-field-input"
+          type="text"
+          formControlName="phone"
+          required
+        />
+        <div class="hint-div">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="580"
+            height="2"
+            viewBox="0 0 580 2"
+            fill="none"
+          >
+            <path d="M0 1.16846H580" stroke="black" />
+          </svg>
+          <p class="form-field-hint">
+            Escribe tu número, recuerda agregar el 09 al principio
+          </p>
         </div>
+      </div>
     </div>
-    <div class="buttons-container">
-        <button class="button cancel" (click)="close()">
-            <p>Cancelar</p>
-        </button>
-        <button class="button next" (click)="openDialog()">
-            <p>Guardar</p>
-        </button>
-    </div>
+  </form>
+  <div class="buttons-container">
+    <button class="button cancel" (click)="close()">
+      <p>Cancelar</p>
+    </button>
+    <button class="button next" (click)="putForm()">
+      <p>Guardar</p>
+    </button>
+  </div>
 </div>

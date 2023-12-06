@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Category } from 'src/app/shared/models/categories';
 import { AddSubcategoryComponent } from '../add-subcategory/add-subcategory.component';
+import { CategoryModel } from 'src/app/models/categoryModel';
 
 @Component({
   selector: 'app-edit-categories',
@@ -15,16 +16,13 @@ export class EditCategoriesComponent {
     private dialogRef: MatDialogRef<EditCategoriesComponent>) {
   }
 
-  categoria:Category=this.data.categoria;
-
-
+  categoria:CategoryModel=this.data.categoria;
 
   close(): void {
     this.dialogRef.close(true);
   }
 
   openAddDialog() {
-    const dialogRef = this.dialog.open(AddSubcategoryComponent);
-    console.log(this.categoria.subCategories);
+    const dialogRef = this.dialog.open(AddSubcategoryComponent,{data:{categoria:this.categoria}});
   }
 }

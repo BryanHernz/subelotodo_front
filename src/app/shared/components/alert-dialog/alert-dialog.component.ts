@@ -20,5 +20,6 @@ export class AlertDialogComponent {
   
   close(): void {
     this.dialogRef.close(true);
+    window.location.reload()
   }
 }
